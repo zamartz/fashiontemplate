@@ -1,29 +1,389 @@
-/*Default Fashion Blog Template CSS*/
+/******************************************************************************
+ * PAGE STYLES
+ * Defines the structure and styles of the entire theme.
+ ******************************************************************************/
 
+#tumblr_controls {
+    z-index: 4; /* popover needs to ride on top */
+}
+
+/** Scrolling **/
+body.is-scrolling {
+    pointer-events: none;
+}
+
+body.is-scrolling #posts * {
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+    -moz-transition: none !important;
+    transition: none !important;
+}
+
+/** Variations on header **/
 #header {
--webkit-transform: translate3d(0, 0, 0);
--o-transform: translate3d(0, 0, 0);
--ms-transform: translate3d(0, 0, 0);
--moz-transform: translate3d(0, 0, 0);
-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/** No header image **/
+.no-image #header {
+    margin-top: 140px;
+}
+
+/** No image, no avatar **/
+.no-image.avatar-hidden #header,
+.no-image.avatar-style-hidden #header {
+    margin-top: 30px;
+}
+
+/** Nav **/
+.nav-menu-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.is_lightbox .nav-menu-wrapper,
+.is_lightbox .nav-menu-bg {
+    z-index: 0;
+}
+
+.nav-menu-wrapper:not(.exposed) .nav-menu {
+    float: left;
+    position: relative;
+    margin: 3px 8px;
+    z-index: 10; /* ride the snake */
+}
+
+.nav-menu .selector {
+    cursor: pointer;
+    display: block;
+    height: 36px;
+    width: 37px;
+}
+
+.selector {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+
+.selector .bar-icon-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -11px;
+    margin-top: -11px;
+    -webkit-transform: translate3d(0, 0, 0); /* The zoom: 1; of new browsers */
+}
+
+.selector .bar-icon {
+    height: 3px;
+    width: 20px;
+    background: #fff;
+    display: block;
+    opacity: 1;
+    margin-top: 4px;
+    -webkit-transition: -webkit-transform 0.15s linear;
+    -o-transition: -o-transform 0.15s linear;
+    -ms-transition: -ms-transform 0.15s linear;
+    -moz-transition: -moz-transform 0.15s linear;
+    transition: transform 0.15s linear;
+    -webkit-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.bar-icon:nth-child(2) {
+    -webkit-transition: opacity 0.1s linear;
+    -o-transition: opacity 0.1s linear;
+    -ms-transition: opacity 0.1s linear;
+    -moz-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+}
+
+.active .bar-icon:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate3d(5px, 5px, 0);
+    -o-transform: rotate(45deg) translate3d(5px, 5px, 0);
+    -ms-transform: rotate(45deg) translate3d(5px, 5px, 0);
+    -moz-transform: rotate(45deg) translate3d(5px, 5px, 0);
+    transform: rotate(45deg) translate3d(5px, 5px, 0);
+}
+
+.active .bar-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.active .bar-icon:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translate3d(5px, -5px, 0);
+    -o-transform: rotate(-45deg) translate3d(5px, -5px, 0);
+    -ms-transform: rotate(-45deg) translate3d(5px, -5px, 0);
+    -moz-transform: rotate(-45deg) translate3d(5px, -5px, 0);
+    transform: rotate(-45deg) translate3d(5px, -5px, 0);
+}
+
+.search-only .selector .icon {
+    display: block;
+    height: 26px;
+    margin: auto;
+    width: 26px;
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    font-size: 26px;
+    color: #fff;
+    -webkit-transition: opacity 0.25s linear;
+    -o-transition: opacity 0.25s linear;
+    -ms-transition: opacity 0.25s linear;
+    -moz-transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear;
+}
+
+.search-only .selector .icon-close {
+    display: none;
+    opacity: 0;
+}
+
+.search-only .selector.show .icon-close {
+    display: block;
+}
+
+.search-only .selector.show .icon-search_16 {
+    opacity: 0;
+}
+
+.search-only .selector.active .icon-close {
+    opacity: 1;
+}
+
+.search-only .selector.show.active .icon-search_16 {
+    display: none;
+}
+
+.nav-menu .pop-menu {
+    bottom: auto;
+    top: 0;
+    left: 35px;
+    width: 200px;
+}
+
+.nav-menu .pop-menu.active {
+    left: 40px;
+}
+
+/** Exposed nav **/
+.exposed-nav-wrapper {
+    margin-top: 20px;
+}
+
+#posts.no-title-desc.exposed-nav {
+    margin-top: 10px;
+}
+
+.no-title-desc .h-line {
+    display: none;
+}
+
+.exposed-nav-wrapper ul {
+    margin: 1em 0;
+    padding: 0;
+    text-align: center;
+}
+
+.exposed-nav-wrapper li {
+    display: inline-block;
+    margin: 10px 10px 0;
+}
+
+.exposed-nav-wrapper li a {
+    color: #444;
+    text-decoration: none;
+}
+/** /Exposed nav **/
+
+.mobile-menu {
+    float: right;
+    margin: 11px 10px 0 0;
+    position: relative;
+    width: 250px;
+    z-index: 1;
+}
+
+#search {
+    margin: 6px 10px 8px;
+}
+
+#search input {
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    width: 155px;
+}
+
+#search button {
+    border: none;
+    background: transparent;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 26px;
+    height: 26px;
+    font-size: 26px;
+    color: #bbb;
+    position: absolute;
+    right: 7px;
+    top: 0;
 }
 
 .header-image-wrapper {
-position: relative;
-height: 350px;
-overflow: hidden;
--webkit-transform: translate3d(0,0,0);
--o-transform: translate3d(0, 0, 0);
--ms-transform: translate3d(0, 0, 0);
--moz-transform: translate3d(0, 0, 0);
-transform: translate3d(0, 0, 0);
--webkit-transition: height 0.25s linear;
--o-transition: height 0.25s linear;
--ms-transition: height 0.25s linear;
--moz-transition: height 0.25s linear;
-transition: height 0.25s linear;
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: height 0.25s linear;
+    -o-transition: height 0.25s linear;
+    -ms-transition: height 0.25s linear;
+    -moz-transition: height 0.25s linear;
+    transition: height 0.25s linear;
 }
 
+.iframe .header-image-wrapper {
+    -webkit-transition: none;
+    -o-transition: none;
+    -ms-transition: none;
+    -moz-transition: none;
+    transition: none;
+}   
+
+.header-image {
+    background: transparent 50% 50% no-repeat;
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: relative;
+    -webkit-transition: opacity 0.15s ease;
+    -o-transition: opacity 0.15s ease;
+    -ms-transition: opacity 0.15s ease;
+    -moz-transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease;                   
+}
+
+.header-image img {
+    max-width: 80%;
+    max-height: 80%;
+    max-height: calc(100% - 100px);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.header-image.cover img {
+    display: none;                  
+}
+
+.header-image.contain {
+    background-image: none !important;
+    margin: auto; /* center */             
+}
+
+.regular .header-image.contain,
+.grid.permalink .header-image.contain {
+    max-width: 700px;
+}
+
+.narrow .header-image.contain {
+    max-width: 500px;
+}
+
+.iframe .header-image {
+    opacity: 1;
+    -webkit-transition: none;
+    -o-transition: none;
+    -ms-transition: none;
+    -moz-transition: none;
+    transition: none;
+} 
+
+.header-image.loaded {
+    opacity: 1;
+}
+
+.header-image.cover.loaded:after {
+    content: '';
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); 
+}
+
+.header-image.cover {
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin: 0 -1px; /* account for browser rounding errors */
+}
+
+.header-image.cover:not(.loaded) + .loader-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(68, 68, 68, 0.1);
+}
+
+.title-group.animate {
+    -webkit-animation: slide-fade-in 0.8s ease;
+    -o-animation: slide-fade-in 0.8s ease;
+    -ms-animation: slide-fade-in 0.8s ease;
+    -moz-animation: slide-fade-in 0.8s ease;
+    animation: slide-fade-in 0.8s ease;
+}
+
+.blog-title {
+    text-align: center;
+}
+
+.description {
+    color: #666;
+    margin: 50px 0 0;
+    display: block;
+}
+
+.avatar-hidden .description {
+    margin-top: 25px;
+}
+
+h1 + .description {
+    margin-top: 5px !important;
+}
 
 /** Avatar **/
 .avatar-wrapper {
@@ -89,3 +449,35 @@ transition: height 0.25s linear;
 .avatar-hidden h1 {
     margin-top: 23px;
 }
+
+.avatar_frame {
+    display: block;
+    float: left;
+    position: relative;
+    margin: -2px 12px 0 0;
+    border-radius: 2px;
+}
+
+.avatar_frame:before {
+    content: '';
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.avatar_frame:after {
+    content: '';
+    background: rgba(0, 0, 0, 0) url('http://static.tumblr.com/vr9xgox/X4en0lgid/sprite-1x.png') 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: -6px;
+    z-index: 10;
+    right: -8px;
+}
+
