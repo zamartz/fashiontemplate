@@ -13,14 +13,50 @@
         {/block:Description}
         
         {block:Hidden}
-        <meta name="if:Sliding header" content="1">    
-        <meta name="if:Collapse navigation" content="1">
+        <meta name="if:Show Header Image" content="1">
+       
+        <meta name="if:Show Header SubTitle" content="1">
+        <meta name="text:HeaderSubTitle" content="">
+       
+
+        <meta name="select:Home Post Default" content="full-large" title="Full Large">
+        <meta name="select:Home Post Default" content="full-left" title="Full Left Photo">
+        <meta name="select:Home Post Default" content="full-right" title="Full Right Photo">
+        <meta name="select:Home Post Default" content="full-oe" title="Full Odd & Even">
+        <meta name="select:Home Post Default" content="half-tall" title="Half Tall">
         <meta name="if:Endless scrolling" content="1">
+        <meta name="if:Blog Roll Square Images" content="1">
+        <meta name="color:Post Headers Color" content="#000"/> 
+        <meta name="color:Post Text Color" content="#444"/> 
 
-        <meta name="select:Layout" content="regular" title="Regular">
-        <meta name="select:Layout" content="narrow" title="Narrow">
-        <meta name="select:Layout" content="grid" title="Grid">
+        <meta name="text:Feature Override Tag" content="FeaturePost">
+        <meta name="text:Photo Left Override Tag" content="PhotoLeft">
+        <meta name="text:Photo Right Override Post Tag" content="PhotoRight">
+        <meta name="text:Photo Tall Override Tag" content="HalfTall">
+       
+        <meta name="if:UseGoogleFonts" content="1">
+        <meta name="select:Google Header Font" content="'Lora',serif" title="Lora">
+        <meta name="select:Google Header Font" content="'Playfair Display','Times New Roman',Times,serif" title="Playfair Display">
+        <meta name="select:Google Header Font" content="'Josefin Slab','Times New Roman',Times,serif" title="Josefin Slab">
+        <meta name="select:Google Header Font" content="'Arvo','Times New Roman',Times,serif" title="Arvo">
+        <meta name="select:Google Header Font" content="'Vollkorn','Times New Roman',Times,serif" title="Vollkorn">
+        <meta name="select:Google Header Font" content="'Abril Fatface','Times New Roman',Times,serif" title="Abril Fatface">
+        <meta name="select:Google Header Font" content="'Open Sans',HelveticaNeue,Arial,san-serif" title="Open Sans">
+        <meta name="select:Google Header Font" content="'Ubuntu',HelveticaNeue,Arial,san-serif" title="Ubuntu">
+        <meta name="select:Google Header Font" content="'Lato',HelveticaNeue,Arial,san-serif" title="Lato">
+        <meta name="select:Google Header Font" content="'Istok',HelveticaNeue,Arial,san-serif" title="Anivers">
 
+        <meta name="select:Google Post Header Font" content="'Lora',serif" title="Lora">
+        <meta name="select:Google Post Header Font" content="'Playfair Display','Times New Roman',Times,serif" title="Playfair Display">
+        <meta name="select:Google Post Header Font" content="'Josefin Slab','Times New Roman',Times,serif" title="Josefin Slab">
+        <meta name="select:Google Post Header Font" content="'Arvo','Times New Roman',Times,serif" title="Arvo">
+        <meta name="select:Google Post Header Font" content="'Vollkorn','Times New Roman',Times,serif" title="Vollkorn">
+        <meta name="select:Google Post Header Font" content="'Abril Fatface','Times New Roman',Times,serif" title="Abril Fatface">
+        <meta name="select:Google Post Header Font" content="'Open Sans',HelveticaNeue,Arial,san-serif" title="Open Sans">
+        <meta name="select:Google Post Header Font" content="'Ubuntu',HelveticaNeue,Arial,san-serif" title="Ubuntu">
+        <meta name="select:Google Post Header Font" content="'Lato',HelveticaNeue,Arial,san-serif" title="Lato">
+        <meta name="select:Google Post Header Font" content="'Istok',HelveticaNeue,Arial,san-serif" title="Anivers">
+       
         <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
         {/block:Hidden}
@@ -30,6 +66,9 @@
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:IfUseGoogleFonts}<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora|Playfair+Display|Josefin+Slab|Arvo|Vollkorn|Abril+Fatface|Open+Sans|Ubuntu|Lato|Istok">{/block:IfUseGoogleFonts}
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
         <link rel="stylesheet" href="https://raw.githubusercontent.com/zamartz/fashiontemplate/master/fashionblogtemplate.css">
 
@@ -45,7 +84,7 @@
             }
 
             h1 {
-                font-family: {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+                font-family: {block:IfUseGoogleFonts}{select:Google Header Font},{/block:IfUseGoogleFonts}{TitleFont}{block:IfNotUseGoogleFonts}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif{/block:IfNotUseGoogleFonts};
                 font-weight: {TitleFontWeight};
             }
 
@@ -57,6 +96,16 @@
 
             .h-line {
                 background: {TitleColor};
+            }
+
+            .post {
+                color: {color:Post Text Color};
+                font-family: {block:IfUseGoogleFonts}{select:Google Post Header Font},{/block:IfUseGoogleFonts}{TitleFont}{block:IfNotUseGoogleFonts}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif{/block:IfNotUseGoogleFonts};
+            }
+
+            .post h1, .post h2, .post h3, .post h5, .post h6{
+                color: {color:Post Headers Color};
+                font-family: {block:IfUseGoogleFonts}{select:Google Post Header Font},{/block:IfUseGoogleFonts}{TitleFont}{block:IfNotUseGoogleFonts}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif{/block:IfNotUseGoogleFonts};
             }
 
             a {
@@ -270,6 +319,9 @@
                             {block:ShowTitle}
                             <h1><a href="/">{Title}</a></h1>
                             {/block:ShowTitle}
+                            {block:IfShow Header SubTitle}
+                             <h2>{text:HeaderSubTitle}</h2>
+                            {/block:IfShow Header SubTitle}
                             {block:ShowDescription}
                             <span class="description">
                                 {Description}
