@@ -1,16 +1,47 @@
 /*Default Fashion Blog Template CSS*/
 
-/* Avatar Settings */
-.avatar-wrapper .animate {
--webkit-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
--o-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
--ms-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
--moz-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+.header-image-wrapper {
+position: relative;
+height: 350px;
+overflow: hidden;
+-webkit-transform: translate3d(0,0,0);
+-o-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+-webkit-transition: height 0.25s linear;
+-o-transition: height 0.25s linear;
+-ms-transition: height 0.25s linear;
+-moz-transition: height 0.25s linear;
+transition: height 0.25s linear;
 }
 
-.user-avatar:active {
-    margin-top: 1px;
+
+/** Avatar **/
+.avatar-wrapper {
+    left: 50%;
+    margin-left: -57px;
+    position: absolute;
+    top: -78px;   
+}
+
+.avatar-wrapper.animate {
+    -webkit-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -o-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -ms-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    -moz-animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000); 
+}
+
+.user-avatar {
+    background: #666 50% 50% no-repeat;
+    background-size: 106px 106px;
+    border-radius: 4px;
+    display: block;
+    height: 106px;
+    width: 106px;
+    border: 4px solid #f6f6f6;
+    position: relative;
 }
 
 /* square avatar, uses box-shadow to create inset border */
@@ -25,6 +56,10 @@ animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
     box-shadow: 0 0 0 4px #F6F6F6;
 }
 
+.user-avatar:active {
+    margin-top: 1px;
+}
+
 /** Variations on avatars **/
 .avatar-hidden .avatar-wrapper,
 .avatar-style-hidden .avatar-wrapper {
@@ -32,7 +67,7 @@ animation: grow 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000);
 }
 
 .avatar-style-circle .user-avatar {
-border-radius: 50%;
+    border-radius: 50%;
 }
 
 #header.no-image .avatar-wrapper {
@@ -46,9 +81,3 @@ border-radius: 50%;
 .avatar-hidden h1 {
     margin-top: 23px;
 }
-
-
-
-
-
-

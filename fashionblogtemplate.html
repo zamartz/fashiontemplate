@@ -15,8 +15,8 @@
         {block:Hidden}
         <meta name="if:Show Header Image" content="1">
        
-        <meta name="if:Show Header SubTitle" content="1">
-        <meta name="text:HeaderSubTitle" content="">
+        <meta name="if:ShowHeaderSubTitle" title="Show Header Subtitle" content="1">
+        <meta name="text:HeaderSubTitle" content=" ">
        
 
         <meta name="select:Home Post Default" content="full-large" title="Full Large">
@@ -70,7 +70,7 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-        <link rel="stylesheet" href="https://raw.githubusercontent.com/zamartz/fashiontemplate/master/fashionblogtemplate.css">
+        <link rel="stylesheet" href="http://zamartz.github.io/fashiontemplate/fashionblogtemplate.css">
 
         <!-- HTML5 Shiv -->
         <!--[if lt IE 9]>
@@ -319,9 +319,9 @@
                             {block:ShowTitle}
                             <h1><a href="/">{Title}</a></h1>
                             {/block:ShowTitle}
-                            {block:IfShow Header SubTitle}
+                            {block:IfShowHeaderSubTitle}
                              <h2>{text:HeaderSubTitle}</h2>
-                            {/block:IfShow Header SubTitle}
+                            {/block:IfShowHeaderSubTitle}
                             {block:ShowDescription}
                             <span class="description">
                                 {Description}
