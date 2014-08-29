@@ -741,14 +741,20 @@
        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript">
-            jQuery(".nav-menu.pop" ).click(function(){
-                jQuery(".nav-menu.pop" ).toggle(
-                function() {
-                    jQuery( this ).children( '.selector' ).addClass( "active" );
+            /*jQuery(".nav-menu.pop" ).click(function(){
+                jQuery(".nav-menu.pop").toggle(function(){
+                    jQuery(".nav-menu.pop" ).addClass("show active");
+                    jQuery(".pop-menu.west" ).addClass("show active");
+                    jQuery(this).find('.selector').addClass("show active");
                   }, function() {
-                   jQuery( this ).children( '.selector' ).removeClass( "active" );
-                  }
-            });
+                    jQuery(".nav-menu.pop" ).removeClass("show active");
+                   jQuery(this).find('.selector').removeClass("show active");
+                    jQuery(".pop-menu.west" ).addClass("show active");
+                  });
+            });*/
+            jQuery(".nav-menu.pop" ).click(function(){
+                jQuery('.nav-menu.pop').toggle(function(){ jQuery(".nav-menu.pop").addClass("show active");}, function() {jQuery(".nav-menu.pop" ).removeClass("show active"); })
+            )};
         </script>
        {block:IfDisqusID}
             <script type="text/javascript">

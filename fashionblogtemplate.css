@@ -361,6 +361,12 @@ body:not(.ios) .share-menu ul li:nth-child(2):hover {
 }
 
 /** Nav **/
+
+nav ul, nav ol {
+list-style: none;
+list-style-image: none;
+}
+
 .nav-menu-wrapper {
     position: absolute;
     top: 0;
