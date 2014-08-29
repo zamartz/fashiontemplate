@@ -14,6 +14,8 @@
         
         {block:Hidden}
         <meta name="if:Show Header Image" content="1">
+        <meta name="if:CollapseNavigation" content="1" title="Collapse Navigation">
+        
        
         <meta name="if:ShowHeaderSubTitle" title="Show Header Subtitle" content="1">
         <meta name="text:HeaderSubTitle" content=" ">
@@ -296,27 +298,27 @@
                                 </form>
                             </li>
                             {block:IfCollapseNavigation}
-                                <li>
-                                    <a href="/archive" class="archive">{lang:Archive} <i class="icon-arrow_carrot_right"></i></a>
-                                </li>
-                                {block:AskEnabled}
-                                    <li>
-                                        <a href="/ask" class="ask">{AskLabel} <i class="icon-arrow_carrot_right"></i></a>
-                                    </li>
-                                {/block:AskEnabled}
-                                {block:HasPages}
-                                    {block:Pages}
-                                    <li>
-                                        <a href="{URL}" class="page">{Label} <i class="icon-arrow_carrot_right"></i></a>
-                                    </li>
-                                    {/block:Pages}
-                                {/block:HasPages}
-                                {block:SubmissionsEnabled}
-                                    <li>
-                                        <a href="/submit" class="submit">{SubmitLabel} <i class="icon-arrow_carrot_right"></i></a>
-                                    </li>
-                                {/block:SubmissionsEnabled}
-                            {block:IfCollapseNavigation}
+                            <li>
+                                <a href="/archive" class="archive">{lang:Archive} <i class="icon-arrow_carrot_right"></i></a>
+                            </li>
+                            {block:AskEnabled}
+                            <li>
+                                <a href="/ask" class="ask">{AskLabel} <i class="icon-arrow_carrot_right"></i></a>
+                            </li>
+                            {/block:AskEnabled}
+                            {block:HasPages}
+                            {block:Pages}
+                            <li>
+                                <a href="{URL}" class="page">{Label} <i class="icon-arrow_carrot_right"></i></a>
+                            </li>
+                            {/block:Pages}
+                            {/block:HasPages}
+                            {block:SubmissionsEnabled}
+                            <li>
+                                <a href="/submit" class="submit">{SubmitLabel} <i class="icon-arrow_carrot_right"></i></a>
+                            </li>
+                            {/block:SubmissionsEnabled}
+                            {/block:IfCollapseNavigation}
                         </ul>
                     </div> 
                 </nav>
@@ -364,32 +366,41 @@
                     </div>
 
                     {block:IfNotCollapseNavigation}
-                    <div class="{block:HideTitle}{block:HideDescription}no-title-desc{/block:HideDescription}{/block:HideTitle} exposed-nav-wrapper content">
-                        <div class="h-line"></div>
-                        <nav class="nav-menu">
-                            <ul>
-                                <li>
-                                    <a href="/archive">{lang:Archive}</a>
-                                </li>
-                                {block:AskEnabled}
-                                    <li>
-                                        <a href="/ask" class="ask">{AskLabel}</a>
-                                    </li>
-                                {/block:AskEnabled}
-                                {block:HasPages}
-                                    {block:Pages}
-                                    <li>
-                                        <a href="{URL}" class="page">{Label}</a>
-                                    </li>
-                                    {/block:Pages}
-                                {/block:HasPages}
-                                {block:SubmissionsEnabled}
-                                    <li>
-                                        <a href="/submit" class="submit">{SubmitLabel}</a>
-                                    </li>
-                                {/block:SubmissionsEnabled}
-                            </ul>
-                        </nav>
+                    <div class="top-bar">
+                      <nav class="pages">
+                        <div class="profile-icon">
+                          <a href="/"><img src="{block:IfIconImage}{image:Icon}{/block:IfIconImage}{block:IfNotIconImage}{PortraitURL-128}{block:IfNotIconImage}" /></a>
+                        </div>
+                        {block:HasPages}
+                        <a class="view-nav" href="#">
+                          <span class="icon"></span>
+                          <span class="label">{block:English}View Nav{/block:English}{block:NotEnglish}{lang:Navigate}{/block:NotEnglish}</span>
+                        </a>
+                        <ul>
+                          {block:Pages}<li><a href="{URL}" title="{Label}">{Label}</a></li>{/block:Pages}
+                          <li>
+                                <a href="/archive">{lang:Archive}</a>
+                          </li>
+                            {block:HasPages}
+                            {block:Pages}
+                          <li>
+                                <a href="{URL}" class="page">{Label}</a>
+                          </li>
+                                {/block:Pages}
+                            {/block:HasPages}
+                          {block:AskEnabled}
+                          <li>
+                                <a href="/ask" class="ask">{AskLabel}</a>
+                          </li>
+                          {/block:AskEnabled}
+                          {block:SubmissionsEnabled}
+                          <li>
+                                <a href="/submit" class="submit">{SubmitLabel}</a>
+                          </li>
+                          {/block:SubmissionsEnabled}
+                        </ul>
+                        {/block:HasPages}
+                      </nav>
                     </div>
                     {/block:IfNotCollapseNavigation}
                 </header>

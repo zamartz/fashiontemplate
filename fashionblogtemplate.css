@@ -390,7 +390,7 @@ h1 + .description {
     left: 50%;
     margin-left: -57px;
     position: absolute;
-    top: -78px;   
+    top: 100px;
 }
 
 .avatar-wrapper.animate {
@@ -488,4 +488,6 @@ h1 + .description {
 .print-only {
     display: none;
 }
+
+/*PAGE*/
 
