@@ -97,8 +97,8 @@ textarea {
  * WAYPOINTS
  * Items that get scrolling sticky
  ******************************************************************************/
-.exposed-nav-wrapper .sticky{
-	position:absolute !important;
+.nav-menu .sticky{
+	position:fixed !important;
 	top:0px !important;
 	left:0px !important;
 }
