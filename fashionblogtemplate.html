@@ -750,15 +750,25 @@
         </section>
        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        {block:IfStickyNavSide} 
-        <script src="stylesheet" href="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
-        {/block:IfStickyNavSide}
         <script type="text/javascript">
              jQuery(".selector" ).click(function(){
                 jQuery(".bar-icon-wrapper" ).toggleClass("show active");
                 jQuery(".pop-menu.west" ).toggleClass("show active");
              });
         </script>
+       
+        {block:IfStickyNavSide} 
+        <script src="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
+        <script src="//zamartz.github.io/fashiontemplate/waypoints-sticky.js"></script>
+        <script type="text/javascript">
+            jQuery('.nav-menu').waypoint(function(){
+                jQuery(".nav-menu" ).toggleClass("sticky");
+             });
+        </script>
+        {/block:IfStickyNavSide}
+        
+
+      
        {block:IfDisqusID}
             <script type="text/javascript">
                 if(!StyleHatch.customizeMode){
