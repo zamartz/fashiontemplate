@@ -1,4 +1,4 @@
-@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(//weloveiconfonts.com/api/?family=entypo);
 
 /* entypo */
 [class*="entypo-"]:before {
@@ -80,6 +80,10 @@ textarea {
 
 :-ms-input-placeholder {
     color: #bbb;
+}
+
+.icon {
+	font-family: 'entypo', sans-serif !important;
 }
 
 /******************************************************************************
