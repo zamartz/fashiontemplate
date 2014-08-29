@@ -201,7 +201,7 @@
                 background: {TitleColor};
             }
 
-            .nav-menu .sticky{
+            .exposed-nav-wrapper .sticky{
                 background-color:{BackgroundColor};
             }
 
@@ -766,7 +766,7 @@
         <script src="//zamartz.github.io/fashiontemplate/waypoints-sticky.js"></script>
         <script type="text/javascript">
             jQuery('.exposed-nav-wrapper .nav-menu').waypoint(function() {
-                jQuery(".nav-menu" ).toggleClass("sticky");
+                jQuery(".exposed-nav-wrapper" ).toggleClass("sticky");
             });
         </script>
         {/block:IfStickyNavSide}
