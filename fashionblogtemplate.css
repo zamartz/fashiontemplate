@@ -93,6 +93,15 @@ textarea {
 :-ms-input-placeholder {
     color: #bbb;
 }
+/******************************************************************************
+ * WAYPOINTS
+ * Items that get scrolling sticky
+ ******************************************************************************/
+.nav-menu .stuck{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
 
 /******************************************************************************
  * HELPERS
@@ -570,7 +579,8 @@ list-style-image: none;
     padding: 0;
     width: 26px;
     height: 26px;
-    font-size: 26px;
+    font-size: 46px;
+	line-height: 29px;
     color: #bbb;
     position: absolute;
     right: 7px;

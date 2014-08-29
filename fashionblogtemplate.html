@@ -5,6 +5,14 @@
 <!--[if IE 9]><html class="lt-ie10"> <![endif]-->
 <!--[if gt IE 9]><!--> <html> <!--<![endif]-->
     <head>
+    <!-- 
+    TITLE: Fashion Blogger Clean 2014
+    CREATOR: Zachary A Martz
+    CREATOR SITE: www.zamartz.com
+    NOTE: Some CSS and Core Tumblr profile elements repurposed from Tumblr Theme Optica
+    FONT ICONS: by Daniel Bruce & Andreas Blomback
+    FONT ICONS LICENSE: (CC BY-SA 3.0)
+    -->
         {MobileAppHeaders}
         <meta charset="utf-8">
         <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
@@ -18,6 +26,7 @@
         
        
         <meta name="if:ShowHeaderSubTitle" title="Show Header Subtitle" content="1">
+        <meta name="if:StickyNavSide" title="Sticky Nav & Sidebar" content="1">
         <meta name="text:HeaderSubTitle" content=" ">
        
 
@@ -162,6 +171,7 @@
          <!-- END OpenGraph Setup -->
 
         <link rel="stylesheet" href="//zamartz.github.io/fashiontemplate/fashionblogtemplate.css">
+        
 
         <!-- HTML5 Shiv -->
         <!--[if lt IE 9]>
@@ -353,7 +363,7 @@
                             <li class="no-hover search">
                                 <form action="/search" method="get" id="search">
                                     <input type="text" name="q" id="q" placeholder="{lang:Search}" value="{SearchQuery}">
-                                    <button type="submit" class="icon-search_16"></button>
+                                    <button type="submit" class="icon-search_16 icon"></button>
                                 </form>
                             </li>
                             {block:IfCollapseNavigation}
@@ -740,21 +750,14 @@
         </section>
        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        {block:IfStickyNavSide} 
+        <script src="stylesheet" href="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
+        {/block:IfStickyNavSide}
         <script type="text/javascript">
-            /*jQuery(".nav-menu.pop" ).click(function(){
-                jQuery(".nav-menu.pop").toggle(function(){
-                    jQuery(".nav-menu.pop" ).addClass("show active");
-                    jQuery(".pop-menu.west" ).addClass("show active");
-                    jQuery(this).find('.selector').addClass("show active");
-                  }, function() {
-                    jQuery(".nav-menu.pop" ).removeClass("show active");
-                   jQuery(this).find('.selector').removeClass("show active");
-                    jQuery(".pop-menu.west" ).addClass("show active");
-                  });
-            });*/
-            jQuery(".nav-menu.pop" ).click(function(){
-                jQuery('.nav-menu.pop').toggle(function(){ jQuery(".nav-menu.pop").addClass("show active");}, function() {jQuery(".nav-menu.pop" ).removeClass("show active"); })
-            )};
+             jQuery(".selector" ).click(function(){
+                jQuery(".bar-icon-wrapper" ).toggleClass("show active");
+                jQuery(".pop-menu.west" ).toggleClass("show active");
+             });
         </script>
        {block:IfDisqusID}
             <script type="text/javascript">
