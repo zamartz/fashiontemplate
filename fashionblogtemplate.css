@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
 /******************************************************************************
  * OVERWRITES
  * Variations on elements.
@@ -807,6 +814,9 @@ h1 + .description {
 .search-header h2 {
     margin: 0;
     opacity: 0.7;
+}
+.icon-search_16:before {
+content: "\1f50d";
 }
 
 /******************************************************************************
