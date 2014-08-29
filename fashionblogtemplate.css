@@ -258,7 +258,7 @@
     background: transparent 50% 50% no-repeat;
     display: block;
     height: 100%;
-    opacity: 0;
+    opacity: 100;
     position: relative;
     -webkit-transition: opacity 0.15s ease;
     -o-transition: opacity 0.15s ease;

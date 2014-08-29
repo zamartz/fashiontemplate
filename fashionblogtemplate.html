@@ -100,7 +100,66 @@
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         {block:IfUseGoogleFonts}<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora|Playfair+Display|Josefin+Slab|Arvo|Vollkorn|Abril+Fatface|Open+Sans|Ubuntu|Lato|Istok">{/block:IfUseGoogleFonts}
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- OpenGraph Setup -->
+        <meta property="og:site_name" content="{Title}"/>
+        {block:PermalinkPage}
+        <meta property="og:url" content="{Permalink}"/>
+        <meta property="og:type" content="article"/>
+        {block:Posts}
+        {block:Text}
+        {block:Title}<meta property="og:title" content="{PlaintextTitle}"/>{/block:Title}
+        <meta property="og:image" content="{PortraitURL-64}"/>
+        <meta property="og:description" content="{PlaintextBody}"/>
+        {/block:Text}
+        {block:Photo}
+        <meta property="og:image" content="{PhotoURL-500}"/>
+        <meta property="og:image" content="{PortraitURL-64}"/>
+        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+        {/block:Photo}
+        {block:Photoset}
+        {block:Photos}
+        <meta property="og:image" content="{PhotoURL-500}"/>
+        <meta property="og:image" content="{PortraitURL-64}"/>
+        {/block:Photos}
+        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption}
+        {/block:Photoset}
+        {block:Quote}
+        <meta property="og:title" content="{PlaintextQuote}"/>
+        <meta property="og:description" content="{PlaintextSource}"/>
+        <meta property="og:image" content="{PortraitURL-64}"/>
+        {/block:Quote}
+        {block:Link}
+        <meta property="og:title" content="{PlaintextName}"/>
+        <meta property="og:description" content="{PlaintextDescription}"/>
+        <meta property="og:image" content="{PortraitURL-64}"/>
+        {/block:Link}
+        {block:Chat}
+        <meta property="og:title" content="{PlaintextTitle}"/>
+        <meta property="og:description" content="{block:Lines}{block:Label}{Label}: {/block:Label}{Line} &bull; {/block:Lines}"/>
+        <meta property="og:image" content="{PortraitURL-64}"/>
+        {/block:Chat}
+        {block:Audio}
+        <meta property="og:title" content="{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}"/>
+        <meta property="og:description" content="{PlaintextCaption}"/>
+        {block:AlbumArt}<meta property="og:image" content="{AlbumArtURL}"/>{/block:AlbumArt}
+        {/block:Audio}
+        {block:Video}
+        {block:Caption}<meta property="og:description" content="{PlaintextCaption}"/>{/block:Caption} 
+        {/block:Video}
+        {block:Answer}
+        <meta property="og:title" content="{PlaintextQuestion}"/>
+        <meta property="og:description" content="{PlaintextAnswer}"/>
+        <meta property="og:image" content="{PortraitURL-64}"/>
+        {/block:Answer}
+        {/block:Posts}
+        {/block:PermalinkPage}
+        {block:IndexPage}
+        <meta property="og:title" content="{Title}"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:description" content="{MetaDescription}"/>
+        <meta property="og:image" content="{PortraitURL-64}"/>
+        {/block:IndexPage}
+         <!-- END OpenGraph Setup -->
 
         <link rel="stylesheet" href="//zamartz.github.io/fashiontemplate/fashionblogtemplate.css">
 
@@ -274,7 +333,7 @@
     </head>
     <body data-urlencoded-name="{URLEncodedName}" class="{select:Layout}{block:IndexPage} index-page{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:SearchPage} search-page{block:NoSearchResults} no-results{/block:NoSearchResults}{/block:SearchPage}{block:HideHeaderImage} no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} contain-header-image{/block:NoStretchHeaderImage}">
         <section id="page">
-              <div class="nav-menu-wrapper {block:IfNotCollapseNavigation}search-only{/block:IfNotCollapseNavigation}">
+            <div class="nav-menu-wrapper {block:IfNotCollapseNavigation}search-only{/block:IfNotCollapseNavigation}">
                 <nav class="nav-menu pop">
                     <a class="selector">
                         {block:IfCollapseNavigation}
@@ -298,27 +357,27 @@
                                 </form>
                             </li>
                             {block:IfCollapseNavigation}
-                                <li>
-                                    <a href="/archive" class="archive">{lang:Archive} <i class="icon-arrow_carrot_right"></i></a>
-                                </li>
-                                {block:AskEnabled}
-                                    <li>
-                                        <a href="/ask" class="ask">{AskLabel} <i class="icon-arrow_carrot_right"></i></a>
-                                    </li>
-                                {/block:AskEnabled}
-                                {block:HasPages}
-                                    {block:Pages}
-                                    <li>
-                                        <a href="{URL}" class="page">{Label} <i class="icon-arrow_carrot_right"></i></a>
-                                    </li>
-                                    {/block:Pages}
-                                {/block:HasPages}
-                                {block:SubmissionsEnabled}
-                                    <li>
-                                        <a href="/submit" class="submit">{SubmitLabel} <i class="icon-arrow_carrot_right"></i></a>
-                                    </li>
-                                {/block:SubmissionsEnabled}
-                            {block:IfCollapseNavigation}
+                            <li>
+                                <a href="/archive" class="archive">{lang:Archive} <i class="icon-arrow_carrot_right"></i></a>
+                            </li>
+                            {block:AskEnabled}
+                            <li>
+                                <a href="/ask" class="ask">{AskLabel} <i class="icon-arrow_carrot_right"></i></a>
+                            </li>
+                            {/block:AskEnabled}
+                            {block:HasPages}
+                            {block:Pages}
+                            <li>
+                                <a href="{URL}" class="page">{Label} <i class="icon-arrow_carrot_right"></i></a>
+                            </li>
+                            {/block:Pages}
+                            {/block:HasPages}
+                            {block:SubmissionsEnabled}
+                            <li>
+                            <a href="/submit" class="submit">{SubmitLabel} <i class="icon-arrow_carrot_right"></i></a>
+                            </li>
+                            {/block:SubmissionsEnabled}
+                            {/block:IfCollapseNavigation}
                         </ul>
                     </div> 
                 </nav>
@@ -689,20 +748,32 @@
                 {/block:IndexPage}
             </footer>
         </section>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/vr9xgox/sBgmmjhyw/jquery-1.9.1.min.js"%3E%3C/script%3E'));</script>
-        <script src="http://static.tumblr.com/vr9xgox/Azhmnml1q/jquery.masonry.min.js"></script>
-        <script src="http://static.tumblr.com/wogenvz/kcyn7f6re/main-min.js"></script>
+       
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       {block:IfDisqusID}
+            <script type="text/javascript">
+                if(!StyleHatch.customizeMode){
+                var disqus_shortname = '{text:Disqus ID}';
+                (function () {
+                  var s = document.createElement('script'); s.async = true;
+                  s.type = 'text/javascript';
+                  s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+                  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                }());
+                }
+            </script>
+        {/block:IfDisqusID}
 
         {block:IfGoogleAnalyticsID}
-            <script>
-              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-              ga('create', '{text:Google Analytics ID}', 'tumblr.com');
-              ga('send', 'pageview');
+            <script type="text/javascript">
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', '{text:Google Analytics ID}', 'zamartz.com');
+                ga('send', 'pageview');
             </script>
         {/block:IfGoogleAnalyticsID}
+       
     </body>
 </html>
