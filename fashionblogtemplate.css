@@ -1,8 +1,13 @@
 @import url(//weloveiconfonts.com/api/?family=entypo);
 
-/* entypo */
+/* entypo http://www.entypo.com/
+   By: Daniel Bruce & Andreas Blomback
+*/
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
+}
+.icon {
+	font-family: 'entypo', sans-serif !important;
 }
 
 /******************************************************************************
@@ -80,10 +85,6 @@ textarea {
 
 :-ms-input-placeholder {
     color: #bbb;
-}
-
-.icon {
-	font-family: 'entypo', sans-serif !important;
 }
 
 /******************************************************************************

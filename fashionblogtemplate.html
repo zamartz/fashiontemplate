@@ -413,6 +413,9 @@
                             {block:ShowTitle}
                             <h1><a href="/">{Title}</a></h1>
                             {/block:ShowTitle}
+                            {block:IfShowHeaderSubTitle}
+                            <h2>{text:HeaderSubTitle}</h2>
+                            {/block:IfShowHeaderSubTitle}
                             {block:ShowDescription}
                             <span class="description">
                                 {Description}
@@ -737,6 +740,16 @@
         </section>
        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            jQuery(".nav-menu.pop" ).click(function(){
+                jQuery(".nav-menu.pop" ).toggle(
+                function() {
+                    jQuery( this ).children( '.selector' ).addClass( "active" );
+                  }, function() {
+                   jQuery( this ).children( '.selector' ).removeClass( "active" );
+                  }
+            });
+        </script>
        {block:IfDisqusID}
             <script type="text/javascript">
                 if(!StyleHatch.customizeMode){
