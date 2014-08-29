@@ -4,7 +4,11 @@
 */
 @font-face {
     font-family: entypo;
-    src: url(zamartz.github.io/fashiontemplate/Entypo.otf);
+	src: url('zamartz.github.io/fashiontemplate/entypo.eot') format('embedded-opentype'); /* IE9 Compat Modes */
+	src: url('zamartz.github.io/fashiontemplate/entypo.ttf') format('truetype'),
+	url('zamartz.github.io/fashiontemplate/Entypo.otf') format('opentype'),
+	url('zamartz.github.io/fashiontemplate/entypo.woff') format('woff'), /* Modern Browsers */
+	url('zamartz.github.io/fashiontemplate/entypo.svg') format('svg'); /* Legacy iOS */
 }
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
