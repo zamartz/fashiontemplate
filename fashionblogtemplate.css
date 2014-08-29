@@ -1,4 +1,326 @@
 /******************************************************************************
+ * OVERWRITES
+ * Variations on elements.
+ ******************************************************************************/
+html {
+    top: 0 !important; /* override mobile iframe */
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    margin: 0 auto;
+    color: #333;
+    font-family: "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    background: #fafafa;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #529ecc;
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 56px;
+    line-height: 1.2;
+    margin: 40px 0 0;
+    word-wrap: break-word;
+}
+
+h1 a {
+    color: #444;
+    display: block;
+    text-decoration: none;
+}
+
+h1 a:active {
+    -webkit-transform: translateY(1px);
+    -moz-transform: translateY(1px);
+    -ms-transform: translateY(1px);
+    -o-transform: translateY(1px);
+    transform: translateY(1px);
+}
+
+img,
+iframe,
+object {
+    vertical-align: middle;
+}
+
+input,
+textarea {
+    color: #333;
+    font-size: 14px;
+    font-family: inherit;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-input-placeholder {
+    color: #bbb;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #bbb;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #bbb;
+}
+
+:-ms-input-placeholder {
+    color: #bbb;
+}
+
+/******************************************************************************
+ * HELPERS
+ * Various helper styles.
+ ******************************************************************************/
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.print-only {
+    display: none;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { 
+    border: 0 !important; 
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px !important; 
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* .clear classes are used by notes */
+div.clear,
+br.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+/******************************************************************************
+ * REUSABLE WIDGETS
+ * Classes meant to be reused / generic.
+ ******************************************************************************/
+
+/** Popover menu **/
+.glass {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+.glass.active {
+    display: block;
+}
+
+.pop-menu {
+    display: none;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 35px;
+    left: -54px;
+    width: 146px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+.pop-menu ul {
+    float: none;
+    margin: 0 !important;
+    padding: 0;
+}
+
+.pop-menu ul li {
+    border-left: none;
+    float: none;
+    height: auto;
+    position: relative;
+    width: auto;
+}
+
+.pop-menu.show {
+    display: block;
+    opacity: 0;
+    -webkit-transition: all 0.25s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    -o-transition: all 0.25s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    -ms-transition: all 0.25s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    -moz-transition: all 0.25s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    transition: all 0.25s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.pop-menu.active {
+    opacity: 1;
+}
+
+.pop-menu.west li:first-child:before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    height: 10px;
+    width: 10px;
+    margin-top: -8px;
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.pop-menu ul li.search {
+    border-bottom: 1px solid #eee;
+}
+
+.search-only .pop-menu.west li:first-child:before {
+    margin-top: -6px;
+    border-bottom: none;
+}
+
+.pop-menu.south li:last-child:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    height: 12px;
+    width: 12px;
+    margin-left: -6px;
+    background-color: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pop-menu ul li:not(.no-hover):hover {
+    background: #e6eff7;
+}
+
+.pop-menu ul li:first-child:hover {
+    border-radius: 4px 4px 0 0;
+}
+
+.pop-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.pop-menu ul li:last-child:hover {
+    border-radius: 0 0 4px 4px;
+}
+
+.pop-menu.south ul li:last-child:hover:after {
+    background: #e6eff7;
+}
+
+.pop-menu ul li:first-child {
+    border-top: none;
+}
+
+.pop-menu ul li a {
+    background: none;
+    color: #444;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    margin: 0;
+    padding: 6px 40px 6px 10px;
+    position: relative;
+    text-decoration: none;
+    width: auto;
+}
+
+.pop-menu ul li a .icon-arrow_carrot_right {
+    font-size: 11px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-top: -1px;
+}
+
+.share-menu {
+    bottom: 30px;
+}
+
+.share-menu.active {
+    bottom: 35px;
+}
+
+body:not(.ios) .share-menu ul li:nth-child(2):hover {
+    border-radius: 4px 4px 0 0;
+}
+
+
+.share-menu ul li a {
+    opacity: 1;
+}
+
+.share-menu ul li a:hover {
+    opacity: 1;
+}
+
+.pop-menu ul li.open-in-app {
+    display: none;
+}
+
+.h-line {
+    background: #DADADA;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0.15;
+    filter: alpha(opacity = 15);
+    width: 100%;
+}
+
+/******************************************************************************
  * PAGE STYLES
  * Defines the structure and styles of the entire theme.
  ******************************************************************************/
