@@ -1,8 +1,11 @@
-@import url(//weloveiconfonts.com/api/?family=entypo);
-
 /* entypo http://www.entypo.com/
    By: Daniel Bruce & Andreas Blomback
+   Entypo License: (CC BY-SA 3.0)
 */
+@font-face {
+    font-family: entypo;
+    src: url(//zamartz.github.io/fashiontemplate/.otf);
+}
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
