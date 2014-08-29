@@ -98,9 +98,9 @@ textarea {
  * Items that get scrolling sticky
  ******************************************************************************/
 .nav-menu .sticky{
-	position:fixed !important;
-	top:0px !important;
-	left:0px !important;
+	position:fixed ;
+	top:0px;
+	left:0px;
 }
 
 /******************************************************************************

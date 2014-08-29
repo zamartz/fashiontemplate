@@ -201,6 +201,10 @@
                 background: {TitleColor};
             }
 
+            .nav-menu .sticky{
+                background-color:{BackgroundColor};
+            }
+
             .post h1, .post h2, .post h3, .post h5, .post h6{
                 color: {color:Post Headers Color};
                 font-family: {block:IfUseGoogleFonts}{select:Google Post Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Post Header Font Default}{/block:IfNotUseGoogleFonts};
@@ -761,7 +765,7 @@
         <script src="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
         <script src="//zamartz.github.io/fashiontemplate/waypoints-sticky.js"></script>
         <script type="text/javascript">
-            jQuery('.exposed-nav-wrapper .h-line').waypoint(function() {
+            jQuery('.exposed-nav-wrapper .nav-menu').waypoint(function() {
                 jQuery(".nav-menu" ).toggleClass("sticky");
             });
         </script>
