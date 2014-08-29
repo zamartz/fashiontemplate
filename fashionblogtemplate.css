@@ -577,6 +577,61 @@ h1 + .description {
     to  { opacity: 1; transform: translate(1); }
 }
 
+/******************************************************************************
+ * MEDIA QUERIES
+ * These follow after primary styles so they will successfully override.
+ ******************************************************************************/
+@media screen and (max-width: 768px) {
+    .header-image-wrapper {
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 54px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .post-footer .date-notes li {
+        width: 123px; /* andorid does weird things */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #a7a7a7;
+    }
+
+    .permalink .post-footer .date-notes li {
+        float: none; /* force two lines */
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    iframe[src^="//instagram"] {
+        min-height: 550px;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+
+    .header-image-wrapper {
+        height: 200px;
+    }
+
+    .answer_form_container iframe {
+        min-height: 143px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    iframe[src^="//instagram"] {
+        min-height: 455px;
+    }
+
+}
+
 /* mobile-ify */
 @media screen and (max-device-width: 568px) {
 
