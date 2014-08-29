@@ -3,23 +3,6 @@
  * Defines the structure and styles of the entire theme.
  ******************************************************************************/
 
-#tumblr_controls {
-    z-index: 4; /* popover needs to ride on top */
-}
-
-/** Scrolling **/
-body.is-scrolling {
-    pointer-events: none;
-}
-
-body.is-scrolling #posts * {
-    -webkit-transition: none !important;
-    -o-transition: none !important;
-    -ms-transition: none !important;
-    -moz-transition: none !important;
-    transition: none !important;
-}
-
 /** Variations on header **/
 #header {
     -webkit-transform: translate3d(0, 0, 0);
@@ -384,6 +367,7 @@ body.is-scrolling #posts * {
 h1 + .description {
     margin-top: 5px !important;
 }
+
 
 /** Avatar **/
 .avatar-wrapper {

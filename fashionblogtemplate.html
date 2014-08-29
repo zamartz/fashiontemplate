@@ -274,7 +274,7 @@
     </head>
     <body data-urlencoded-name="{URLEncodedName}" class="{select:Layout}{block:IndexPage} index-page{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:SearchPage} search-page{block:NoSearchResults} no-results{/block:NoSearchResults}{/block:SearchPage}{block:HideHeaderImage} no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} contain-header-image{/block:NoStretchHeaderImage}">
         <section id="page">
-            <div class="nav-menu-wrapper {block:IfNotCollapseNavigation}search-only{/block:IfNotCollapseNavigation}">
+              <div class="nav-menu-wrapper {block:IfNotCollapseNavigation}search-only{/block:IfNotCollapseNavigation}">
                 <nav class="nav-menu pop">
                     <a class="selector">
                         {block:IfCollapseNavigation}
@@ -298,27 +298,27 @@
                                 </form>
                             </li>
                             {block:IfCollapseNavigation}
-                            <li>
-                                <a href="/archive" class="archive">{lang:Archive} <i class="icon-arrow_carrot_right"></i></a>
-                            </li>
-                            {block:AskEnabled}
-                            <li>
-                                <a href="/ask" class="ask">{AskLabel} <i class="icon-arrow_carrot_right"></i></a>
-                            </li>
-                            {/block:AskEnabled}
-                            {block:HasPages}
-                            {block:Pages}
-                            <li>
-                                <a href="{URL}" class="page">{Label} <i class="icon-arrow_carrot_right"></i></a>
-                            </li>
-                            {/block:Pages}
-                            {/block:HasPages}
-                            {block:SubmissionsEnabled}
-                            <li>
-                                <a href="/submit" class="submit">{SubmitLabel} <i class="icon-arrow_carrot_right"></i></a>
-                            </li>
-                            {/block:SubmissionsEnabled}
-                            {/block:IfCollapseNavigation}
+                                <li>
+                                    <a href="/archive" class="archive">{lang:Archive} <i class="icon-arrow_carrot_right"></i></a>
+                                </li>
+                                {block:AskEnabled}
+                                    <li>
+                                        <a href="/ask" class="ask">{AskLabel} <i class="icon-arrow_carrot_right"></i></a>
+                                    </li>
+                                {/block:AskEnabled}
+                                {block:HasPages}
+                                    {block:Pages}
+                                    <li>
+                                        <a href="{URL}" class="page">{Label} <i class="icon-arrow_carrot_right"></i></a>
+                                    </li>
+                                    {/block:Pages}
+                                {/block:HasPages}
+                                {block:SubmissionsEnabled}
+                                    <li>
+                                        <a href="/submit" class="submit">{SubmitLabel} <i class="icon-arrow_carrot_right"></i></a>
+                                    </li>
+                                {/block:SubmissionsEnabled}
+                            {block:IfCollapseNavigation}
                         </ul>
                     </div> 
                 </nav>
@@ -689,16 +689,6 @@
                 {/block:IndexPage}
             </footer>
         </section>
-        <script>
-            var Optica = {};
-            Optica.ENDLESS_SCROLLING = {block:IfEndlessScrolling}true{/block:IfEndlessScrolling}{block:IfNotEndlessScrolling}false{/block:IfNotEndlessScrolling};
-            Optica.LAYOUT = "{select:Layout}";
-            Optica.GRID_LAYOUT = (Optica.LAYOUT === 'grid');
-            Optica.TITLE_COLOR = "{TitleColor}";
-            Optica.ACCENT_COLOR = "{AccentColor}";
-            Optica.BACKGROUND_COLOR = "{BackgroundColor}";
-            Optica.ENDLESS_NOTES_SCROLLING = {block:IfDisqusShortname}false{/block:IfDisqusShortname}{block:IfNotDisqusShortname}true{/block:IfNotDisqusShortname};
-        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/vr9xgox/sBgmmjhyw/jquery-1.9.1.min.js"%3E%3C/script%3E'));</script>
         <script src="http://static.tumblr.com/vr9xgox/Azhmnml1q/jquery.masonry.min.js"></script>
