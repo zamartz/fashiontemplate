@@ -473,5 +473,673 @@ h1 + .description {
     display: none;
 }
 
-/*PAGE*/
+/******************************************************************************
+ * Search
+ * Styles specific to search.
+ ******************************************************************************/
+.search-header {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.search-header h2 {
+    margin: 0;
+    opacity: 0.7;
+}
+
+/******************************************************************************
+ * KEYFRAME ANIMATIONS
+ * Cool little thingies.
+ ******************************************************************************/
+@-webkit-keyframes wiggle {
+    0%   { opacity: 1; -webkit-transform: rotate(0deg); }
+    25%  { opacity: 1; -webkit-transform: rotate(-20deg); }
+    75%  { -webkit-transform: rotate(20deg); }
+    100% { margin-top: -130px; opacity: 0; -webkit-transform: rotate(0deg); }
+}
+@-moz-keyframes wiggle {
+    0%   { opacity: 1; -moz-transform: rotate(0deg); }
+    25%  { opacity: 1; -moz-transform: rotate(-20deg); }
+    75%  { -moz-transform: rotate(20deg); }
+    100% { margin-top: -130px; opacity: 0; -moz-transform: rotate(0deg); }
+}
+@-ms-keyframes wiggle {
+    0%   { opacity: 1; -ms-transform: rotate(0deg); }
+    25%  { opacity: 1; -ms-transform: rotate(-20deg); }
+    75%  { -ms-transform: rotate(20deg); }
+    100% { margin-top: -130px; opacity: 0; -ms-transform: rotate(0deg); }
+}
+@-o-keyframes wiggle {
+    0%   { opacity: 1; -o-transform: rotate(0deg); }
+    25%  { opacity: 1; -o-transform: rotate(-20deg); }
+    75%  { -o-transform: rotate(20deg); }
+    100% { margin-top: -130px; opacity: 0; -o-transform: rotate(0deg); }
+}
+@keyframes wiggle {
+    0%   { opacity: 1; transform: rotate(0deg); }
+    25%  { opacity: 1; transform: rotate(-20deg); }
+    75%  { transform: rotate(20deg); }
+    100% { margin-top: -130px; opacity: 0; transform: rotate(0deg); }
+}
+
+@-webkit-keyframes loader-oscillate {
+    0% { opacity: 0.1; -webkit-transform: scaleY(1); }
+    100% { opacity: 0.2; -webkit-transform: scaleY(1.3); }
+}
+@-moz-keyframes loader-oscillate {
+    0% { opacity: 0.1; -moz-transform: scaleY(1); }
+    100% { opacity: 0.2; -moz-transform: scaleY(1.3); }
+}
+@keyframes loader-oscillate {
+    0% { opacity: 0.1; transform: scaleY(1); }
+    100% { opacity: 0.2; transform: scaleY(1.3); }
+}
+
+@-webkit-keyframes slide-fade-in {
+    from   { opacity: 0; -webkit-transform: translate3d(0, 20px, 0); }
+    to  { opacity: 1; -webkit-transform: translate(0, 0, 0); }
+}
+@-o-keyframes slide-fade-in {
+    from   { opacity: 0; -o-transform: translate3d(0, 20px, 0); }
+    to  { opacity: 1; -o-transform: translate(0, 0, 0); }
+}
+@-ms-keyframes slide-fade-in {
+    from   { opacity: 0; -ms-transform: translate3d(0, 20px, 0); }
+    to  { opacity: 1; -ms-transform: translate(0, 0, 0); }
+}
+@-moz-keyframes slide-fade-in {
+    from   { opacity: 0; -moz-transform: translate3d(0, 20px, 0); }
+    to  { opacity: 1; -moz-transform: translate(0, 0, 0); }
+}
+@keyframes slide-fade-in {
+    from   { opacity: 0; transform: translate3d(0, 20px, 0); }
+    to  { opacity: 1; transform: translate(0, 0, 0); }
+}
+
+@-webkit-keyframes grow {
+    from   { opacity: 0.85; -webkit-transform: scale(0.5); }
+    to  { opacity: 1; -webkit-transform: translate(1); }
+}
+@-o-keyframes grow {
+    from   { opacity: 0.85; -o-transform: scale(0.5); }
+    to  { opacity: 1; -o-transform: translate(1); }
+}
+@-ms-keyframes grow {
+    from   { opacity: 0.85; -ms-transform: scale(0.5); }
+    to  { opacity: 1; -ms-transform: translate(1); }
+}
+@-moz-keyframes grow {
+    from   { opacity: 0.85; -moz-transform: scale(0.5); }
+    to  { opacity: 1; -moz-transform: translate(1); }
+}
+@keyframes grow {
+    from   { opacity: 0.85; transform: scale(0.5); }
+    to  { opacity: 1; transform: translate(1); }
+}
+
+/* mobile-ify */
+@media screen and (max-device-width: 568px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    #tumblr_controls {
+        position: fixed;
+        margin-top: 3px;
+        z-index: 5; /* z-index above slide down nav menu */
+    }
+
+    .no-image #header {
+        margin-top: 115px;
+    }
+
+    .description {
+        margin-top: 35px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-top: 30px;
+    }
+    
+    .avatar-hidden h1 {
+        margin-top: 15px;
+    }
+
+    .avatar-hidden .description {
+        margin-top: 20px;
+    }
+
+    h1 + .description {
+        margin-top: 0 !important;
+    }
+
+    #posts,
+    #posts.no-title-desc.avatar-hidden,
+    #posts.no-title-desc.avatar-style-hidden {
+        margin-top: 15px;
+    }
+
+    #posts.no-image.no-title-desc.avatar-hidden,
+    #posts.no-image.no-title-desc.avatar-style-hidden {
+        margin-top: 45px;
+    }
+
+    #posts.no-title-desc.avatar-style-circle,
+    #posts.no-title-desc.avatar-style-square {
+        margin-top: 40px;
+    }
+
+    #posts.no-title-desc.exposed-nav {
+        margin-top: 10px;
+    }
+
+    .content {
+        padding: 1px 10px;
+    }
+
+    .narrow .content {
+        max-width: 702px; /* Upscale in-case of narrow layout */        
+    }
+
+    /* Nav menu behaves differently on mobile, it slides down from top */
+    .nav-menu-wrapper {
+        position: fixed;
+        width: 100%;
+    }
+
+    .nav-menu-wrapper .nav-menu,
+    .nav-menu-wrapper:not(.exposed) .nav-menu {
+        float: none;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-menu-wrapper .nav-menu.active:before {
+        content: '';
+        background: #fff;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 42px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        z-index: 11; /* advanced snake riding */
+    }
+    
+    .nav-menu-wrapper .nav-menu.active:after {
+        content: '';
+        height: 41px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        z-index: 10; /* ssssssnake */
+    }
+
+    .nav-menu .selector {
+        position: absolute;
+        height: 29px;
+        width: 31px;
+        z-index: 11;
+        top: 5px;
+        left: 10px;
+    }
+
+    .active .bar-icon {
+        background: #444;
+    }
+    
+    .nav-menu-bg {
+        background: #fff;
+        width: 100%;
+        height: 42px;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        -webkit-transition: opacity 0.2s linear;
+        -o-transition: opacity 0.2s linear;
+        -ms-transition: opacity 0.2s linear;
+        -moz-transition: opacity 0.2s linear;
+        transition: opacity 0.2s linear;
+        z-index: 4; /* higher than most content, lower than tumblr_controls */
+    }
+
+    .below-header .nav-menu-bg {
+        opacity: 0.9;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .below-header .selector .bar-icon {
+        background: #444;
+    }
+
+    .below-header .selector .icon,
+    .search-only .selector.active .icon {
+        color: #444;
+    }
+
+    .search-only {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .nav-menu .pop-menu {
+        position: fixed;
+        background: transparent; /* background is on menu instead */
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border-radius: 0;
+        left: 0;
+        top: -1px;
+        opacity: 0.9;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        -webkit-transition: opacity 0.1s ease, -webkit-transform 0.25s ease-out;
+        -webkit-transform: translateY(-100%);
+    }
+
+    .nav-menu .pop-menu.active {
+        left: 0;
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+
+    .nav-menu .pop-menu ul {
+        background: #fff;
+        margin: 0 !important;
+        padding: 42px 10px 2px;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu .pop-menu ul li {
+        border-top: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    .nav-menu .pop-menu.west li:first-child {
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .nav-menu .pop-menu.west li:first-child:before {
+        display: none;
+    }
+
+    .nav-menu .pop-menu ul li a {
+        padding: 7px 40px 8px 10px;
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    #search {
+        margin: 8px 10px;
+    }
+
+    #search input {
+        font-weight: normal;
+        font-size: 16px; /* avoid zoom in */
+    }
+
+    #search button {
+        top: -2px;
+    }
+
+    .search-only .selector .icon {
+        /* Don't transition the icon, there's already a bunch of animations going on */
+        -webkit-transition: none;
+        -o-transition: none;
+        -ms-transition: none;
+        -moz-transition: none;
+        transition: none;
+    }
+
+    .search-only .selector.show .icon-search_16 {
+        display: none;
+        opacity: 1;
+    }
+
+    .search-only .selector.show .icon-close {
+        display: block;
+        opacity: 1;
+    }
+
+    .below-header.no-header-image .search-only .selector .icon {
+        color: #444;
+    }
+
+    .header-image {
+        /*override parallax inline styles */
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        -o-transform: translate3d(0, 0, 0) !important;
+        -ms-transform: translate3d(0, 0, 0) !important;
+        -moz-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+    }
+
+    .avatar-wrapper {
+        margin-left: -40px;
+        top: -60px;
+    }
+
+    .avatar-style-square .avatar-wrapper {
+        margin-left: -40px;
+    }
+
+    .user-avatar {
+        background-size: 80px 80px;
+        border-radius: 3px;
+        height: 80px;
+        width: 80px;
+        border: 3px solid #f6f6f6;
+    }
+
+    .attribution-tags .reblog {
+        display: none; /* hide the reblog link the attributions */
+    }
+
+    .reblog-header {
+        display: block;     
+        font-size: 14px;
+        font-weight: bold;
+        padding: 11px 15px; 
+    }
+
+    .reblog-header a {
+        color: #a7a7a7;
+        text-decoration: none;   
+    }
+
+    .reblog-header .reblog-link .icon-reblog {
+        font-size: 16px;
+        vertical-align: -3px;
+    }
+
+    .text .reblog-header,
+    .quote .reblog-header,
+    .answer .reblog-header {
+        margin-bottom: -6px;
+        padding-bottom: 0;
+    }
+
+    .chat .reblog-header {
+        margin-bottom: -4px;
+        padding-bottom: 0;
+    }
+
+    .link .reblog-header {
+        padding-bottom: 1px;
+    }
+
+    .photo .reblog-header,
+    .photoset .reblog-header {
+        padding-bottom: 0;
+    }
+
+    .post {
+        margin-bottom: 0;
+        padding: 20px 15px 5px;
+    }
+
+    .chat .post {
+        padding-bottom: 0;
+    }
+
+    .post .caption {
+        margin: 15px;
+    }
+
+    .post blockquote {
+        padding-left: 13px;    
+    }
+
+    .photoset .post {
+        padding: 0;
+    }
+
+    .photoset figure,
+    .photo figure {
+        margin: 10px -4px 0;
+    }
+    
+    .photoset .caption {
+        margin: 15px 19px 10px;
+    }
+
+    .photoset .attribution-tags {
+        margin: 0 15px;
+    }
+
+    .photo-wrapper:not(.high-res) + .caption {
+        margin: 0 5px;
+    }
+
+    .photo figure img {
+        background: #fff; /* for transparent images */
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    .photo .photo-wrapper {
+        border-radius: 1px;
+        margin: 0 0 -1px;
+    }
+
+    .photo .photo-wrapper-inner {
+        padding: 0;
+    }
+
+    .photo-wrapper:not(.high-res) + .caption {
+        padding: 15px;
+    }
+
+    #posts article {
+        margin-bottom: 15px;
+    }
+
+    .post-wrapper {
+        overflow: visible;
+    } 
+
+    .panel {
+        opacity: 1;
+    }
+
+    .post-footer {
+        opacity: 1;
+    }
+
+    .post-footer ul {
+        margin: 0 0 0 15px;
+    }
+
+    .post-controls > ul {
+        margin-right: 5px;
+    }
+
+    .index-page .meta {
+        font-size: 15px;
+    }
+
+    .post h2,
+    .quote blockquote {
+        font-size: 18px;
+    }
+
+    .link-wrapper h2 {
+        margin-top: 10px;
+    }
+
+    .link-wrapper h2 a {
+        border-radius: 0;
+        font-size: 15px;
+    }
+
+    .link-wrapper .link-title {
+        line-height: 20px;
+    }
+
+    .link-wrapper .link-title:after {
+        font-size: 10px;
+    }
+
+    .link-wrapper .link-host {
+        font-size: 15px;
+    }
+
+    .quote .post > blockquote {
+        font-size: 22px;
+    }
+
+    .quote blockquote.medium {
+        font-size: 18px;
+    }
+
+    .quote blockquote.long {
+        font-size: 15px;
+    }
+
+    .caption + .attribution-tags, 
+    .with-caption + .attribution-tags {
+        margin-top: -15px;
+    }
+
+    .attribution-tags {
+        margin: 0 15px;
+    }
+
+    .text .attribution-tags,
+    .answer .attribution-tags,
+    .quote .attribution-tags {
+        margin: 0 0 -5px;
+    }
+
+    .attribution-tags ul {
+        margin-bottom: 0;
+    }
+
+    .attribution-tags li {
+        font-size: 15px;
+        margin: 0 15px 5px 0;
+    }
+
+    .video .video-wrapper iframe {
+        height: auto !important;
+        min-height: 0;
+    }
+
+    .video .video-wrapper iframe[src^="//instagram"] {
+        min-height: 385px;
+    }
+
+    .video .video-wrapper a {
+        max-height: 300px;
+    }
+
+    .video .video-wrapper a div {
+        background-size: 50px 50px;
+    }
+
+    #pagination a {
+        margin-bottom: 20px;
+    }
+
+    .notes-wrapper {
+        margin: 5px 15px;
+    }
+
+}
+
+@media screen and (max-device-width: 320px) and (orientation: portrait) {
+    .header-image-wrapper {
+        height: 180px; /* 16:9 */
+    }
+}
+
+/******************************************************************************
+ * PRINT STYLES
+ * Added here to avoid otherwise required HTTP connection
+ ******************************************************************************/
+@media print {
+  
+    * {
+        background: transparent !important;
+        color: #444 !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        color: #444 !important;
+        text-decoration: underline;
+    }
+
+    pre,
+    blockquote {
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+        /* css-discuss.incutio.com/wiki/Printing_Tables */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    @page  {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    .print-only {
+        display: block;
+        visibility: visible;
+    }
+
+    #tumblr_controls,
+    .post-controls {
+        display: none !important;
+    }
+
+    .header-image-wrapper {
+        height: 100px !important; /* override parallax inline styles */
+    }
+
+    .user-avatar img {
+        height: 80px;
+        width: 80px;
+    }
+
+}
+
+/******************************************************************************
+ * RETINA
+ * High res!
+ ******************************************************************************/
+@media only screen and (-webkit-min-device-pixel-ratio: 2 ), only screen and ( -moz-min-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1 ), only screen and ( min-device-pixel-ratio: 2 ), only screen and ( min-resolution: 192dpi ), only screen and ( min-resolution: 2dppx ) {
+
+    .avatar_frame:after {
+        background-image: url('http://static.tumblr.com/vr9xgox/Df0n0lgok/sprite-2x.png');
+        background-size: 100px 24px; /* 1x dimensions */
+    }
+
+}
 
