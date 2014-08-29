@@ -381,7 +381,7 @@ list-style-image: none;
 }
 
 .nav-menu-wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 5;
@@ -402,8 +402,8 @@ list-style-image: none;
 .nav-menu .selector {
     cursor: pointer;
     display: block;
-    height: 36px;
-    width: 37px;
+    height: 40px;
+	width: 40px;
 }
 
 .selector {
@@ -418,8 +418,8 @@ list-style-image: none;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -11px;
-    margin-top: -11px;
+    margin-left: -10px;
+    margin-top: -13px;
     -webkit-transform: translate3d(0, 0, 0); /* The zoom: 1; of new browsers */
 }
 

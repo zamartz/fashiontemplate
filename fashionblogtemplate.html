@@ -37,6 +37,7 @@
         <meta name="select:Home Post Default" content="half-tall" title="Half Tall">
         <meta name="if:Endless scrolling" content="1">
         <meta name="if:Blog Roll Square Images" content="1">
+        <meta name="color:Navigation Color" content="#fff"/> 
         <meta name="color:Post SubTitle Color" content="#444"/> 
         <meta name="color:Post Headers Color" content="#000"/> 
         <meta name="color:Body Text Color" content="#444"/> 
@@ -201,8 +202,15 @@
                 background: {TitleColor};
             }
 
-            .exposed-nav-wrapper.content.sticky{{
-                background-color:{BackgroundColor};
+            .exposed-nav-wrapper.content.sticky{
+                background-color:{color:Post Navigation Color};
+                width: 100%;
+            }
+
+            .nav-menu .selector {
+                border: 1px solid {color:Post Navigation Color};
+                border-radius: 10px;
+                background-color: {color:Post Navigation Color};
             }
 
             .post h1, .post h2, .post h3, .post h5, .post h6{
