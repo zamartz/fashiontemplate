@@ -4,7 +4,7 @@
 */
 @font-face {
     font-family: entypo;
-    src: url(//zamartz.github.io/fashiontemplate/entypo.otf);
+    src: url(//zamartz.github.io/fashiontemplate/Entypo.otf);
 }
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
