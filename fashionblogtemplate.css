@@ -473,7 +473,8 @@ list-style-image: none;
 .search-only .selector .icon {
     display: block;
     height: 26px;
-    margin: auto;
+    margin-top: -15px;
+	margin-left: 4px;
     width: 26px;
     position: absolute;
     top: 3px;
@@ -845,6 +846,7 @@ h1 + .description {
 }
 .icon-search_16:before {
 content: "\1f50d";
+font-size: 40px;
 }
 
 /******************************************************************************
