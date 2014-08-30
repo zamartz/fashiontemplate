@@ -395,15 +395,15 @@ list-style-image: none;
 .nav-menu-wrapper:not(.exposed) .nav-menu {
     float: left;
     position: relative;
-    margin: 3px 8px;
+    margin: 5px;
     z-index: 10; /* ride the snake */
 }
 
 .nav-menu .selector {
     cursor: pointer;
     display: block;
-    height: 40px;
-	width: 40px;
+    height: 30px;
+	width: 30px;
 }
 
 .selector {
