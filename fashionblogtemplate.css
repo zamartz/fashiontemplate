@@ -2,20 +2,7 @@
    By: Daniel Bruce & Andreas Blomback
    Entypo License: (CC BY-SA 3.0)
 */
-@font-face {
-    font-family: entypo;
-    src: url('entypo.eot');
-    src: url('entypo.eot?#iefix') format('embedded-opentype'),
-         url('entypo.woff') format('woff'),
-         url('entypo.ttf') format('truetype'),
-         url('entypo.svg#EntypoRegular') format('svg');
-}
-[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-}
-.icon {
-	font-family: 'entypo', sans-serif !important;
-}
+
 
 /******************************************************************************
  * OVERWRITES
