@@ -526,7 +526,9 @@ list-style-image: none;
 
 /** Exposed nav **/
 .exposed-nav-wrapper {
-    margin-top: 20px;
+    border:1px solid #000;
+    border-width:1px 0 3px; 
+
 }
 
 #posts.no-title-desc.exposed-nav {
