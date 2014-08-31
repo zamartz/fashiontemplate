@@ -2,7 +2,20 @@
    By: Daniel Bruce & Andreas Blomback
    Entypo License: (CC BY-SA 3.0)
 */
-
+@font-face {
+    font-family: entypo;
+    src: url('https://dl.dropboxusercontent.com/s/bouv4i4hsvyit77/entypo.eot');
+    src: url('https://dl.dropboxusercontent.com/s/bouv4i4hsvyit77/entypo.eot?#iefix') format('embedded-opentype'),
+         url('https://dl.dropboxusercontent.com/s/2dbxwto0i59uxb9/entypo.woff') format('woff'),
+         url('https://dl.dropboxusercontent.com/s/sndkdrv1u57qrdk/entypo.ttf') format('truetype'),
+         url('https://dl.dropboxusercontent.com/s/obz59xzqcoz37rg/entypo.svg#EntypoRegular') format('svg');
+}
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+.icon {
+	font-family: 'entypo', sans-serif !important;
+}
 
 /******************************************************************************
  * OVERWRITES
