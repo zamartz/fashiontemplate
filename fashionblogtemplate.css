@@ -103,6 +103,10 @@ textarea {
 	left:0px;
 }
 
+.nav-menu-wrapper.sticky{
+top: 30px;
+}
+
 /******************************************************************************
  * HELPERS
  * Various helper styles.
