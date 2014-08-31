@@ -171,7 +171,7 @@
         {/block:IndexPage}
          <!-- END OpenGraph Setup -->
 
-        <link rel="stylesheet" href="zamartz.github.io/fashiontemplate/fashionblogtemplate.css">
+        <link rel="stylesheet" href="//zamartz.github.io/fashiontemplate/fashionblogtemplate.css">
         
 
         <!-- HTML5 Shiv -->
@@ -356,6 +356,17 @@
                 }
 
             }
+            /*Featured Post*/
+            .t_FeaturePostTag{}
+
+            /*Post Photo Left*/
+            .t_PhotoLeftTag{}
+
+            /*Post Photo Right*/
+            .t_PhotoRightTag{}
+            
+            /*Post Half Tall*/
+            .t_HalfTallTag{}
 
             /* Custom CSS */
             {CustomCSS}
@@ -776,32 +787,24 @@
                 jQuery(".pop-menu.west" ).toggleClass("show active");
              });
         </script>
-         {block:IfFeatureOverrideTag}
+        {block:IfFeatureOverrideTag}
         <script type="text/javascript">
-        alert("function");
-            function f_themetags(taglist,tagtype){
-                 thefeaturetags = taglist.split(',');
-                //For Feature Post
-                if tagtpe == "FeaturePost"{
-                    for ( var themetag in thefeaturetags) {
-                        themetag = ".t_"+themetag;
-                        alert(themetag);
-                        jQuery(themetag).each(function() {
-                          jQuery( this ).addClass( "t_FeaturedPost" );
-                        });
-                    }
+            function Dothemetags(taglist,tagtoadd){
+                 var thefeaturetags = taglist.split(',');
+                 var themetag;
+                for(var i = 0; i < thefeaturetags.length; i++) {
+                    thefeaturetags[i] = ".t_"+thefeaturetags[i];
+                    jQuery(thefeaturetags[i]).each(function() {
+                      jQuery( this ).addClass(tagtoadd);
+                    });
                 }
-                //For Half Tall
-                //For Long Wide Photo Left
-                //For Long Wide Photo Right
             }
-            //The Custome Tags Set
-            f_themetags('{text:Feature Override Tag}','FeaturePost');
-            //f_themetags({JStext:Photo Left Override Tag},'PhotoLeft');
-            //f_themetags({JStext:Photo Right Override Post Tag},'PhotoRight');
-            //f_themetags({JStext:Photo Tall Override Tag},'HalfTall');
+            //The Custome Feature Tags Set
+            Dothemetags('{text:Feature Override Tag}','t_FeaturePostTag');
+            Dothemetags('{text:Photo Left Override Tag}','t_PhotoLeftTag');
+            Dothemetags('{text:Photo Right Override Post Tag}','t_PhotoRightTag');
+            Dothemetags('{text:Photo Tall Override Tag}','t_HalfTallTag');
         </script>
-
         {/block:IfFeatureOverrideTag}
        
         {block:IfStickyNavSide} 

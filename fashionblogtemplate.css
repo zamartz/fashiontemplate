@@ -706,6 +706,9 @@ list-style-image: none;
     -ms-animation: slide-fade-in 0.8s ease;
     -moz-animation: slide-fade-in 0.8s ease;
     animation: slide-fade-in 0.8s ease;
+    top: 215px;
+	position: absolute;
+	width: 100%;
 }
 
 .blog-title {
@@ -821,6 +824,10 @@ h1 + .description {
     bottom: -6px;
     z-index: 10;
     right: -8px;
+}
+
+.blog-titl h1{
+margin: 0;
 }
 
 .invisible {
