@@ -194,6 +194,10 @@
                 font-family: {block:IfUseGoogleFonts}{select:Google Post Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Body Font Default}{/block:IfNotUseGoogleFonts};
                 font-size:{text:Body Font Size};
             }
+            
+             .header.sticky{
+                margin-bottom:30px;
+            }
 
             h1 {
                 font-family: {block:IfUseGoogleFonts}{select:Google Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{TitleFont}{/block:IfNotUseGoogleFonts};
@@ -243,6 +247,8 @@
                 font-family: {block:IfUseGoogleFonts}{select:Google SubHeader Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:SubHeader Font Default}{/block:IfNotUseGoogleFonts};
                 font-size:{text:SubTitle Font Size};
             }
+            
+           
 
             a {
                 color: {AccentColor};
@@ -310,6 +316,8 @@
             .dark-on-dark.contain-header-image .selector .bar-icon {
                 background: #fff;
             }
+            
+            
 
             .dark-on-dark.no-header-image .search-only .selector .icon,
             .dark-on-dark.contain-header-image .search-only .selector .icon {
@@ -821,9 +829,8 @@
        
         {block:IfStickyNavSide} 
         <script src="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
-        <script src="//zamartz.github.io/fashiontemplate/waypoints-sticky.js"></script>
         <script type="text/javascript">
-            jQuery('.exposed-nav-wrapper .nav-menu').waypoint(function() {
+            jQuery('.exposed-nav-wrapper').waypoint(function() {
                 jQuery(".exposed-nav-wrapper").toggleClass("sticky");
             });
         </script>
