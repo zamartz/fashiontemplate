@@ -4,11 +4,11 @@
 */
 @font-face {
     font-family: entypo;
-    src: url('//zamartz.github.io/fashiontemplate/entypo.eot');
-    src: url('//zamartz.github.io/fashiontemplate/entypo.eot?#iefix') format('embedded-opentype'),
-         url('//zamartz.github.io/fashiontemplate/entypo.woff') format('woff'),
-         url('//zamartz.github.io/fashiontemplate/entypo.ttf') format('truetype'),
-         url('//zamartz.github.io/fashiontemplate/entypo.svg#EntypoRegular') format('svg');
+    src: url('entypo.eot');
+    src: url('entypo.eot?#iefix') format('embedded-opentype'),
+         url('entypo.woff') format('woff'),
+         url('entypo.ttf') format('truetype'),
+         url('entypo.svg#EntypoRegular') format('svg');
 }
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
