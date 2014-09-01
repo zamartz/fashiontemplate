@@ -12,6 +12,8 @@
     NOTE: Some CSS and Core Tumblr profile elements repurposed from Tumblr Theme Optica
     FONT ICONS: by Daniel Bruce & Andreas Blomback
     FONT ICONS LICENSE: (CC BY-SA 3.0)
+    PICTUREFILL: by the Filament Group
+    PICTUREFILL LICENSE: (MIT)
     -->
         {MobileAppHeaders}
         <meta charset="utf-8">
@@ -34,7 +36,7 @@
         <meta name="if:Show Sidebar" title="Show Sidebar" content="1">
         <meta name="if:Link Accents Only" content="1">
         <meta name="if:EvenOdd Posts" content="0">
-        <meta name="if:Responsive Post Images" content="0">
+        <meta name="if:Responsive Post Images" content="1">
         <meta name="if:Endless scrolling" content="1">
         <meta name="if:Blog Roll Square Images" content="1">
         <meta name="if:Feedly Widget" title="Show Feedly Button" content="0">
@@ -61,6 +63,14 @@
         <meta name="text:Google analytics ID" content="">
         <meta name="text:Disqus shortname" content="">
         <meta name="text:AddThis RA" title="AddThis RA#" content="0">
+        <meta name="text:Facebook Follow" content="">
+        <meta name="text:Twitter Follow" content="zamartz">
+        <meta name="text:Instagram Follow" content="zamartz">
+        <meta name="text:LinkedIn Follow" content="zamartz">
+        <meta name="text:Pinterest Follow" content="">
+        <meta name="text:GooglePlus Follow" content="">
+        <meta name="text:BeHance Follow" content="">
+        <meta name="text:Feedly Follow" content="">
 
         <!-- FONT -->
         <meta name="font:Post Header Font Default" title="Post Header Font" content="Arial, Helvetica, sans-serif"/>
@@ -203,7 +213,7 @@
          <!-- END OpenGraph Setup -->
 
         <link rel="stylesheet" href="//zamartz.github.io/fashiontemplate/fashionblogtemplate.css">
-        
+        <link rel="stylesheet" href="//dl.dropboxusercontent.com/s/m7krhvia7kjzpxl/socialsquare-min.css">
 
         <!-- HTML5 Shiv -->
         <!--[if lt IE 9]>
@@ -610,7 +620,19 @@
                                         <figure class="{block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
                                             <div class="photo-wrapper">
                                                 <div class="photo-wrapper-inner">
-                                                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">{LinkCloseTag}
+                                                    {block:IfResponsivePostImages}
+                                                <picture>
+                                                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                                    {block:HighRes}<source srcset="{PhotoURL-HighRes}" media="(min-width: 620px)"{/block:HighRes} 
+                                                    <source srcset="{PhotoURL-500}" media="(min-width: 300px)">
+                                                    <source srcset="{PhotoURL-400}" media="(min-width: 300px)">
+                                                    <!--[if IE 9]></video><![endif]-->
+                                                    <img srcset="{PhotoURL-250}" alt="{PhotoAlt}"> 
+                                                </picture>
+                                                {/block:IfResponsivePostImages}
+                                                {block:IfNotResponsivePostImages}
+                                                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}
+                                                {/block:IfNotResponsivePostImages}
                                                 </div>
                                             </div>
                                             {block:Caption}
@@ -631,11 +653,11 @@
                                                     <source srcset="{PhotoURL-500}" media="(min-width: 300px)">
                                                     <source srcset="{PhotoURL-400}" media="(min-width: 300px)">
                                                     <!--[if IE 9]></video><![endif]-->
-                                                    <img srcset="{PhotoURL-250}" alt="{Caption}" width="620px"> 
+                                                    <img srcset="{PhotoURL-250}" alt="{Caption}"> 
                                                 </picture>
                                                 {/block:IfResponsivePostImages}
                                                 {block:IfNotResponsivePostImages}
-                                                  <img src="{PhotoURL-500}"alt="{Caption}" width="620px">
+                                                  <img src="{PhotoURL-500}"alt="{Caption}">
                                                 {/block:IfNotResponsivePostImages}
                                              {/block:Photos}
                                             {block:Caption}
