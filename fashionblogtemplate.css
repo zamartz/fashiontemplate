@@ -855,6 +855,8 @@ section#posts{max-width:620px; margin:0px 20px;float:left;}
 section#posts.sidebar-right{float:left;}
 section#posts.sidebar-left{float:right;}
 
+section#sidebar h1, section#sidebar h2, section#sidebar h3, section#sidebar h4, section#sidebar h5, section#sidebar h6{text-align: center;}
+
 figure {
 margin: 0;
 }
