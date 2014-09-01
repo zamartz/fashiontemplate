@@ -240,7 +240,7 @@ br.clear {
 }
 
 .search-only .pop-menu.west li:first-child:before {
-    margin-top: -16px;
+    margin-top: -12px;
     border-bottom: none;
 }
 
@@ -517,7 +517,7 @@ list-style-image: none;
 }
 
 .nav-menu .pop-menu.active {
-    left: 40px;
+    left: 45px;
 }
 
 /** Exposed nav **/
