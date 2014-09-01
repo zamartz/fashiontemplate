@@ -34,6 +34,7 @@
         <meta name="if:Show Sidebar" title="Show Sidebar" content="1">
         <meta name="if:Link Accents Only" content="1">
         <meta name="if:EvenOdd Posts" content="0">
+        <meta name="if:Responsive Post Images" content="0">
         <meta name="if:Endless scrolling" content="1">
         <meta name="if:Blog Roll Square Images" content="1">
         <meta name="if:Feedly Widget" title="Show Feedly Button" content="0">
@@ -623,7 +624,19 @@
                                         {block:Photoset}
                                         <figure class="photoset {block:Caption}with-caption{/block:Caption} photoset-{PhotosetLayout}">
                                              {block:Photos}
-                                                  <img src="{PhotoURL-250}" data-500px="{PhotoURL-500}" {block:HighRes}data-highres="{PhotoURL-HighRes}"{/block:HighRes} alt="{Caption}">
+                                                {block:IfResponsivePostImages}
+                                                <picture>
+                                                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                                    {block:HighRes}<source srcset="{PhotoURL-HighRes}" media="(min-width: 620px)"{/block:HighRes} 
+                                                    <source srcset="{PhotoURL-500}" media="(min-width: 300px)">
+                                                    <source srcset="{PhotoURL-400}" media="(min-width: 300px)">
+                                                    <!--[if IE 9]></video><![endif]-->
+                                                    <img srcset="{PhotoURL-250}" alt="{Caption}" width="620px"> 
+                                                </picture>
+                                                {/block:IfResponsivePostImages}
+                                                {block:IfNotResponsivePostImages}
+                                                  <img src="{PhotoURL-500}"alt="{Caption}" width="620px">
+                                                {/block:IfNotResponsivePostImages}
                                              {/block:Photos}
                                             {block:Caption}
                                             <figcaption class="caption">
@@ -865,6 +878,10 @@
         </section>
        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        {block:IfResponsivePostImages}
+        <script src="//zamartz.github.io/fashiontemplate/picturefill.min.js"></script>
+
+        {/block:IfResponsivePostImages}
         <script type="text/javascript">
              jQuery(".selector" ).click(function(){
                 jQuery(".bar-icon-wrapper" ).toggleClass("show active");

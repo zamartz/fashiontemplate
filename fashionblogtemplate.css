@@ -859,6 +859,10 @@ figure {
 margin: 0;
 }
 
+.post img {
+max-width: 620px;
+}
+
 .caption {
 margin: 0;
 border: 1px solid black;
