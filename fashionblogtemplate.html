@@ -25,22 +25,20 @@
         
         
         <!--IFs -->
-        <meta name="if:UseGoogleFonts" content="1">
-        <meta name="if:Show Header Image" content="1">
-        <meta name="if:ShowHeaderSubTitle" title="Show Header Subtitle" content="1">
-        <meta name="if:CollapseNavigation" content="1" title="Collapse Navigation">
-        <meta name="if:StickyNavSide" title="Sticky Nav & Sidebar" content="1">
+        <meta name="if:Use Google Fonts" content="1">
+        <meta name="if:Show Header Image" content="1">        
+        <meta name="if:Header DropShadow" content="1">
+        <meta name="if:Show Header SubTitle" title="Show Header Subtitle" content="1">
+        <meta name="if:Collapse Navigation" content="1" title="Collapse Navigation">
+        <meta name="if:Sticky Nav Side" title="Sticky Nav & Sidebar" content="1">
+        <meta name="if:Link Accents Only" content="1">
         <meta name="if:EvenOdd Posts" content="0">
         <meta name="if:Endless scrolling" content="1">
         <meta name="if:Blog Roll Square Images" content="1">
-       
-       
-        <!-- FONT -->
-        <meta name="font:Post Header Font Default" title="Post Header Font" content="Arial, Helvetica, sans-serif"/>
-        <meta name="font:SubHeader" title="Post SubHeader Font" content="Arial, Helvetica, sans-serif"/>
-        <meta name="font:Body Font Default" content="Arial, Helvetica, sans-serif"/>
+        <meta name="if:Feedly Widget" title="Show Feedly Button" content="0">
 
         <!-- COLOR -->
+        <meta name="color:SubTitle Color" content="#ddd"/> 
         <meta name="color:Navigation Color" content="#fff"/> 
         <meta name="color:Post Headers Color" content="#000"/> 
         <meta name="color:Post SubTitle Color" content="#444"/> 
@@ -51,12 +49,20 @@
         <meta name="text:Title Font Size" content="24px">
         <meta name="text:SubTitle Font Size" content="16px">
         <meta name="text:Body Font Size" content="16px">
+        <meta name="text:Nav Font Size" content="16px">
         <meta name="text:Feature Override Tag" content="FeaturePost">
         <meta name="text:Photo Left Override Tag" content="PhotoLeft">
         <meta name="text:Photo Right Override Post Tag" content="PhotoRight">
         <meta name="text:Photo Tall Override Tag" content="HalfTall">
-        <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
+        <meta name="text:Disqus shortname" content="">
+        <meta name="text:AddThis RA" title="AddThis RA#" content="0">
+
+        <!-- FONT -->
+        <meta name="font:Post Header Font Default" title="Post Header Font" content="Arial, Helvetica, sans-serif"/>
+        <meta name="font:SubHeader" title="Post SubHeader Font" content="Arial, Helvetica, sans-serif"/>
+        <meta name="font:Nav Font Default" title="Nav Font Default" content="Arial, Helvetica, sans-serif"/>
+        <meta name="font:Body Font Default" content="Arial, Helvetica, sans-serif"/>
 
         <!-- SELECT -->
         <meta name="select:Home Post Default" content="full-large" title="Full Large">
@@ -85,6 +91,17 @@
         <meta name="select:Google SubHeader Font" content="'Ubuntu',HelveticaNeue,Arial,san-serif" title="Ubuntu">
         <meta name="select:Google SubHeader Font" content="'Lato',HelveticaNeue,Arial,san-serif" title="Lato">
         <meta name="select:Google SubHeader Font" content="'Istok',HelveticaNeue,Arial,san-serif" title="Anivers">
+
+        <meta name="select:Google Nav Font" content="'Lora',serif" title="Lora">
+        <meta name="select:Google Nav Font" content="'Playfair Display','Times New Roman',Times,serif" title="Playfair Display">
+        <meta name="select:Google Nav Font" content="'Josefin Slab','Times New Roman',Times,serif" title="Josefin Slab">
+        <meta name="select:Google Nav Font" content="'Arvo','Times New Roman',Times,serif" title="Arvo">
+        <meta name="select:Google Nav Font" content="'Vollkorn','Times New Roman',Times,serif" title="Vollkorn">
+        <meta name="select:Google Nav Font" content="'Abril Fatface','Times New Roman',Times,serif" title="Abril Fatface">
+        <meta name="select:Google Nav Font" content="'Open Sans',HelveticaNeue,Arial,san-serif" title="Open Sans">
+        <meta name="select:Google Nav Font" content="'Ubuntu',HelveticaNeue,Arial,san-serif" title="Ubuntu">
+        <meta name="select:Google Nav Font" content="'Lato',HelveticaNeue,Arial,san-serif" title="Lato">
+        <meta name="select:Google Nav Font" content="'Istok',HelveticaNeue,Arial,san-serif" title="Anivers">
 
         <meta name="select:Google Post Header Font" content="'Lora',serif" title="Lora">
         <meta name="select:Google Post Header Font" content="'Playfair Display','Times New Roman',Times,serif" title="Playfair Display">
@@ -194,10 +211,11 @@
                 font-family: {block:IfUseGoogleFonts}{select:Google Post Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Body Font Default}{/block:IfNotUseGoogleFonts};
                 font-size:{text:Body Font Size};
             }
-            
-             .header.sticky{
-                margin-bottom:30px;
+            {block:IfHeaderDropShadow}
+            #header{
+                text-shadow: 2px 2px 5px #000;
             }
+            {/block:IfHeaderDropShadow}
 
             h1 {
                 font-family: {block:IfUseGoogleFonts}{select:Google Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{TitleFont}{/block:IfNotUseGoogleFonts};
@@ -205,9 +223,12 @@
             }
 
             h1 a,
-            .description,
             .search-header {
                 color: {TitleColor};
+            }
+
+            #header .description, #header h2{
+               color:{color:SubTitle Color};
             }
 
             .h-line {
@@ -220,7 +241,7 @@
             }
 
             .selector .bar-icon {
-                background: {AccentColor};
+                background: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
 
             .nav-menu .selector {
@@ -229,8 +250,13 @@
                 background-color: {color:Navigation Color};
             }
 
+            .nav-menu{
+                 font-family: {block:IfUseGoogleFonts}{select:Google Nav Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Nav Font Default}{/block:IfNotUseGoogleFonts};
+                 font-weight:{text:Nav Font Size};
+            }
+
             .icon-search_16{
-                color:{AccentColor};
+                color:{block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
 
             .post h1, .post h2, .post h3, .post h5, .post h6{
@@ -248,23 +274,21 @@
                 font-size:{text:SubTitle Font Size};
             }
             
-           
-
             a {
                 color: {AccentColor};
             }
             
             #pagination a,
             .exposed-nav-wrapper li a {
-                color: {AccentColor};
+                color: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
 
             #pagination a.next:after {
-                border-left-color: {AccentColor};
+                border-left-color: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
 
             #pagination a.previous:after {
-                border-right-color: {AccentColor};
+                border-right-color: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
 
             .loader .loader-bar {
@@ -272,7 +296,7 @@
             }
 
             .link-wrapper h2 a {
-                background-color: {AccentColor};
+                background-color: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
             
             .header-image.cover {
@@ -292,12 +316,12 @@
             
             .no-header-image .selector .bar-icon,
             .contain-header-image .selector .bar-icon {
-                background: {AccentColor};
+                background: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
 
             .no-header-image .search-only .selector .icon,
             .contain-header-image .search-only .selector .icon {
-                color: {AccentColor};
+                color: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
 
             /* Adjust menus for light accents on light backgrounds */
@@ -317,8 +341,6 @@
                 background: #fff;
             }
             
-            
-
             .dark-on-dark.no-header-image .search-only .selector .icon,
             .dark-on-dark.contain-header-image .search-only .selector .icon {
                 color: #fff;
@@ -339,12 +361,12 @@
 
                 .nav-menu.active .selector .bar-icon,
                 .below-header .selector .bar-icon {
-                    background: {AccentColor};
+                    background: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
                 }
 
                 .nav-menu .pop-menu ul li a,
                 .below-header .search-only .selector .icon {
-                    color: {AccentColor};
+                    color: {block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
                 }
                 
                 /* Adjust menus for light accents on light backgrounds */
@@ -438,6 +460,11 @@
                                         <a href="/submit" class="submit">{SubmitLabel} <i class="icon-arrow_carrot_right"></i></a>
                                     </li>
                                 {/block:SubmissionsEnabled}
+                                {block:IfFeedlyWidget}
+                                    </li>
+                                        <a href='http://cloud.feedly.com/#subscription%2Ffeed%2F{RSS}' target='blank'><img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-logo-green_2x.png' alt='follow us in feedly' width='28' height='28'></a>
+                                    </li>
+                                {/block:IfFeedlyWidget}
                             {block:IfCollapseNavigation}
                         </ul>
                     </div> 

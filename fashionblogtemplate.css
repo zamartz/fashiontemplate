@@ -536,7 +536,7 @@ list-style-image: none;
 }
 
 .exposed-nav-wrapper ul {
-    margin: 1em 0;
+   	margin: 0 0 10px;
     padding: 0;
     text-align: center;
 }
@@ -719,7 +719,7 @@ list-style-image: none;
 
 .description {
     color: #666;
-    margin: 0;
+    margin: 50px 0 0;
     display: block;
 }
 
