@@ -24,7 +24,8 @@
         
         {block:Hidden}
 
-        
+        <!--IMAGESs -->
+        <meta name="image:Sidebar FeatureImg 300x300"/>
         
         <!--IFs -->
         <meta name="if:Use Google Fonts" content="1">
@@ -57,7 +58,9 @@
         <meta name="text:Body Font Size" content="16px">
         <meta name="text:Nav Font Size" content="16px">
         <meta name="text:Nav Seperator Text" content="/">
-        <meta name="text:Follow Me Text" content="Follow Me On:">
+        <meta name="text:Follow Me Text" content="FOLLOW ME ON:">
+        <meta name="text:Sidebar Feature Title" content="SPECIAL FEATURE:">
+        <meta name="text:Sidebar Feature URL" content="#:">
         <meta name="text:Feature Override Tag" content="FeaturePost">
         <meta name="text:Photo Left Override Tag" content="PhotoLeft">
         <meta name="text:Photo Right Override Post Tag" content="PhotoRight">
@@ -296,7 +299,7 @@
                 text-align: center;
             }
             .social-item {
-                background: url("https://dl.dropboxusercontent.com/s/egvzop1sb7i1yv7/Social-Square-Icons-Double.png");
+                /*background: url("https://dl.dropboxusercontent.com/s/egvzop1sb7i1yv7/Social-Square-Icons-Double.png");*/
                 display: inline-block;
                 float: none;
                 margin: 0;
@@ -601,6 +604,7 @@
             <section id="main-content">
             {block:IfShowSidebar}
             <section id="sidebar" class="{select:Sidebar Position} content clearfix">
+                <div id="SideBarSec1" class="sidebar-section">
                 {block:IfShowFollowBlock}
                 <div id="Social-sidebar"class="width-300 height-150">
                     <h2>{text:Follow Me Text}</h2>
@@ -609,8 +613,17 @@
                     <a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="Instagram">Instagram</a>
                 </div><!-- end #Social-sidebar -->
                 <div id="AdUnit2" class="width-300 height-300">
-                    
+
                 </div><!-- end #AdUnit2 -->
+                </div><!-- end #SideBarSec1 -->
+                <div id="SideBarSec2" class="sidebar-section">
+                    <h2 class="height-50">{text:Sidebar Feature Title}</h2>
+                    <div class="feature-image width-300 height-300"
+                    <a href="{block:IfSidebarFeatureURL}{Sidebar Feature URL}{block:IfSidebarFeatureURL}"><img src="{image:Sidebar FeatureImg 300x300}" alt="{text:Sidebar Feature Title}"></a>
+                    </div>
+                    <h4 class="height-50"><a href="{block:IfSidebarFeatureURL}{Sidebar Feature URL}{block:IfSidebarFeatureURL}" alt="{text:Sidebar Feature Title}">post on 1/23/2014</a></h4>
+                </div><!-- end #SideBarSec2 -->
+
                 {/block:IfShowFollowBlock}
             </section><!-- End section #sidebar -->
             {/block:IfShowSidebar}
