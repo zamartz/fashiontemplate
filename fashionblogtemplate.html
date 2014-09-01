@@ -583,7 +583,7 @@
            
             </section>
             {/block:IfShowSidebar}
-            <section id="posts" class="content clearfix {select:Sidebar Position} {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}{block:HideHeaderImage}no-image {/block:HideHeaderImage} {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar} {block:HideAvatar}avatar-hidden{/block:HideAvatar} {block:IfNotCollapseNavigation}exposed-nav{/block:IfNotCollapseNavigation}">
+            <section id="posts" class="content clearfix {block:IfShowSidebar}{select:Sidebar Position}{/block:IfShowSidebar} {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}{block:HideHeaderImage}no-image {/block:HideHeaderImage} {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar} {block:HideAvatar}avatar-hidden{/block:HideAvatar} {block:IfNotCollapseNavigation}exposed-nav{/block:IfNotCollapseNavigation}">
     
                 <div data-page-id="{CurrentPage}">
                     {block:Posts}

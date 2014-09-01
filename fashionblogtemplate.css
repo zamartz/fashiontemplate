@@ -855,6 +855,16 @@ section#posts{max-width:620px; margin:0px 20px;float:left;}
 section#posts.sidebar-right{float:left;}
 section#posts.sidebar-left{float:right;}
 
+figure {
+margin: 0;
+}
+
+.caption {
+margin: 0;
+border: 1px solid black;
+border-width: 1px 0 3px;
+}
+
 /******************************************************************************
  * SEARCH
  * Styles specific to search.
