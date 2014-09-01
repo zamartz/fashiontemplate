@@ -960,6 +960,12 @@ font-size: 40px;
     h1 {
         font-size: 54px;
     }
+    .avatar-wrapper {
+	    top: 250px;
+	}
+	.title-group,.title-group.animate {
+		top: 180px;
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -992,6 +998,12 @@ font-size: 40px;
     .answer_form_container iframe {
         min-height: 143px;
     }
+    .avatar-wrapper {
+	    top: 25px;
+	}
+	.title-group,.title-group.animate {
+		top: 155px;
+	}
 
 }
 
