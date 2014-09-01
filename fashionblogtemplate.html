@@ -40,6 +40,7 @@
         <!-- COLOR -->
         <meta name="color:SubTitle Color" content="#ddd"/> 
         <meta name="color:Navigation Color" content="#fff"/> 
+        <meta name="color:Nav Seperator Color" content="#ccc"/>
         <meta name="color:Post Headers Color" content="#000"/> 
         <meta name="color:Post SubTitle Color" content="#444"/> 
         <meta name="color:Body Text Color" content="#444"/>
@@ -50,6 +51,7 @@
         <meta name="text:SubTitle Font Size" content="16px">
         <meta name="text:Body Font Size" content="16px">
         <meta name="text:Nav Font Size" content="16px">
+        <meta name="text:Nav Seperator Text" content="/">
         <meta name="text:Feature Override Tag" content="FeaturePost">
         <meta name="text:Photo Left Override Tag" content="PhotoLeft">
         <meta name="text:Photo Right Override Post Tag" content="PhotoRight">
@@ -252,8 +254,19 @@
 
             .nav-menu{
                  font-family: {block:IfUseGoogleFonts}{select:Google Nav Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Nav Font Default}{/block:IfNotUseGoogleFonts};
-                 font-weight:{text:Nav Font Size};
+                 font-size:{text:Nav Font Size};
             }
+            {block:IfNavSeperatorText}
+            .exposed-nav-wrapper .nav-menu ul li:after{
+                content:'{text:Nav Seperator Text}';
+                margin-left:10px;
+                color:{color:Nav Seperator Color};
+            }
+            .exposed-nav-wrapper .nav-menu ul li:last-child:after{
+                content:"";
+                margin-left:0;
+            }
+            {/block:IfNavSeperatorText}
 
             .icon-search_16{
                 color:{block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
@@ -441,6 +454,11 @@
                             </li>
                             {block:IfCollapseNavigation}
                                 <li>
+                                    <a href="/" class="nav-avatar">
+                                        <img src="{PortraitURL-24}" alt=""/> {Title}
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="/archive" class="archive">{lang:Archive} <i class="icon-arrow_carrot_right"></i></a>
                                 </li>
                                 {block:AskEnabled}
@@ -517,6 +535,11 @@
                         <div class="h-line"></div>
                         <nav class="nav-menu">
                             <ul>
+                                <li>
+                                    <a href="/" class="nav-avatar">
+                                        <img src="{PortraitURL-24}" alt=""/> {Title}
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="/archive">{lang:Archive}</a>
                                 </li>
