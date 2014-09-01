@@ -103,6 +103,13 @@ textarea {
 	left:0px;
 }
 
+#SideBarSec1.sticky{
+	position:fixed ;
+	top:150px;
+}
+
+
+
 /******************************************************************************
  * HELPERS
  * Various helper styles.
