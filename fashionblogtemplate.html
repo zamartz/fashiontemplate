@@ -259,6 +259,7 @@
             .nav-menu{
                  font-family: {block:IfUseGoogleFonts}{select:Google Nav Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Nav Font Default}{/block:IfNotUseGoogleFonts};
                  font-size:{text:Nav Font Size};
+                 text-transform:uppercase;
             }
             {block:IfNavSeperatorText}
             .exposed-nav-wrapper .nav-menu ul li:after{
@@ -620,8 +621,10 @@
                                         {/block:Photo}
 
                                         {block:Photoset}
-                                        <figure class="photoset {block:Caption}with-caption{/block:Caption}">
-                                            {Photoset}
+                                        <figure class="photoset {block:Caption}with-caption{/block:Caption} photoset-{PhotosetLayout}">
+                                             {block:Photos}
+                                                  <img src="{PhotoURL-250}" data-500px="{PhotoURL-500}" {block:HighRes}data-highres="{PhotoURL-HighRes}"{/block:HighRes} alt="{Caption}">
+                                             {/block:Photos}
                                             {block:Caption}
                                             <figcaption class="caption">
                                                 {Caption}
