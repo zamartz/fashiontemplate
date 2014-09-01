@@ -841,18 +841,18 @@ margin: 0;
 }
 
 /******************************************************************************
- * Main Content
+ * MAIN CONTENT
  * Styles specific to search.
  ******************************************************************************/
 
-section#main-content{max-width:940px; margin:0px auto;}
+section#main-content{max-width:980px; margin:0px auto;}
 
-section#sidebar{max-width:300px;margin-right:20px;}
+section#sidebar{width:300px;margin-right:20px;float:right;}
 
-section#posts{max-width:620px; margin:0px 20px;}
+section#posts{max-width:620px; margin:0px 20px;float:left;}
 
 /******************************************************************************
- * Search
+ * SEARCH
  * Styles specific to search.
  ******************************************************************************/
 .search-header {
