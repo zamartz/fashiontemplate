@@ -350,7 +350,7 @@ body:not(.ios) .share-menu ul li:nth-child(2):hover {
 
 
 /******************************************************************************
- * PAGE STYLES
+ * HEADER STYLES
  * Defines the structure and styles of the entire theme.
  ******************************************************************************/
 
@@ -839,6 +839,17 @@ margin: 0;
 .print-only {
     display: none;
 }
+
+/******************************************************************************
+ * Main Content
+ * Styles specific to search.
+ ******************************************************************************/
+
+section#main-content{max-width:940px; margin:0px auto;}
+
+section#sidebar{max-width:300px;margin-right:20px;}
+
+section#posts{max-width:620px; margin:0px 20px;}
 
 /******************************************************************************
  * Search
