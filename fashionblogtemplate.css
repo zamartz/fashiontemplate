@@ -258,7 +258,7 @@ br.clear {
 }
 
 .search-only .pop-menu.west li:first-child:before {
-    margin-top: -12px;
+    margin-top: -5px;
     border-bottom: none;
 }
 
@@ -579,7 +579,7 @@ list-style-image: none;
 }
 
 #search {
-    margin: 6px 10px 8px;
+    margin: 0px 10px 5px;
 }
 
 #search input {
@@ -596,7 +596,7 @@ list-style-image: none;
     border: none;
     background: transparent;
     display: block;
-    margin: 0;
+    margin: 4px 0 0 0;
     padding: 0;
     width: 26px;
     height: 26px;
