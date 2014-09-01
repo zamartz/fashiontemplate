@@ -240,7 +240,7 @@ br.clear {
 }
 
 .search-only .pop-menu.west li:first-child:before {
-    margin-top: -6px;
+    margin-top: -16px;
     border-bottom: none;
 }
 
@@ -383,7 +383,7 @@ list-style-image: none;
 
 .nav-menu-wrapper {
     position: fixed;
-    top: 0;
+    top: 5px;
     left: 0;
     z-index: 5;
 }
