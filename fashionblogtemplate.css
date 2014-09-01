@@ -961,11 +961,12 @@ font-size: 40px;
         font-size: 54px;
     }
     .avatar-wrapper {
-	    top: 250px;
+	    top: 50px;
 	}
 	.title-group,.title-group.animate {
 		top: 180px;
 	}
+	.title-group.description,.title-group h2{display:none;}
 }
 
 @media screen and (max-width: 640px) {
@@ -1004,6 +1005,7 @@ font-size: 40px;
 	.title-group,.title-group.animate {
 		top: 155px;
 	}
+	.title-group.description,.title-group h2{display:none;}
 
 }
 
