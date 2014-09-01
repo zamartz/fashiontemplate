@@ -542,7 +542,7 @@ list-style-image: none;
 .exposed-nav-wrapper {
     border:1px solid #000;
     border-width:1px 0 3px; 
-    -webkit-animation: slide-fade-in 0.8s ease;
+     -webkit-animation: slide-fade-in 0.8s ease;
     -o-animation: slide-fade-in 0.8s ease;
     -ms-animation: slide-fade-in 0.8s ease;
     -moz-animation: slide-fade-in 0.8s ease;
@@ -877,13 +877,7 @@ section#posts{max-width:620px; margin:0px 20px;float:left;}
 section#posts.sidebar-right{float:left;}
 section#posts.sidebar-left{float:right;}
 
-.sidebar-section{
-	margin-top:20px; -webkit-animation: slide-fade-in 0.8s ease;
-    -o-animation: slide-fade-in 0.8s ease;
-    -ms-animation: slide-fade-in 0.8s ease;
-    -moz-animation: slide-fade-in 0.8s ease;
-    animation: slide-fade-in 0.8s ease;
-}
+.sidebar-section{margin-top:20px;}
 
 section#sidebar h1, section#sidebar h2, section#sidebar h3, section#sidebar h4, section#sidebar h5, section#sidebar h6{
     text-align:center;
