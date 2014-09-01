@@ -605,7 +605,7 @@
             <section id="main-content">
             {block:IfShowSidebar}
             <section id="sidebar" class="{select:Sidebar Position} content clearfix">
-                <div id="SideBarSec1" class="sidebar-section">
+                <div id="SideBarSec1" class="sidebar-section {block:IfCollapseNavigation}collapse {/block:IfCollapseNavigation}">
                 {block:IfShowFollowBlock}
                 <div id="Social-sidebar"class="width-300 height-150">
                     <h2>{text:Follow Me Text}</h2>
@@ -617,7 +617,7 @@
                 <div id="AdUnit2" class="width-300 height-300">
                 </div><!-- end #AdUnit2 -->
                 </div><!-- end #SideBarSec1 -->
-                <div id="SideBarSec2" class="sidebar-section">
+                <div id="SideBarSec2" class="sidebar-section ">
                     <h2 class="height-50">{text:Sidebar Feature Title}</h2>
                     <div class="feature-image width-300 height-300"
                     <a href="{block:IfSidebarFeatureURL}{Sidebar Feature URL}{block:IfSidebarFeatureURL}"><img src="{image:Sidebar FeatureImg 300x300}" alt="{text:Sidebar Feature Title}"></a>
@@ -869,7 +869,7 @@
                                                             <div class="pop-menu share-menu south" id="share_{PostID}">
                                                                 <ul>
                                                                     <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="{PostID}">Open in app</a></li>
-                                                                    <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" class="share-item facebook" target="_blank">Facebook</a></li>
+                                                                    <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" class="s hare-item facebook" target="_blank">Facebook</a></li>
                                                                     <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" class="share-item twitter" target="_blank">Tweet</a></li>
                                                                     <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" class="share-item mail">Mail</a></li>
                                                                     <li><a href="{Permalink}" class="share-item permalink">{lang:Permalink} <i class="icon-arrow_carrot_right"></i></a></li>
@@ -976,9 +976,8 @@
             {/block:IfStickyNavSide}
             {block:IfStickySidebar}
             jQuery('#sidebar-end').waypoint(function() {
-                jQuery("#SideBarSec1").toggleClass("sticky").promise().done(function(){
-                    jQuery("#SideBarSec1").slideDown('slow');
-                });
+                jQuery("#SideBarSec1").toggleClass("sticky");
+                jQuery("#SideBarSec1").slideDown('slow');
             });
             {/block:IfStickySidebar}
         </script>
