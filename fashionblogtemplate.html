@@ -57,7 +57,7 @@
         <meta name="text:Title Font Size" content="24px">
         <meta name="text:SubTitle Font Size" content="16px">
         <meta name="text:Body Font Size" content="16px">
-        <meta name="text:Nav Font Size" content="16px">
+        <meta name="text:Nav Font Size" content="24px">
         <meta name="text:Nav Seperator Text" content="/">
         <meta name="text:Follow Me Text" content="FOLLOW ME ON:">
         <meta name="text:Sidebar Feature Title" content="SPECIAL FEATURE:">
@@ -125,6 +125,18 @@
         <meta name="select:Google Nav Font" content="'Ubuntu',HelveticaNeue,Arial,san-serif" title="Ubuntu">
         <meta name="select:Google Nav Font" content="'Lato',HelveticaNeue,Arial,san-serif" title="Lato">
         <meta name="select:Google Nav Font" content="'Istok',HelveticaNeue,Arial,san-serif" title="Anivers">
+
+        <meta name="select:Google Sidebar Header Font" content="'Lora',serif" title="Lora">
+        <meta name="select:Google Sidebar Header Font" content="'Playfair Display','Times New Roman',Times,serif" title="Playfair Display">
+        <meta name="select:Google Sidebar Header Font" content="'Josefin Slab','Times New Roman',Times,serif" title="Josefin Slab">
+        <meta name="select:Google Sidebar Header Font" content="'Arvo','Times New Roman',Times,serif" title="Arvo">
+        <meta name="select:Google Sidebar Header Font" content="'Vollkorn','Times New Roman',Times,serif" title="Vollkorn">
+        <meta name="select:Google Sidebar Header Font" content="'Abril Fatface','Times New Roman',Times,serif" title="Abril Fatface">
+        <meta name="select:Google Sidebar Header Font" content="'Open Sans',HelveticaNeue,Arial,san-serif" title="Open Sans">
+        <meta name="select:Google Sidebar Header Font" content="'Ubuntu',HelveticaNeue,Arial,san-serif" title="Ubuntu">
+        <meta name="select:Google Sidebar Header Font" content="'Lato',HelveticaNeue,Arial,san-serif" title="Lato">
+        <meta name="select:Google Sidebar Header Font" content="'Istok',HelveticaNeue,Arial,san-serif" title="Anivers">
+
 
         <meta name="select:Google Post Header Font" content="'Lora',serif" title="Lora">
         <meta name="select:Google Post Header Font" content="'Playfair Display','Times New Roman',Times,serif" title="Playfair Display">
@@ -293,7 +305,14 @@
             .post h1, .post h2, .post h3, .post h5, .post h6{
                 color: {color:Post Headers Color};
                 font-family: {block:IfUseGoogleFonts}{select:Google Post Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Post Header Font Default}{/block:IfNotUseGoogleFonts};
+                font-weight: normal;
             }
+
+            section#sidebar h1, section#sidebar h2, section#sidebar h3, section#sidebar h4, section#sidebar, section#sidebar h6{
+                color: {color:Post Headers Color};
+                font-family: {block:IfUseGoogleFonts}{select:Google Sidebar Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Post Header Font Default}{/block:IfNotUseGoogleFonts};
+            }
+            
             /* Social Icon Override */
 
             #Social-sidebar {

@@ -737,7 +737,7 @@ list-style-image: none;
     -ms-animation: slide-fade-in 0.8s ease;
     -moz-animation: slide-fade-in 0.8s ease;
     animation: slide-fade-in 0.8s ease;
-    top: 230px;
+    top: 220px;
 	position: absolute;
 	width: 100%;
 }
