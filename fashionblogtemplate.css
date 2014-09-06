@@ -173,7 +173,6 @@ line-height: 50px;
 padding: 10px;
 border: 1px solid #777;
 border-radius: 10px 10px 0 0;
-background: #eee;
 }
 
 
@@ -1017,7 +1016,7 @@ ul.post-infolist li.reblog-control, ul.post-infolist li.like-control {
 top: 5px;
 }
 
-.short-post-caption{height:150px;overflow: hidden;overflow-y: scroll;}
+.short-post-caption{max-height:150px; min-height: 50px;overflow: hidden;overflow-y: scroll;}
 
 footer{float:left;width:100%;}
 
