@@ -43,6 +43,7 @@
         <meta name="if:Endless scrolling" content="1">
         <meta name="if:Blog Roll Square Images" content="1">
         <meta name="if:Feedly Widget" title="Show Feedly Button" content="0">
+        <meta name="if:Customize Read More" content="1">
 
         <!-- COLOR -->
         <meta name="color:SubTitle Color" content="#ddd"/> 
@@ -77,6 +78,7 @@
         <meta name="text:GooglePlus Follow" content="">
         <meta name="text:BeHance Follow" content="">
         <meta name="text:Feedly Follow" content="">
+        <meta name="text:Read More Text" content="Read More...">
 
         <!-- FONT -->
         <meta name="font:Post Header Font Default" title="Post Header Font" content="sans-serif"/>
@@ -234,7 +236,7 @@
         <link rel="stylesheet" href="//zamartz.github.io/fashiontemplate/fashionblogtemplate.css">
         <link rel="stylesheet" href="//dl.dropboxusercontent.com/s/m7krhvia7kjzpxl/socialsquare-min.css">
 
-
+        <!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]--> 
         <style>
             /* Colors */
             body {
@@ -425,27 +427,6 @@
             .post-infolist li a:hover{
                 color:{AccentColor};
             }
-
-            li.post-date:before{
-                content:'\1F4C5';
-            }
-
-            li.read-more:before{
-                content:'\1F4D6';
-            }
-
-           li.comment-count:before{
-                content:'\E718';
-            }
-
-            li.note-count:before{
-                content:'\E736';
-            }
-
-            li.source-link:before{
-                content:'\1F501';
-            }
-            
 
             @media screen and (max-device-width: 568px) {
                 .header-image.cover {
@@ -862,6 +843,13 @@
                                         {/block:Answer}
                                     </section>
                                     
+                                    <section class="post-end gradient">
+                                        <div class="post-end-block">
+                                            {block:IfCustomizeReadMore}
+                                            {block:More}<a class="custom-read-more-button" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">{text:Read More Text}</a>{/block:More}
+                                            {/block:IfCustomizeReadMore}
+                                        </div>
+                                    </section>
                                     {block:Date}
                                     <section class="panel">
                                         <div class="reblog-control icon">{ReblogButton size="21" color="grey"}</div>
@@ -874,8 +862,8 @@
                                                     <a href="{BlogURL}{Year}/{MonthNumber}/{DayOfMonth}" title="{TimeAgo}">{DayOfMonth}{DayOfMonthSuffix}</a>
                                                     <a href="{BlogURL}archive/{Year}/{MonthNumber}" title="{TimeAgo}"> {ShortMonth}, {Year} </a>
                                                 </li>
-                                                <li class="read-more icon"> 
-                                                    <a href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">Read More</a>
+                                                <li class="read-more icon {block:More}hidden{/block:More}"> 
+                                                    <a href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">{text:Read More Text}</a>
                                                 </li>
                                                 {block:IfDisqusID}
                                                 <li class="comment-count icon"> 
@@ -1000,8 +988,13 @@
             });
             {/block:IfStickySidebar}
         </script>
-
-       
+       {block:IfCustomizeReadMore}
+       <script type="text/javascript">
+            jQuery(".read_more_container").each(function() {
+                jQuery( this ).addClass("hidden");
+            });
+       </script>
+       {/block:IfCustomizeReadMore}
 
 
        {block:IfDisqusID}
