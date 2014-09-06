@@ -1017,6 +1017,8 @@ ul.post-infolist li.reblog-control, ul.post-infolist li.like-control {
 top: 5px;
 }
 
+.short-post-caption{height:150px;}
+
 footer{float:left;width:100%;}
 
 /******************************************************************************
