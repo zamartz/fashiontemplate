@@ -420,6 +420,10 @@
             }
             .post-infolist li a{
                 color:{color:Post Headers Color};
+                text-decoration:none
+            }
+            .post-infolist li a:hover{
+                color:{AccentColor};
             }
 
             li.post-date:before{
@@ -860,30 +864,34 @@
                                     
                                     {block:Date}
                                     <section class="panel">
+                                        <div class="reblog-control icon">{ReblogButton size="21" color="grey"}</div>
+                                        <div class="like-control icon">{LikeButton size="20" color="grey"}</div>
                                         <footer class="post-footer">
                                             <section class="more-text">
                                             <ul class="post-infolist">
                                                 <li class="post-date icon"> 
-                                                    <a href="{Permalink}" title="{TimeAgo}">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a>
+                                                    <!-- <a href="{BlogURL}" title="{TimeAgo}">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a> -->
+                                                    <a href="{BlogURL}{Year}/{MonthNumber}/{DayOfMonth}" title="{TimeAgo}">{DayOfMonth}{DayOfMonthSuffix}</a>
+                                                    <a href="{BlogURL}archive/{Year}/{MonthNumber}" title="{TimeAgo}"> {ShortMonth}, {Year} </a>
                                                 </li>
                                                 <li class="read-more icon"> 
                                                     <a href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">Read More</a>
                                                 </li>
+                                                {block:IfDisqusID}
                                                 <li class="comment-count icon"> 
                                                 <a class="comment-count" href="{Permalink}#disqus_thread">Comments</a>
                                                 </li>
+                                                {/block:IfDisqusID}
                                                 {block:NoteCount}
                                                  <li class="note-count icon">
                                                 <a class="note-count" title="{NoteCountWithLabel}" href="{Permalink}#note_count">{NoteCountWithLabel}</a>
                                                 </li>
                                                 {/block:NoteCount}
-                                                {block:ContentSource}
+                                                {block:RebloggedFrom}
                                                 <li class="source-link icon">
-                                                    <a class="source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
+                                                    <a class="source-link" href="{ReblogParentURL}">{lang:Reblogged}: {ReblogParentName}</a>
                                                 </li>
-                                                {/block:ContentSource}
-                                                <li class="reblog-control icon">{ReblogButton size="21" color="grey"}</li>
-                                                <li class="like-control icon">{LikeButton size="20" color="grey"}</li>
+                                                {/block:RebloggedFrom}
                                             </ul>
                                             </section><!-- end more-text -->
                                             

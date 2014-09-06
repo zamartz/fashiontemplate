@@ -963,9 +963,29 @@ ul.post-infolist li{
 	height: 25px;
 }
 
+li.post-date:before{
+    content:'\1F4C5';
+}
+
+li.read-more:before{
+    content:'\1F4D6';
+}
+
+li.comment-count:before{
+    content:'\E718';
+}
+
+li.note-count:before{
+    content:'\E736';
+}
+
+li.source-link:before{
+    content:'\1F501';
+}
+
+
 ul.post-infolist li.reblog-control, ul.post-infolist li.like-control {
-display: inline-block;
-position: relative;
+	position: relative;
 top: 5px;
 }
 
