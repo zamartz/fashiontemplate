@@ -939,8 +939,12 @@ margin-top: 1px;
 	overflow-x:hidden;
 }
 
-section.more-text{
+section.more-text {
 	text-align: center;
+	max-height: 50px;
+	border: 1px black solid;
+	border-width: 1px 0px 3px;
+	overflow: hidden;
 }
 
 ul.post-infolist {
@@ -952,6 +956,7 @@ ul.post-infolist li{
 	float: left;
 	font-size: 15px;
 	line-height: 25px;
+	margin: 0px 10px;
 }
 
 footer{float:left;width:100%;}
