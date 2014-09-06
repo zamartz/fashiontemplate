@@ -963,6 +963,12 @@ ul.post-infolist li{
 	height: 25px;
 }
 
+ul.post-infolist li.reblog-control, ul.post-infolist li.like-control {
+display: inline-block;
+position: relative;
+top: 5px;
+}
+
 footer{float:left;width:100%;}
 
 /******************************************************************************
