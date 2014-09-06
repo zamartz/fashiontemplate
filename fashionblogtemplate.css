@@ -959,6 +959,8 @@ ul.post-infolist li{
 	font-size: 15px;
 	line-height: 25px;
 	margin: 0px 10px;
+	overflow: hidden;
+	height: 25px;
 }
 
 footer{float:left;width:100%;}

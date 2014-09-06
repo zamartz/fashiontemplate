@@ -410,11 +410,13 @@
 
             /* POST MORE INFO LIST */
 
-            li.read-more:before,li.comment-count:before,li.note-count:before,li.post-date:before{
+            li.read-more:before,li.comment-count:before,li.note-count:before,li.post-date:before,li.source-link:before{
                 font-size: 30px;
                 color:{color:Nav Seperator Color};
-                position:relative:
-                top:3px;
+                position:relative;
+                top: 5px;
+                display: inline-block;
+                overflow: hidden;
             }
             .post-infolist li a{
                 color:{color:Post Headers Color};
@@ -435,6 +437,11 @@
             li.note-count:before{
                 content:'\E736';
             }
+
+            li.source-link:before{
+                content:'\1F501';
+            }
+            
 
             @media screen and (max-device-width: 568px) {
                 .header-image.cover {
@@ -867,21 +874,22 @@
                                                 </li>
                                                 {block:NoteCount}
                                                  <li class="note-count icon">
-                                                <a class="note-count" title="{block:NoteCount}" href="{Permalink}#note_count">{NoteCountWithLabel}</a>
+                                                <a class="note-count" title="{NoteCountWithLabel}" href="{Permalink}#note_count">{NoteCountWithLabel}</a>
                                                 </li>
                                                 {/block:NoteCount}
+                                                {block:ContentSource}
+                                                <li class="source-link icon">
+                                                    <a class="source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
+                                                </li>
+                                                {/block:ContentSource}
+                                                <li class="reblog-control icon">{ReblogButton size="21" color="grey"}</li>
+                                                <li class="like-control icon">{LikeButton size="20" color="grey"}</li>
                                             </ul>
                                             </section><!-- end more-text -->
                                             
                                             <section class="post-controls">
                                                 <ul>
-                                                    <li class="reblog-control">{ReblogButton size="21" color="grey"}</li>
-                                                    <li class="like-control">{LikeButton size="20" color="grey"}</li>
-                                                    {block:ContentSource}
-                                                    <li>
-                                                        <a class="source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
-                                                    </li>
-                                                    {/block:ContentSource}
+                                                    
                                                 </ul>
                                             </section>
                                         </footer>
