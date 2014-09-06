@@ -409,18 +409,32 @@
             }
 
             /* POST MORE INFO LIST */
-            .post-infolist li:after{
-                content:'/';
-                 font-size: .75em;
+
+            li.read-more:before,li.comment-count:before,li.note-count:before,li.post-date:before{
+                font-size: 30px;
+                color:{color:Nav Seperator Color};
+                position:relative:
+                top:3px;
             }
-            .post-infolist li:first-child:after{
-                content:'\e762';
-                font-size: .75em;
-            }
-            .post-infolist li:last-child:after{
-                content:'';
+            .post-infolist li a{
+                color:{color:Post Headers Color};
             }
 
+            li.post-date:before{
+                content:'\1F4C5';
+            }
+
+            li.read-more:before{
+                content:'\1F4D6';
+            }
+
+           li.comment-count:before{
+                content:'\E718';
+            }
+
+            li.note-count:before{
+                content:'\E736';
+            }
 
             @media screen and (max-device-width: 568px) {
                 .header-image.cover {
@@ -845,14 +859,14 @@
                                                 <li class="post-date icon"> 
                                                     <a href="{Permalink}" title="{TimeAgo}">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a>
                                                 </li>
-                                                <li class="read-more"> 
+                                                <li class="read-more icon"> 
                                                     <a href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">Read More</a>
                                                 </li>
-                                                <li class="counts"> 
+                                                <li class="comment-count icon"> 
                                                 <a class="comment-count" href="{Permalink}#disqus_thread">Comments</a>
                                                 </li>
                                                 {block:NoteCount}
-                                                 <li>
+                                                 <li class="note-count icon">
                                                 <a class="note-count" title="{block:NoteCount}" href="{Permalink}#note_count">{NoteCountWithLabel}</a>
                                                 </li>
                                                 {/block:NoteCount}

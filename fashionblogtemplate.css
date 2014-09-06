@@ -939,6 +939,10 @@ margin-top: 1px;
 	overflow-x:hidden;
 }
 
+section.more-text{
+	text-align: center;
+}
+
 ul.post-infolist {
 display: inline-block;
 }
@@ -946,7 +950,7 @@ display: inline-block;
 ul.post-infolist li{
 	list-style: none;
 	float: left;
-	font-size: 25px;
+	font-size: 15px;
 	line-height: 25px;
 }
 
