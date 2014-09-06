@@ -949,6 +949,8 @@ section.more-text {
 
 ul.post-infolist {
 display: inline-block;
+margin: 0;
+padding: 0;
 }
 
 ul.post-infolist li{
