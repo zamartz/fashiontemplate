@@ -939,11 +939,11 @@ margin-top: 1px;
 	overflow-x:hidden;
 }
 
-ul .post-infolist {
+ul.post-infolist {
 display: inline-block;
 }
 
-ul .post-infolist li{
+ul.post-infolist li{
 	list-style: none;
 	float: left;
 }
