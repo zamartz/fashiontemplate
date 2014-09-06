@@ -946,6 +946,8 @@ display: inline-block;
 ul.post-infolist li{
 	list-style: none;
 	float: left;
+	font-size: 25px;
+	line-height: 25px;
 }
 
 footer{float:left;width:100%;}
