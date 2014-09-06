@@ -905,7 +905,8 @@ max-width: 620px;
 .caption {
 margin: 0;
 border: 1px solid black;
-border-width: 1px 0 3px;
+border-width: 1px 0 0;
+margin-top: 1px;
 }
 
 .height-50{
@@ -936,6 +937,15 @@ border-width: 1px 0 3px;
 .width-600{
 	width:600px;
 	overflow-x:hidden;
+}
+
+ul .post-infolist {
+display: inline-block;
+}
+
+ul .post-infolist li{
+	list-style: none;
+	float: left;
 }
 
 footer{float:left;width:100%;}

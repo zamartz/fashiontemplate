@@ -79,10 +79,11 @@
         <meta name="text:Feedly Follow" content="">
 
         <!-- FONT -->
-        <meta name="font:Post Header Font Default" title="Post Header Font" content="Arial, Helvetica, sans-serif"/>
-        <meta name="font:SubHeader" title="Post SubHeader Font" content="Arial, Helvetica, sans-serif"/>
-        <meta name="font:Nav Font Default" title="Nav Font Default" content="Arial, Helvetica, sans-serif"/>
-        <meta name="font:Body Font Default" content="Arial, Helvetica, sans-serif"/>
+        <meta name="font:Post Header Font Default" title="Post Header Font" content="sans-serif"/>
+        <meta name="font:SubHeader" title="Post SubHeader Font" content="sans-serif"/>
+        <meta name="font:Nav Font Default" title="Nav Font Default" content="sans-serif"/>
+        <meta name="font:Post Sidebar Header Font Default" title="Post Header Font" content="sans-serif"/>
+        <meta name="font:Body Font Default" content="sans-serif"/>
 
         <!-- SELECT -->
         <meta name="select:Sidebar Position" content="sidebar-right" title="Sidebar Right">
@@ -305,12 +306,12 @@
             .post h1, .post h2, .post h3, .post h5, .post h6{
                 color: {color:Post Headers Color};
                 font-family: {block:IfUseGoogleFonts}{select:Google Post Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Post Header Font Default}{/block:IfNotUseGoogleFonts};
-                font-weight: normal;
             }
 
             section#sidebar h1, section#sidebar h2, section#sidebar h3, section#sidebar h4, section#sidebar, section#sidebar h6{
                 color: {color:Post Headers Color};
-                font-family: {block:IfUseGoogleFonts}{select:Google Sidebar Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Post Header Font Default}{/block:IfNotUseGoogleFonts};
+                font-family: {block:IfUseGoogleFonts}{select:Google Sidebar Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Post Sidebar Header Font Default}{/block:IfNotUseGoogleFonts};
+                font-weight: normal;
             }
             
             /* Social Icon Override */
@@ -406,6 +407,19 @@
             .dark-on-dark.contain-header-image .search-only .selector .icon {
                 color: #fff;
             }
+
+            .post-infolist li:after{
+                content:'/';
+                 font-size: 1.5em;
+            }
+            .post-infolist li:first-child:after{
+                content:'\e762';
+            }
+            .post-infolist li:last-child:after{
+                content:'';
+                font-size: .75em;
+            }
+
 
             @media screen and (max-device-width: 568px) {
                 .header-image.cover {
@@ -820,84 +834,39 @@
                                             {Replies}
                                         </div>
                                         {/block:Answer}
-
-                                        {block:RebloggedFrom}
-                                        <section class="attribution-tags clearfix">
-                                            <ul>
-                                                <li class="reblog">
-                                                    <a class="reblog-link" href="{ReblogParentURL}"><i class="icon-reblog"></i>{ReblogParentName}</a>
-                                                </li>
-                                                {block:ContentSource}
-                                                <li>
-                                                    <a class="source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
-                                                </li>
-                                                {/block:ContentSource}
-                                                {block:HasTags}
-                                                    {block:Tags}
-                                                        <li>
-                                                            <a href="{TagURL}" class="tag">{Tag}</a>
-                                                        </li>
-                                                    {/block:Tags}
-                                                {/block:HasTags} 
-                                            </ul>
-                                        </section>
-                                        {/block:RebloggedFrom}
-
-                                        {block:NotReblog}
-                                            {block:HasTags}
-                                            <section class="attribution-tags clearfix">
-                                                <ul>
-                                                    {block:ContentSource}
-                                                    <li>
-                                                        <a class="source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
-                                                    </li>
-                                                    {/block:ContentSource}
-                                                    {block:Tags}
-                                                        <li>
-                                                            <a href="{TagURL}" class="tag">{Tag}</a>
-                                                        </li>
-                                                    {/block:Tags}
-                                                </ul>
-                                            </section>
-                                            {/block:HasTags}                                
-                                        {/block:NotReblog}
-
                                     </section>
                                     
                                     {block:Date}
                                     <section class="panel">
                                         <footer class="post-footer">
-                                            <section class="meta"> 
-                                                <ul class="date-notes">
-                                                    {block:NoteCount}
-                                                    <li class="post-notes">
-                                                        <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-                                                    </li>
-                                                    {/block:NoteCount}
-                                                    <li class="post-date"> 
-                                                        <a href="{Permalink}" title="{TimeAgo}">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a>
-                                                    </li>
-                                                </ul>
-                                            </section>
+                                            <section class="more-text">
+                                            <ul class="post-infolist">
+                                                <li class="post-date icon"> 
+                                                    <a href="{Permalink}" title="{TimeAgo}">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a>
+                                                </li>
+                                                <li class="read-more"> 
+                                                    <a href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">Read More</a>
+                                                </li>
+                                                <li class="counts"> 
+                                                <a class="comment-count" href="{Permalink}#disqus_thread">Comments</a>
+                                                </li>
+                                                {block:NoteCount}
+                                                 <li>
+                                                <a class="note-count" title="{block:NoteCount}" href="{Permalink}#note_count">{NoteCountWithLabel}</a>
+                                                </li>
+                                                {/block:NoteCount}
+                                            </ul>
+                                            </section><!-- end more-text -->
                                             
                                             <section class="post-controls">
                                                 <ul>
-                                                    <li class="share-control">
-                                                        <nav class="pop">
-                                                            <a href="#" class="share selector icon-export"></a>
-                                                            <div class="pop-menu share-menu south" id="share_{PostID}">
-                                                                <ul>
-                                                                    <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="{PostID}">Open in app</a></li>
-                                                                    <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" class="s hare-item facebook" target="_blank">Facebook</a></li>
-                                                                    <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" class="share-item twitter" target="_blank">Tweet</a></li>
-                                                                    <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" class="share-item mail">Mail</a></li>
-                                                                    <li><a href="{Permalink}" class="share-item permalink">{lang:Permalink} <i class="icon-arrow_carrot_right"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </nav>
+                                                    <li class="reblog-control">{ReblogButton size="21" color="grey"}</li>
+                                                    <li class="like-control">{LikeButton size="20" color="grey"}</li>
+                                                    {block:ContentSource}
+                                                    <li>
+                                                        <a class="source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
                                                     </li>
-                                                    <li class="reblog-control">{ReblogButton size="21" color="black"}</li>
-                                                    <li class="like-control">{LikeButton size="20" color="black"}</li>
+                                                    {/block:ContentSource}
                                                 </ul>
                                             </section>
                                         </footer>
