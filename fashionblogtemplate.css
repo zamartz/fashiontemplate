@@ -13,7 +13,7 @@
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
-[class*="icon"]:before,[class*="icon-"]:after {
+.icon:before,.icon:after {
 	font-family: 'entypo', sans-serif !important;
 }
 
