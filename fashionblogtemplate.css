@@ -931,7 +931,7 @@ margin-top: 20px;
 }
 
 .post img, .post picture {
-	width: inherit;
+	width: 100%;
 	max-width: 620px;
 	min-width: 300px;
 }
