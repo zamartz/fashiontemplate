@@ -43,6 +43,7 @@
         <meta name="if:Endless scrolling" content="1">
         <meta name="if:Blog Roll Square Images" content="1">
         <meta name="if:Feedly Widget" title="Show Feedly Button" content="0">
+        <meta name="if:Minimize Homepage Posts" content="1">
         <meta name="if:Customize Read More" content="1">
 
         <!-- COLOR -->
@@ -62,14 +63,14 @@
         <meta name="text:Nav Seperator Text" content="/">
         <meta name="text:Follow Me Text" content="FOLLOW ME ON:">
         <meta name="text:Sidebar Feature Title" content="SPECIAL FEATURE:">
-        <meta name="text:Sidebar Feature URL" content="#:">
+        <meta name="text:Sidebar Feature URL" content="#">
         <meta name="text:Feature Override Tag" content="FeaturePost">
         <meta name="text:Photo Left Override Tag" content="PhotoLeft">
         <meta name="text:Photo Right Override Post Tag" content="PhotoRight">
         <meta name="text:Photo Tall Override Tag" content="HalfTall">
         <meta name="text:Google analytics ID" content="">
         <meta name="text:Disqus shortname" content="">
-        <meta name="text:AddThis RA" title="AddThis RA#" content="0">
+        <meta name="text:AddThis RA" title="AddThis RA#" content="">
         <meta name="text:Facebook Follow" content="">
         <meta name="text:Twitter Follow" content="zamartz">
         <meta name="text:Instagram Follow" content="zamartz">
@@ -428,6 +429,20 @@
                 color:{AccentColor};
             }
 
+            /* CUSTOM READ MORE */
+            .custom-read-more-button {
+                background-color: {color:Nav Seperator Color};
+                border-color:#000;
+            }
+            a.custom-read-more-button {
+                text-decoration: none;
+                color:{color:Post Headers Color};
+            }
+            a:hover.custom-read-more-button{
+                 border-color:{AccentColor};
+                 background-color:#fff;
+            }
+
             @media screen and (max-device-width: 568px) {
                 .header-image.cover {
                     background-image: url({HeaderImage-640});
@@ -649,9 +664,9 @@
                 {block:IfShowFollowBlock}
                 <div id="Social-sidebar"class="width-300 height-150">
                     <h2>{text:Follow Me Text}</h2>
-                    <a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>
-                    <a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>
-                    <a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="Instagram">Instagram</a>
+                    {block:IFFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IFFacebookFollow}
+                    {block:IFTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IFTwitterFollow}
+                    {block:IFInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="Instagram">Instagram</a>{/block:IFInstagramFollow}
                 </div><!-- end #Social-sidebar -->
                 {/block:IfShowFollowBlock}
                 <div id="AdUnit2" class="width-300 height-300">
@@ -677,11 +692,6 @@
                     {block:Posts}
                             <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}{block:HasTags}{block:Tags} t_{URLSafeTag} {/block:Tags}{/block:HasTags}" {block:Date}data-post-id="post_{PostID}"{/block:Date}>
                                 <div class="post-wrapper clearfix">
-                                    {block:RebloggedFrom}
-                                    <header class="reblog-header">
-                                        <a class="reblog-link" href="{ReblogParentURL}"><i class="icon-reblog"></i>{ReblogParentName}</a>
-                                    </header>
-                                    {/block:RebloggedFrom}
                                     <section class="post">
                                         {block:Text}
                                             {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
@@ -711,11 +721,16 @@
                                                 {/block:IfNotResponsivePostImages}
                                                 </div>
                                             </div>
-                                            {block:Caption}
-                                            <figcaption class="caption">
+                                            
+                                            <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                                {block:Caption}
                                                 {Caption}
+                                                {/block:Caption}
+                                                 {block:IfNotCustomizeReadMore}{block:More}
+                                                    <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
+                                                {/block:More}{/block:IfNotCustomizeReadMore}
                                             </figcaption>
-                                            {/block:Caption}
+                                           
                                         </figure>
                                         {/block:Photo}
 
@@ -736,11 +751,14 @@
                                                   <img src="{PhotoURL-500}"alt="{Caption}">
                                                 {/block:IfNotResponsivePostImages}
                                              {/block:Photos}
-                                            {block:Caption}
-                                            <figcaption class="caption">
+                                             <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                                {block:Caption}
                                                 {Caption}
+                                                {/block:Caption}
+                                                 {block:IfNotCustomizeReadMore}{block:More}
+                                                    <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
+                                                {/block:More}{/block:IfNotCustomizeReadMore}
                                             </figcaption>
-                                            {/block:Caption}
                                         </figure>
                                         {/block:Photoset}
 
@@ -766,7 +784,7 @@
                                             </h2>
                                         </div>
                                         {block:Description}
-                                        <div class="caption">
+                                        <div class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
                                             {Description}
                                         </div>
                                         {/block:Description}
@@ -790,10 +808,13 @@
                                             {/block:AudioEmbed}
                                         </div>
                                         {block:Caption}
-                                        <div class="caption">
+                                        <div class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
                                             {Caption}
                                         </div>
                                         {/block:Caption}
+                                        {block:IfNotCustomizeReadMore}{block:More}
+                                                    <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
+                                                {/block:More}{/block:IfNotCustomizeReadMore}
                                         {/block:Audio}
 
 
@@ -802,11 +823,14 @@
                                             <div class="video-wrapper">
                                                 {Video-700}
                                             </div>
-                                            {block:Caption}
-                                            <figcaption class="caption">
+                                             <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                                {block:Caption}
                                                 {Caption}
+                                                {/block:Caption}
+                                                {block:IfNotCustomizeReadMore}{block:More}
+                                                    <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
+                                                {/block:More}{/block:IfNotCustomizeReadMore}
                                             </figcaption>
-                                            {/block:Caption}
                                         </figure>
                                         {/block:Video}
 
@@ -842,52 +866,51 @@
                                         </div>
                                         {/block:Answer}
                                     </section>
-                                    
-                                    <section class="post-end gradient">
+                                    {block:IfMinimizeHomepagePosts}<section class="post-end gradient">{/block:IfMinimizeHomepagePosts}
                                         <div class="post-end-block">
-                                            {block:IfCustomizeReadMore}
-                                            {block:More}<a class="custom-read-more-button" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">{text:Read More Text}</a>{/block:More}
-                                            {/block:IfCustomizeReadMore}
+                                            {block:More}<a class="{block:IfCustomizeReadMore}custom-read-more-button{/block:IfCustomizeReadMore}{block:IfNotCustomizeReadMore}hidden{/block:IfNotCustomizeReadMore}" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>{/block:More}
                                         </div>
-                                    </section>
+                                     {block:IfMinimizeHomepagePosts}</section>{/block:IfMinimizeHomepagePosts}
+
                                     {block:Date}
                                     <section class="panel">
-                                        <div class="reblog-control icon">{ReblogButton size="21" color="grey"}</div>
-                                        <div class="like-control icon">{LikeButton size="20" color="grey"}</div>
                                         <footer class="post-footer">
-                                            <section class="more-text">
-                                            <ul class="post-infolist">
-                                                <li class="post-date icon"> 
-                                                    <!-- <a href="{BlogURL}" title="{TimeAgo}">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a> -->
-                                                    <a href="{BlogURL}{Year}/{MonthNumber}/{DayOfMonth}" title="{TimeAgo}">{DayOfMonth}{DayOfMonthSuffix}</a>
-                                                    <a href="{BlogURL}archive/{Year}/{MonthNumber}" title="{TimeAgo}"> {ShortMonth}, {Year} </a>
-                                                </li>
-                                                <li class="read-more icon {block:More}hidden{/block:More}"> 
-                                                    <a href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">{text:Read More Text}</a>
-                                                </li>
-                                                {block:IfDisqusID}
-                                                <li class="comment-count icon"> 
-                                                <a class="comment-count" href="{Permalink}#disqus_thread">Comments</a>
-                                                </li>
-                                                {/block:IfDisqusID}
-                                                {block:NoteCount}
-                                                 <li class="note-count icon">
-                                                <a class="note-count" title="{NoteCountWithLabel}" href="{Permalink}#note_count">{NoteCountWithLabel}</a>
-                                                </li>
-                                                {/block:NoteCount}
-                                                {block:RebloggedFrom}
-                                                <li class="source-link icon">
-                                                    <a class="source-link" href="{ReblogParentURL}">{lang:Reblogged}: {ReblogParentName}</a>
-                                                </li>
-                                                {/block:RebloggedFrom}
-                                            </ul>
-                                            </section><!-- end more-text -->
-                                            
                                             <section class="post-controls">
-                                                <ul>
-                                                    
+                                                <div class="post-controls-buttons">
+                                                    {ReblogButton color="grey" size="50"}
+                                                    {LikeButton color="grey" size="50"}
+                                                    {block:IfAddThisRA}<a class="addthis_button_compact"  data-url="{Permalink}">
+                                                         <img src="http://s7.addthis.com/static/btn/sm-plus.gif" width="16" height="16" border="0" alt="Share" />
+                                                    </a> {/block:IfAddThisRA}
+                                                </div>
+                                            </section><!-- end post controlls -->
+                                            <section class="more-text">
+                                                <ul class="post-infolist">
+                                                    <li class="post-date icon"> 
+                                                        <!-- <a href="{BlogURL}" title="{TimeAgo}">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a> -->
+                                                        <a href="{BlogURL}{Year}/{MonthNumber}/{DayOfMonth}" title="{TimeAgo}">{DayOfMonth}{DayOfMonthSuffix}</a>
+                                                        <a href="{BlogURL}archive/{Year}/{MonthNumber}" title="{TimeAgo}"> {ShortMonth}, {Year} </a>
+                                                    </li>
+                                                    <li class="read-more icon {block:More}hidden{/block:More}"> 
+                                                        <a href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}">{text:Read More Text}</a>
+                                                    </li>
+                                                    {block:IfDisqusID}
+                                                    <li class="comment-count icon"> 
+                                                    <a class="comment-count" href="{Permalink}#disqus_thread">Comments</a>
+                                                    </li>
+                                                    {/block:IfDisqusID}
+                                                    {block:NoteCount}
+                                                     <li class="note-count icon">
+                                                    <a class="note-count" title="{NoteCountWithLabel}" href="{Permalink}#note_count">{NoteCountWithLabel}</a>
+                                                    </li>
+                                                    {/block:NoteCount}
+                                                    {block:RebloggedFrom}
+                                                    <li class="source-link icon">
+                                                        <a class="source-link" href="{ReblogParentURL}">{lang:Reblogged}: {ReblogParentName}</a>
+                                                    </li>
+                                                    {/block:RebloggedFrom}
                                                 </ul>
-                                            </section>
+                                            </section><!-- end more-text -->
                                         </footer>
                                     </section>
                                     {/block:Date}
@@ -991,11 +1014,14 @@
        {block:IfCustomizeReadMore}
        <script type="text/javascript">
             jQuery(".read_more_container").each(function() {
-                jQuery( this ).addClass("hidden");
+                jQuery(this).addClass("hidden");
             });
        </script>
        {/block:IfCustomizeReadMore}
 
+        {block:IfAddThisRA}<!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:AddThis RA}"></script>
+        {/block:IfAddThisRA}
 
        {block:IfDisqusID}
             <script type="text/javascript">

@@ -176,11 +176,6 @@ border-radius: 10px 10px 0 0;
 border-bottom: 0;
 }
 
-.read-more-norm{
-margin: 0 0 50px;
-display: inline-block;
-}
-
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
 .visuallyhidden { 
     border: 0 !important; 
@@ -979,6 +974,14 @@ section.more-text {
 	overflow: hidden;
 }
 
+.read-more-norm{
+margin: 0 0 50px;
+display: inline-block;
+}
+.photo-wrapper-inner{
+	text-align: center;
+}
+
 ul.post-infolist {
 display: inline-block;
 margin: 0;
@@ -1013,6 +1016,18 @@ li.note-count:before{
 
 li.source-link:before{
     content:'\1F501';
+}
+
+/* AddThis Override */
+
+.addthis_button_compact:before {
+	content: "\E73C";
+	line-height: 25px;
+	font-size: 43px;
+	background: white;
+}
+.at16nc {
+margin-top: -20px;
 }
 
 
