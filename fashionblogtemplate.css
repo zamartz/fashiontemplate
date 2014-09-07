@@ -949,8 +949,9 @@ article.half-tall {
 	float: left;
 	margin-right: 20px;
 }
-article.half-tall:odd {
-	margin-right:0;
+
+article.half-tall:nth-child(even) {
+margin-right: 0;
 }
 
 article.half-tall picture{
