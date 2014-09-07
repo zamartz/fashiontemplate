@@ -1120,6 +1120,7 @@ ul.post-infolist li{
 	margin: 0px 10px;
 	overflow: hidden;
 	height: 25px;
+	display: inline;
 }
 
 li.post-date:before{
