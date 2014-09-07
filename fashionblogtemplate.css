@@ -939,7 +939,7 @@ margin-top: 20px;
 margin-top: 10px;
 }
 
-.photoset img:first-child  {
+.photoset picture:first-child img  {
 margin-top: 0px;
 }
 
