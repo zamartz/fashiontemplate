@@ -1026,8 +1026,8 @@ li.source-link:before{
 	font-size: 43px;
 	background: white;
 }
-.at16nc {
-margin-top: -20px;
+.addthis_button_compact:first-child span {
+	margin-top: -20px;
 }
 
 
