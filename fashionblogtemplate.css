@@ -1156,7 +1156,7 @@ ul.post-contols-list {
 	height: 25px;
 	text-align: center;
 	overflow: hidden;
-	margin: 0;
+	margin: 5px 0 0 ;
 	border-top: 1px solid black;
 	padding: 2.5px 0 0;
 	width:100%;
@@ -1167,7 +1167,6 @@ ul.post-contols-list li {
 	height: 20px;
 	margin: 0px 10px;
 	display: inline-block;
-	margin-top: 5px;
 }
 
 li.list-like-button {
