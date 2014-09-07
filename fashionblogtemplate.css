@@ -966,7 +966,7 @@ min-height: 300px;
 overflow: hidden;
 }
 
-.short-post .caption{height:150px; overflow: hidden;overflow-y: scroll;}
+.short-post .caption{/*height:150px;*/ overflow: hidden;overflow-y: scroll;}
 .full-right .short-post, .full-left .short-post , article.half-tall {background-color: #ccc;}
 
 /* HALF TALL */
