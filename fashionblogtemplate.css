@@ -997,6 +997,8 @@ overflow: hidden;
 .full-right .tumblr-photoset,.full-right .tumblr-photo {
 width: 300px;
 float: right;
+border-top: 1px solid black;
+margin-top: 1px;
 }
 
 .full-right .caption{
