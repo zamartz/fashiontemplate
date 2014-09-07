@@ -935,6 +935,14 @@ margin-top: 20px;
 	max-width: 620px;
 	min-width: 300px;
 }
+.photoset img {
+margin-top: 10px;
+}
+
+.photoset:first-child img {
+margin-top: 0px;
+}
+
 /* SHORT POST */
 .short-post .tumblr-photoset, .short-post .tumblr-photo {
 max-height: 620px;
