@@ -89,6 +89,7 @@
         <meta name="font:Body Font Default" content="sans-serif"/>
 
         <!-- SELECT -->
+
         <meta name="select:Sidebar Position" content="sidebar-right" title="Sidebar Right">
         <meta name="select:Sidebar Position" content="sidebar-left" title="Sidebar Left">
 
@@ -329,6 +330,19 @@
                 margin: 10px 5px;
             }
 
+            a.addthis_button_compact{
+                color:#ccc;
+                text-decoration:none;
+            }
+            a:hover.addthis_button_compact{
+                color:{AccentColor};
+            }
+             .reblog_button svg:hover{
+                fill:{AccentColor};
+            }
+
+            /*Standard Post Overrides*/
+
             .title-group h1{
                 font-size:{text:Title Font Size};
             }
@@ -434,7 +448,7 @@
                 background-color: {color:Nav Seperator Color};
                 border-color:#000;
             }
-            a.custom-read-more-button {
+            a.custom-read-more-button{
                 text-decoration: none;
                 color:{color:Post Headers Color};
             }
@@ -874,16 +888,21 @@
 
                                     {block:Date}
                                     <section class="panel">
-                                        <footer class="post-footer">
-                                            <section class="post-controls">
+                                        <section class="post-controls">
                                                 <div class="post-controls-buttons">
-                                                    {ReblogButton color="grey" size="50"}
-                                                    {LikeButton color="grey" size="50"}
-                                                    {block:IfAddThisRA}<a class="addthis_button_compact"  data-url="{Permalink}">
-                                                         <img src="http://s7.addthis.com/static/btn/sm-plus.gif" width="16" height="16" border="0" alt="Share" />
-                                                    </a> {/block:IfAddThisRA}
+                                                    <ul class="post-contols-list">
+                                                    {block:IfAddThisRA}
+                                                    <li class="list-reblog">
+                                                        <div class="addthis_toolbox"  style="position:relative;" >
+                                                        <a class="addthis_button_compact icon"  data-url="{Permalink}"></a>  
+                                                    </div></li>
+                                                    {/block:IfAddThisRA}
+                                                    <li class="list-reblog-button">{ReblogButton color="grey" size="20"}</li>
+                                                    <li class="list-like-button">{LikeButton color="grey" size="20"}</li>
+                                                </ul>
                                                 </div>
-                                            </section><!-- end post controlls -->
+                                     </section><!-- end post controlls -->
+                                        <footer class="post-footer">
                                             <section class="more-text">
                                                 <ul class="post-infolist">
                                                     <li class="post-date icon"> 
