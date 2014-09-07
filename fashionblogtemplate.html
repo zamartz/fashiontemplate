@@ -50,6 +50,7 @@
         <meta name="color:SubTitle Color" content="#ddd"/> 
         <meta name="color:Navigation Color" content="#fff"/> 
         <meta name="color:Nav Seperator Color" content="#ccc"/>
+        <meta name="color:Line Color" content="#009"/>
         <meta name="color:Post Headers Color" content="#000"/> 
         <meta name="color:Post SubTitle Color" content="#444"/> 
         <meta name="color:Body Text Color" content="#444"/>
@@ -458,6 +459,14 @@
                  background-color:#fff;
             }
 
+            /* LINE COLORS */
+            .exposed-nav-wrapper, .photoset img, ul.post-contols-list {
+                border-color:{color:Line Color};
+            }
+            .photoset img{
+                background-color:{color:Line Color};
+            }
+
             @media screen and (max-device-width: 568px) {
                 .header-image.cover {
                     background-image: url({HeaderImage-640});
@@ -705,7 +714,7 @@
     
                 <div data-page-id="{CurrentPage}">
                     {block:Posts}
-                            <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}{block:HasTags}{block:Tags} t_{URLSafeTag} {/block:Tags}{/block:HasTags}" {block:Date}data-post-id="post_{PostID}"{/block:Date}>
+                            <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage} {select:Home Post Default}{block:HasTags}{block:Tags} t_{URLSafeTag} {/block:Tags}{/block:HasTags}" {block:Date}data-post-id="post_{PostID}"{/block:Date}>
                                 <div class="post-wrapper clearfix">
                                     <section class="post {block:IfMinimizeHomepagePosts} short-post{/block:IfMinimizeHomepagePosts}">
                                         {block:Text}
@@ -737,7 +746,7 @@
                                                 </div>
                                             </div>
                                         </figure>
-                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                        <figcaption class="caption">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
@@ -765,7 +774,7 @@
                                                 {/block:IfNotResponsivePostImages}
                                              {/block:Photos}
                                         </figure>
-                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                        <figcaption class="caption">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
@@ -800,7 +809,7 @@
                                             </h2>
                                         </div>
                                         </figure>
-                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                        <figcaption class="caption">
                                                 {block:Description}
                                                 {Description}
                                                 {/block:Description}
@@ -831,7 +840,7 @@
                                             {/block:AudioEmbed}
                                         </div>
                                         </figure>
-                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                        <figcaption class="caption">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
@@ -848,7 +857,7 @@
                                                 {Video-700}
                                             </div>
                                         </figure>
-                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                        <figcaption class="caption">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}

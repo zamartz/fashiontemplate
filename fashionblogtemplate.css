@@ -936,11 +936,11 @@ margin-top: 20px;
 	min-width: 300px;
 }
 .photoset img {
-margin-top: 10px;
+padding-top: 3px;
 }
 
 .photoset picture:first-child img  {
-margin-top: 0px;
+padding-top: 0px;
 }
 
 /* SHORT POST */
@@ -980,6 +980,8 @@ overflow: hidden;
 .full-left .tumblr-photoset,.full-left .tumblr-photo {
 width: 300px;
 float: left;
+border-top: 1px solid black;
+margin-top: 1px;
 }
 
 .full-left .caption{
