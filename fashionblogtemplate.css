@@ -969,7 +969,7 @@ max-height: 300px;
 height: 300px;
 overflow: hidden;
 }
-.full-left .photoset {
+.full-left .tumblr-photoset,.full-left .tumblr-photo {
 width: 300px;
 float: left;
 }
