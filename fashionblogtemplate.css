@@ -1127,6 +1127,7 @@ ul.post-contols-list {
 	margin: 0;
 	border-top: 1px solid black;
 	padding: 2.5px 0 0;
+	width:100%;
 }
 
 ul.post-contols-list li {
