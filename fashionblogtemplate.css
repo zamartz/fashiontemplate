@@ -943,6 +943,22 @@ padding-top: 3px;
 padding-top: 0px;
 }
 
+article.half-tall .caption{
+	min-height: 150px;
+}
+.full-left .short-post .caption, .full-right .short-post .caption{
+	min-height: 300px;
+}
+.full-left .short-post .caption, .full-right .short-post .caption,article.half-tall .caption{
+	background-color:#ccc;
+}
+
+.full-left figcaption.with-caption, .full-right figcaption.with-caption, article.half-tall figcaption.with-caption{
+	background-color:inherit;
+	background-image:none;
+}
+
+
 /* SHORT POST */
 .short-post .tumblr-photoset, .short-post .tumblr-photo {
 max-height: 620px;
