@@ -1040,6 +1040,19 @@ ul.post-contols-list li{
 	list-style: none;
 }
 
+ul.post-contols-list {
+	height: 25px;
+	text-align: center;
+	overflow: hidden;
+}
+
+ul.post-contols-list li {
+list-style: none;
+height: 25px;
+margin: 0px 10px;
+display: inline-block;
+}
+
 .short-post-caption{max-height:150px; min-height: 50px;overflow: hidden;overflow-y: scroll;}
 
 footer{float:left;width:100%;}
