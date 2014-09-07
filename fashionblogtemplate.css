@@ -959,6 +959,7 @@ article.half-tall .caption{
 
 section .post {
 	display: inline-block;
+	margin-bottom: -6px;
 }
 
 
