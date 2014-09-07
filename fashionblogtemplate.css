@@ -930,7 +930,7 @@ article {
 margin-top: 20px;
 }
 
-.post img {
+.post img, .post picture {
 	width: inherit;
 	max-width: 620px;
 	min-width: 300px;
