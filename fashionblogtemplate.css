@@ -1052,6 +1052,7 @@ margin-top: 1px;
 float: left;
 width: 100%;
 background: white;
+min-height: 5px;
 }
 
 section .post {
