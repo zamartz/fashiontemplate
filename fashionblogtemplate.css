@@ -1110,11 +1110,12 @@ ul.post-infolist {
 display: inline-block;
 margin: 0;
 padding: 0;
+text-align: center;
 }
 
 ul.post-infolist li{
 	list-style: none;
-	float: left;
+	/*float: left;*/
 	font-size: 15px;
 	line-height: 21px;
 	margin: 0px 10px;
