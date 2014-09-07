@@ -958,7 +958,10 @@ article.half-tall .caption{
 	background-image:none;
 }
 
-.full-right .short-post, .full-left .short-post , article.half-tall,.full-right .tumblr-photoset, .full-right .tumblr-photo {background-color: #ccc;}
+section .post {
+display: inline-block;
+background-color: #ccc;
+}
 
 
 /* SHORT POST */
