@@ -976,14 +976,30 @@ float: left;
 
 .full-left .caption{
 	max-height:300px;
+	padding-left: 20px;
 }
 .full-left .post-end{
 	width: 300px;
 	float: right;
-	margin-right: 20px;
 }
 
 /* FULL RIGHT */
+.full-right .short-post {
+height: 300px;
+overflow: hidden;
+}
+.full-right .tumblr-photoset,.full-right .tumblr-photo {
+width: 300px;
+float: right;
+}
+
+.full-right .caption{
+	max-height:300px;
+	padding-right: 20px;
+}
+.full-right .post-end{
+	width: 300px;
+}
 
 .caption {
 margin: 0;
