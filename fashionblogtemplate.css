@@ -1033,7 +1033,11 @@ li.source-link:before{
 
 ul.post-infolist li.reblog-control, ul.post-infolist li.like-control {
 	position: relative;
-top: 5px;
+	top: 5px;
+}
+
+ul.post-contols-list li{
+	list-style: none;
 }
 
 .short-post-caption{max-height:150px; min-height: 50px;overflow: hidden;overflow-y: scroll;}
