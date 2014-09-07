@@ -970,7 +970,7 @@ min-height: 300px;
 overflow: hidden;
 }
 
-.short-post .caption{/*height:150px;*/ overflow: hidden;overflow-y: scroll;}
+.short-post .caption{min-height:50px; overflow: hidden;overflow-y: scroll;}
 
 /* HALF TALL */
 
