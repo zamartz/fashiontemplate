@@ -931,7 +931,9 @@ margin-top: 20px;
 }
 
 .post img {
-max-width: 620px;
+	width: inherit;
+	max-width: 620px;
+	max-width: 300px;
 }
 
 .short-post .tumblr-photoset, .short-post .tumblr-photo {
