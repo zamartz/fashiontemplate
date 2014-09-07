@@ -962,6 +962,9 @@ section .post {
 	width: 100%;
 }
 
+.full-left .post, .full-right .post{
+margin-bottom: -6px;
+}
 
 /* SHORT POST */
 .short-post .tumblr-photoset, .short-post .tumblr-photo {
