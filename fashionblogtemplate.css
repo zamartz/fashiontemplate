@@ -951,7 +951,8 @@ article.half-tall {
 article.half-tall picture{
 width: 300px;
 }
-article.half-tall .short-post picture{
+
+article.half-tall .short-post .tumblr-photoset,article.half-tall .short-post .tumblr-photo{
 max-height: 300px;
 }
 
