@@ -1022,8 +1022,8 @@ li.source-link:before{
 
 .addthis_button_compact:before {
 	content: "\E73C";
-	line-height: 25px;
-	font-size: 43px;
+	line-height: 20px;
+	font-size: 35px;
 	background: white;
 }
 .addthis_button_compact:first-child span {
@@ -1036,25 +1036,25 @@ ul.post-infolist li.reblog-control, ul.post-infolist li.like-control {
 	top: 5px;
 }
 
-ul.post-contols-list li{
-	list-style: none;
-}
 
 ul.post-contols-list {
 	height: 25px;
 	text-align: center;
 	overflow: hidden;
+	margin: 0;
+	border-top: 1px solid black;
+	padding: 2.5px 0 0;
 }
 
 ul.post-contols-list li {
 	list-style: none;
-	height: 25px;
+	height: 20px;
 	margin: 0px 10px;
 	display: inline-block;
 }
 
 li.list-like-button {
-	top: -10px;
+	top: -5px;
 	position: relative;
 }
 
