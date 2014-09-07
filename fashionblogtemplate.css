@@ -954,13 +954,11 @@ article.half-tall .caption{
 }
 
 .full-left figcaption.caption.with-caption, .full-right figcaption.caption.with-caption, article.half-tall figcaption.caption.with-caption{
-	background-color: #fff;
 	background-image:none;
 }
 
 section .post {
-display: inline-block;
-background-color: #ccc;
+	display: inline-block;
 }
 
 

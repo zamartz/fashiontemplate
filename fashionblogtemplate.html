@@ -460,11 +460,22 @@
             }
 
             /* LINE COLORS */
-            .exposed-nav-wrapper, .section.more-text, photoset img, ul.post-contols-list, section#sidebar h1, section#sidebar h2, section#sidebar h3, section#sidebar h4, section#sidebar h5, section#sidebar h6 {
+            .exposed-nav-wrapper, section.more-text, photoset img, ul.post-contols-list, .custom-read-more-button, section#sidebar h1, section#sidebar h2, section#sidebar h3, section#sidebar h4, section#sidebar h5, section#sidebar h6 {
                 border-color:{color:Line Color};
             }
             .photoset img{
                 background-color:{color:Line Color};
+            }
+
+            /* POST BLANK AREA BACKGROUND */
+           figcaption.caption.with-caption{
+                background-color: #fff;
+                background-image:none;
+            }
+
+            section .post {
+                display: inline-block;
+                background-color: #ccc;
             }
 
             @media screen and (max-device-width: 568px) {
@@ -746,7 +757,7 @@
                                                 </div>
                                             </div>
                                         </figure>
-                                        <figcaption class="caption">
+                                        <figcaption class="caption {block:Caption} with-caption{/block:Caption}">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
@@ -774,7 +785,7 @@
                                                 {/block:IfNotResponsivePostImages}
                                              {/block:Photos}
                                         </figure>
-                                        <figcaption class="caption">
+                                        <figcaption class="caption {block:Caption} with-caption{/block:Caption}">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
@@ -809,7 +820,7 @@
                                             </h2>
                                         </div>
                                         </figure>
-                                        <figcaption class="caption">
+                                        <figcaption class="caption {block:Caption} with-caption{/block:Caption}">
                                                 {block:Description}
                                                 {Description}
                                                 {/block:Description}
@@ -821,7 +832,7 @@
 
 
                                         {block:Chat}
-                                         <figcaption class="caption" >
+                                         <figcaption class="caption {block:Caption} with-caption{/block:Caption}" >
                                         {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                             <ul class="conversation">
                                             {block:Lines}
@@ -840,7 +851,7 @@
                                             {/block:AudioEmbed}
                                         </div>
                                         </figure>
-                                        <figcaption class="caption">
+                                        <figcaption class="caption {block:Caption} with-caption{/block:Caption}">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
@@ -857,7 +868,7 @@
                                                 {Video-700}
                                             </div>
                                         </figure>
-                                        <figcaption class="caption">
+                                        <figcaption class="caption {block:Caption} with-caption{/block:Caption}">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
