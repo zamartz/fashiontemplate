@@ -975,7 +975,6 @@ overflow: hidden;
 
 .short-post .caption{min-height:50px; overflow: hidden;overflow-y: scroll;}
 
-.short-post .half-tall .caption{height:150px;}
 
 /* HALF TALL */
 
@@ -995,6 +994,10 @@ width: 300px;
 
 article.half-tall .short-post .tumblr-photoset,article.half-tall .short-post .tumblr-photo{
 max-height: 300px;
+}
+
+.half-tall .short-post .caption {
+height: 150px;
 }
 
 /* FULL LEFT */
