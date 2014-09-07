@@ -926,8 +926,18 @@ figure {
 margin: 0;
 }
 
+article {
+margin-top: 20px;
+}
+
 .post img {
 max-width: 620px;
+}
+
+.short-post .tumblr-photoset, .short-post .tumblr-photo {
+max-height: 620px;
+min-height: 300px;
+overflow: hidden;
 }
 
 .caption {
