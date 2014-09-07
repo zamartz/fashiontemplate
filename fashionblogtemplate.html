@@ -310,6 +310,7 @@
             .post h1, .post h2, .post h3, .post h5, .post h6{
                 color: {color:Post Headers Color};
                 font-family: {block:IfUseGoogleFonts}{select:Google Post Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Post Header Font Default}{/block:IfNotUseGoogleFonts};
+                text-align: center;
             }
 
             section#sidebar h1, section#sidebar h2, section#sidebar h3, section#sidebar h4, section#sidebar, section#sidebar h6{
@@ -706,7 +707,7 @@
                     {block:Posts}
                             <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}{block:HasTags}{block:Tags} t_{URLSafeTag} {/block:Tags}{/block:HasTags}" {block:Date}data-post-id="post_{PostID}"{/block:Date}>
                                 <div class="post-wrapper clearfix">
-                                    <section class="post">
+                                    <section class="post {block:IfMinimizeHomepagePosts} short-post{/block:IfMinimizeHomepagePosts}">
                                         {block:Text}
                                             {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                             {block:Body}
@@ -717,7 +718,7 @@
                                         {/block:Text}
 
                                         {block:Photo}
-                                        <figure class="{block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+                                        <figure class="tumblr-photo {block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
                                             <div class="photo-wrapper">
                                                 <div class="photo-wrapper-inner">
                                                     {block:IfResponsivePostImages}
@@ -735,21 +736,19 @@
                                                 {/block:IfNotResponsivePostImages}
                                                 </div>
                                             </div>
-                                            
-                                            <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                        </figure>
+                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
-                                                 {block:IfNotCustomizeReadMore}{block:More}
+                                                {block:IfNotCustomizeReadMore}{block:More}
                                                     <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
                                                 {/block:More}{/block:IfNotCustomizeReadMore}
                                             </figcaption>
-                                           
-                                        </figure>
                                         {/block:Photo}
 
                                         {block:Photoset}
-                                        <figure class="photoset {block:Caption}with-caption{/block:Caption} photoset-{PhotosetLayout}">
+                                        <figure class="photoset tumblr-photoset {block:Caption}with-caption{/block:Caption} photoset-{PhotosetLayout}">
                                              {block:Photos}
                                                 {block:IfResponsivePostImages}
                                                 <picture>
@@ -765,28 +764,31 @@
                                                   <img src="{PhotoURL-500}"alt="{Caption}">
                                                 {/block:IfNotResponsivePostImages}
                                              {/block:Photos}
-                                             <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                        </figure>
+                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
-                                                 {block:IfNotCustomizeReadMore}{block:More}
+                                                {block:IfNotCustomizeReadMore}{block:More}
                                                     <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
                                                 {/block:More}{/block:IfNotCustomizeReadMore}
                                             </figcaption>
-                                        </figure>
                                         {/block:Photoset}
 
                                         {block:Quote}
-                                        <blockquote class="{Length}">
-                                            {Quote}
-                                        </blockquote>
-                                        {block:Source}
-                                        <div class="source">{Source}</div>
-                                        {/block:Source}
+                                         <figure class="tumblr-quote">
+                                            <blockquote class=" {Length}">
+                                                {Quote}
+                                            </blockquote>
+                                            {block:Source}
+                                            <div class="source">{Source}</div>
+                                            {/block:Source}
+                                        </figure>
                                         {/block:Quote}
 
 
                                         {block:Link}
+                                        <figure class="tumblr-link">
                                         <div class="link-wrapper">
                                             <h2>
                                                 <a {Target} href="{URL}">
@@ -797,47 +799,39 @@
                                                 </a>
                                             </h2>
                                         </div>
-                                        {block:Description}
-                                        <div class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
-                                            {Description}
-                                        </div>
-                                        {/block:Description}
+                                        </figure>
+                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                                {block:Description}
+                                                {Description}
+                                                {/block:Description}
+                                                {block:IfNotCustomizeReadMore}{block:More}
+                                                    <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
+                                                {/block:More}{/block:IfNotCustomizeReadMore}
+                                            </figcaption>
                                         {/block:Link}
 
 
                                         {block:Chat}
+                                         <figcaption class="caption" >
                                         {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                             <ul class="conversation">
                                             {block:Lines}
                                                 <li class="chat-{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
                                             {/block:Lines}
                                             </ul>
+                                        </figure>
                                         {/block:Chat}
 
 
                                         {block:Audio}
+                                         <figure class="tumblr-audio">
                                         <div class="audio_container">
                                             {block:AudioEmbed}
                                                 {AudioEmbed color="white"}
                                             {/block:AudioEmbed}
                                         </div>
-                                        {block:Caption}
-                                        <div class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
-                                            {Caption}
-                                        </div>
-                                        {/block:Caption}
-                                        {block:IfNotCustomizeReadMore}{block:More}
-                                                    <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
-                                                {/block:More}{/block:IfNotCustomizeReadMore}
-                                        {/block:Audio}
-
-
-                                        {block:Video}                            
-                                        <figure {block:Caption}class="with-caption"{/block:Caption}>
-                                            <div class="video-wrapper">
-                                                {Video-700}
-                                            </div>
-                                             <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                        </figure>
+                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
                                                 {block:Caption}
                                                 {Caption}
                                                 {/block:Caption}
@@ -845,10 +839,27 @@
                                                     <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
                                                 {/block:More}{/block:IfNotCustomizeReadMore}
                                             </figcaption>
+                                        {/block:Audio}
+
+
+                                        {block:Video}                            
+                                        <figure class="tumblr-video {block:Caption}with-caption{/block:Caption}">
+                                            <div class="video-wrapper">
+                                                {Video-700}
+                                            </div>
                                         </figure>
+                                        <figcaption class="caption {block:IfMinimizeHomepagePosts} short-post-caption{/block:IfMinimizeHomepagePosts}">
+                                                {block:Caption}
+                                                {Caption}
+                                                {/block:Caption}
+                                                {block:IfNotCustomizeReadMore}{block:More}
+                                                    <a class="read-more-norm" href="{Permalink}" title="{block:PostTitle}{PostTitle}{/block:PostTitle}"> {block:IfReadMoreText}{text:Read More Text}{/block:IfReadMoreText}{block:IfNotReadMoreText}Read More{/block:IfNotReadMoreText}</a>
+                                                {/block:More}{/block:IfNotCustomizeReadMore}
+                                            </figcaption>
                                         {/block:Video}
 
                                         {block:Answer}
+                                        <figure class="tumblr-answer">
                                         <div class="note-item note-item-asker">
                                             <div class="text">
                                                 <p class="asker"><strong>{Asker}</strong> asked:</p>
@@ -878,6 +889,7 @@
                                         <div class="replies">
                                             {Replies}
                                         </div>
+                                        </figure>
                                         {/block:Answer}
                                     </section>
                                     {block:IfMinimizeHomepagePosts}<section class="post-end gradient">{/block:IfMinimizeHomepagePosts}
@@ -984,7 +996,11 @@
             </footer>
         </section>
        
+        <!-- STANDARD SCRIPTS -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- END STANDARD SCRITPS -->
+
+        <!-- RESPONSIVE IMAGES -->
         {block:IfResponsivePostImages}
         <script src="//zamartz.github.io/fashiontemplate/picturefill.min.js"></script>
         {/block:IfResponsivePostImages}
@@ -994,6 +1010,8 @@
                 jQuery(".pop-menu.west" ).toggleClass("show active");
              });
         </script>
+        <!-- END RESPONSIVE IMAGES-->
+
         <!-- FEATURED TAGS -->
         {block:IfFeatureOverrideTag}
         <script type="text/javascript">

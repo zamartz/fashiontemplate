@@ -940,6 +940,9 @@ min-height: 300px;
 overflow: hidden;
 }
 
+.short-post .caption{max-height:150px; min-height: 50px;overflow: hidden;overflow-y: scroll;}
+
+
 .caption {
 margin: 0;
 border: 1px solid black;
@@ -1069,7 +1072,6 @@ li.list-like-button {
 	position: relative;
 }
 
-.short-post-caption{max-height:150px; min-height: 50px;overflow: hidden;overflow-y: scroll;}
 
 footer{float:left;width:100%;}
 
