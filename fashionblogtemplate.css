@@ -975,6 +975,8 @@ overflow: hidden;
 
 .short-post .caption{min-height:50px; overflow: hidden;overflow-y: scroll;}
 
+.short-post .half-tall .caption{height:150px;}
+
 /* HALF TALL */
 
 article.half-tall {
