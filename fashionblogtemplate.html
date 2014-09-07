@@ -894,7 +894,7 @@
                                                     {block:IfAddThisRA}
                                                     <li class="list-reblog">
                                                         <div class="addthis_toolbox"  style="position:relative;" >
-                                                        <a class="addthis_button_compact icon"  data-url="{Permalink}"></a>  
+                                                        <a class="addthis_button_compact icon"  data-url="{Permalink}" addthis:url="{Permalink}"></a>  
                                                     </div></li>
                                                     {/block:IfAddThisRA}
                                                     <li class="list-reblog-button">{ReblogButton color="grey" size="20"}</li>
@@ -994,6 +994,7 @@
                 jQuery(".pop-menu.west" ).toggleClass("show active");
              });
         </script>
+        <!-- FEATURED TAGS -->
         {block:IfFeatureOverrideTag}
         <script type="text/javascript">
             function Dothemetags(taglist,tagtoadd){
@@ -1006,15 +1007,15 @@
                     });
                 }
             }
-            //The Custome Feature Tags Set
             Dothemetags('{text:Feature Override Tag}','t_FeaturePostTag');
             Dothemetags('{text:Photo Left Override Tag}','t_PhotoLeftTag');
             Dothemetags('{text:Photo Right Override Post Tag}','t_PhotoRightTag');
             Dothemetags('{text:Photo Tall Override Tag}','t_HalfTallTag');
         </script>
         {/block:IfFeatureOverrideTag}
+        <!-- END FEATURED TAGS -->
        
-        
+        <!-- WAYPOINTS -->
         <script src="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
         <script type="text/javascript">
             {block:IfStickyNavSide} 
@@ -1030,19 +1031,26 @@
             });
             {/block:IfStickySidebar}
         </script>
-       {block:IfCustomizeReadMore}
-       <script type="text/javascript">
-            jQuery(".read_more_container").each(function() {
-                jQuery(this).addClass("hidden");
-            });
-       </script>
-       {/block:IfCustomizeReadMore}
+        <!-- END WAYPOITNS -->
 
+        <!-- CUSTOM READ MORE-->
+        {block:IfCustomizeReadMore}
+            <script type="text/javascript">
+                jQuery(".read_more_container").each(function() {
+                    jQuery(this).addClass("hidden");
+                });
+            </script>
+        {/block:IfCustomizeReadMore}
+        <!-- END CUSTOME READ MORE -->
+
+        <!-- ADDTHIS-->
         {block:IfAddThisRA}<!-- Go to www.addthis.com/dashboard to customize your tools -->
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:AddThis RA}"></script>
         {/block:IfAddThisRA}
+        <!-- END ADDTHIS-->
 
-       {block:IfDisqusID}
+        <!-- DISQUS-->
+        {block:IfDisqusID}
             <script type="text/javascript">
                 if(!StyleHatch.customizeMode){
                 var disqus_shortname = '{text:Disqus ID}';
@@ -1055,7 +1063,9 @@
                 }
             </script>
         {/block:IfDisqusID}
+        <!-- END DISQUS -->
 
+        <!-- GOOGLE ANALTICS -->
         {block:IfGoogleAnalyticsID}
             <script type="text/javascript">
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -1066,6 +1076,7 @@
                 ga('send', 'pageview');
             </script>
         {/block:IfGoogleAnalyticsID}
+        <!-- END GOOGLE ANALYTICS -->
        
     </body>
 </html>

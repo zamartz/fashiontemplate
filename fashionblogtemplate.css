@@ -106,6 +106,7 @@ textarea {
     -ms-animation: slide-fade-in 0.8s ease;
     -moz-animation: slide-fade-in 0.8s ease;
     animation: slide-fade-in 0.8s ease;
+    z-index:9000;
 }
 
 #SideBarSec1.sticky{
@@ -441,7 +442,7 @@ list-style-image: none;
     position: fixed;
     top: 5px;
     left: 0;
-    z-index: 5;
+    z-index: 9915;
 }
 
 .is_lightbox .nav-menu-wrapper,
