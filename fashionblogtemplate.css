@@ -944,17 +944,17 @@ padding-top: 0px;
 }
 
 article.half-tall .caption{
-	min-height: 150px;
+	/*min-height: 150px;*/
 }
 .full-left .short-post .caption, .full-right .short-post .caption{
-	min-height: 300px;
+	/*min-height: 300px;*/
 }
 .full-left figcaption.caption, .full-right figcaption.caption,article.half-tall figcaption.caption{
-	background-color:#ccc;
+	/*background-color:#ccc;*/
 }
 
 .full-left figcaption.caption.with-caption, .full-right figcaption.caption.with-caption, article.half-tall figcaption.caption.with-caption{
-	background-color:inherit !important;
+	background-color: #fff;
 	background-image:none;
 }
 
@@ -967,6 +967,7 @@ overflow: hidden;
 }
 
 .short-post .caption{height:150px; overflow: hidden;overflow-y: scroll;}
+.full-right .short-post, .full-left .short-post , article.half-tall {background-color: #ccc;}
 
 /* HALF TALL */
 
