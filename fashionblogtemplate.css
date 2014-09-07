@@ -958,6 +958,8 @@ article.half-tall .caption{
 	background-image:none;
 }
 
+.full-right .short-post, .full-left .short-post , article.half-tall,.full-right .tumblr-photoset, .full-right .tumblr-photo {background-color: #ccc;}
+
 
 /* SHORT POST */
 .short-post .tumblr-photoset, .short-post .tumblr-photo {
@@ -967,7 +969,6 @@ overflow: hidden;
 }
 
 .short-post .caption{/*height:150px;*/ overflow: hidden;overflow-y: scroll;}
-.full-right .short-post, .full-left .short-post , article.half-tall {background-color: #ccc;}
 
 /* HALF TALL */
 
