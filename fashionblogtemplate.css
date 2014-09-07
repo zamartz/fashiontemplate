@@ -1047,10 +1047,15 @@ ul.post-contols-list {
 }
 
 ul.post-contols-list li {
-list-style: none;
-height: 25px;
-margin: 0px 10px;
-display: inline-block;
+	list-style: none;
+	height: 25px;
+	margin: 0px 10px;
+	display: inline-block;
+}
+
+li.list-like-button {
+	top: -10px;
+	position: relative;
 }
 
 .short-post-caption{max-height:150px; min-height: 50px;overflow: hidden;overflow-y: scroll;}
