@@ -974,10 +974,16 @@ width: 300px;
 float: left;
 }
 
+
 .full-left .caption{
-	max-height:300px;
 	padding-left: 20px;
+	width: 300px;
 }
+
+.full-left .short-post .caption{
+	max-height:300px;
+}
+
 .full-left .post-end{
 	width: 300px;
 	float: right;
@@ -994,9 +1000,13 @@ float: right;
 }
 
 .full-right .caption{
-	max-height:300px;
+	width:300px;
 	padding-right: 20px;
 }
+.full-right .short-post .caption{
+	max-height:300px;
+}
+
 .full-right .post-end{
 	width: 300px;
 }
