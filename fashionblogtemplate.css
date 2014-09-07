@@ -954,7 +954,7 @@ article.half-tall .caption{
 }
 
 .full-left figcaption.caption.with-caption, .full-right figcaption.caption.with-caption, article.half-tall figcaption.caption.with-caption{
-	background-color:inherit;
+	background-color:inherit !important;
 	background-image:none;
 }
 
@@ -1011,7 +1011,7 @@ margin-top: 1px;
 }
 
 .full-left .post-end{
-	width: 300px;
+	width: 320px;
 	float: right;
 }
 
@@ -1037,7 +1037,7 @@ margin-top: 1px;
 }
 
 .full-right .post-end{
-	width: 300px;
+	width: 320px;
 }
 
 .caption {
