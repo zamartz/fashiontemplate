@@ -942,6 +942,18 @@ overflow: hidden;
 
 .short-post .caption{max-height:150px; min-height: 50px;overflow: hidden;overflow-y: scroll;}
 
+article.half-tall {
+	width: 300px;
+	float: left;
+	margin-right: 20px;
+}
+
+article.half-tall picture{
+width: 300px;
+}
+article.half-tall .short-post picture{
+max-height: 300px;
+}
 
 .caption {
 margin: 0;
