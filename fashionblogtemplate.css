@@ -935,7 +935,7 @@ margin-top: 20px;
 	max-width: 620px;
 	min-width: 300px;
 }
-
+/* SHORT POST */
 .short-post .tumblr-photoset, .short-post .tumblr-photo {
 max-height: 620px;
 min-height: 300px;
@@ -943,6 +943,8 @@ overflow: hidden;
 }
 
 .short-post .caption{max-height:150px; min-height: 50px;overflow: hidden;overflow-y: scroll;}
+
+/* HALF TALL */
 
 article.half-tall {
 	width: 300px;
@@ -961,6 +963,27 @@ width: 300px;
 article.half-tall .short-post .tumblr-photoset,article.half-tall .short-post .tumblr-photo{
 max-height: 300px;
 }
+
+/* FULL LEFT */
+.full-left .short-post {
+height: 300px;
+overflow: hidden;
+}
+.full-left .photoset {
+width: 300px;
+float: left;
+}
+
+.full-left .caption{
+	max-height:300px;
+}
+.full-left .post-end{
+	width: 300px;
+	float: right;
+	margin-right: 20px;
+}
+
+/* FULL RIGHT */
 
 .caption {
 margin: 0;
