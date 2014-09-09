@@ -978,7 +978,7 @@ overflow: hidden;
 .short-post figcaption.caption.with-caption {
 	background-color: #fff;
 	background-image: none;
-	min-height: 150px;
+	height: 150px;
 }
 
 
