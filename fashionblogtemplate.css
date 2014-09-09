@@ -984,7 +984,7 @@ overflow: hidden;
 .full-left .short-post figcaption.caption.with-caption, .full-right .short-post figcaption.caption.with-caption {
 background-color: #fff;
 background-image: none;
-height: 300px;
+max-height: 300px;
 }
 
 /* HALF TALL */
