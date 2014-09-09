@@ -975,6 +975,12 @@ overflow: hidden;
 
 .short-post .caption{min-height:50px; overflow: hidden;overflow-y: scroll;}
 
+.short-post figcaption.caption.with-caption {
+	background-color: #fff;
+	background-image: none;
+	min-height: 150px;
+}
+
 
 /* HALF TALL */
 
