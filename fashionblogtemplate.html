@@ -477,6 +477,7 @@
                 display: inline-block;
                 background-color: #fff;
                 background-image: url("//zamartz.github.io/fashiontemplate/line-bg.png");
+                background-position: center center;
             }
 
             @media screen and (max-device-width: 568px) {
@@ -531,6 +532,27 @@
                 }
 
             }
+            
+            @media (max-width: 320px) {
+               .full-right .post-end {
+                     width: 300px;
+               }
+           }
+            
+           @media (max-width: 620px) {
+               .full-right .post-end {
+                     width: 300px;
+               }
+           }
+           @media (max-width: 940px) {
+               #sidebar{display:none;}
+               section#posts.sidebar-right,section#posts.sidebar-left {
+                    margin: 0px auto;
+                    float: none;
+                }
+           }
+        
+                        
             /*Featured Post*/
             .t_FeaturePostTag{}
 
@@ -730,12 +752,14 @@
                                 <div class="post-wrapper clearfix">
                                     <section class="post {block:IfMinimizeHomepagePosts} short-post{/block:IfMinimizeHomepagePosts}">
                                         {block:Text}
-                                            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                                         <figure class="tumblr-text{block:Caption} with-caption{/block:Caption}">
+                                            {block:Title}<h2 class="text-header"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
                                             {block:Body}
-                                            <div class="body-text">
+                                            <div class="body-text text-body">
                                                 {Body}
                                             </div>
                                             {/block:Body}
+                                            </figure>
                                         {/block:Text}
 
                                         {block:Photo}

@@ -926,6 +926,28 @@ figure {
 margin: 0;
 }
 
+figure.tumblr-quote, figure.tumblr-text {
+    background-color: #fff;
+    display: inline-block;
+    width: 100%;
+}
+
+figure.tumblr-quote .source, figure.tumblr-text .text-header, figure.tumblr-text .text-body{
+    padding:0px 10px;
+}
+
+ figure.tumblr-quote .source:before {
+    content: "—";
+    display: inline-block;
+    float: left;
+    width: 20px;
+}
+   
+.quote.full-right .post-end,.text.full-right .post-end{
+    width:100%; 
+}
+            
+
 article {
 margin-top: 20px;
 }
@@ -957,6 +979,10 @@ article.half-tall .caption{
 	background-image:none;
 }
 
+.text.full-right .short-post, .text.full-left .short-post,.quote.full-right .short-post, .quote.full-left .short-post {
+    height: auto;
+}
+
 section .post {
 	display: inline-block;
 	width: 100%;
@@ -973,7 +999,7 @@ min-height: 300px;
 overflow: hidden;
 }
 
-.short-post .caption{min-height:50px; overflow: hidden;overflow-y: scroll;}
+.short-post .caption{min-height:50px; overflow: hidden; overflow-y: auto;}
 
 .short-post figcaption.caption.with-caption {
 	background-color: #fff;
@@ -981,10 +1007,16 @@ overflow: hidden;
 	height: 150px;
 }
 
+.short-post figure.tumblr-quote,  .short-post figure.tumblr-text {
+    max-height: 280px;
+    padding-bottom: 20px;
+}
+
 .full-left .short-post figcaption.caption.with-caption, .full-right .short-post figcaption.caption.with-caption {
 background-color: #fff;
 background-image: none;
 max-height: 300px;
+height: auto;
 }
 
 /* HALF TALL */
