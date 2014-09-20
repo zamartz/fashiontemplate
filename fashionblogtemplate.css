@@ -1313,6 +1313,15 @@ font-size: 40px;
  * MEDIA QUERIES
  * These follow after primary styles so they will successfully override.
  ******************************************************************************/
+@media screen and (max-width: 940px) {
+   #sidebar{display:none;}
+   .sticky-section #sidebar1-1.sticky{display:none !important;}
+   section#posts.sidebar-right,section#posts.sidebar-left {
+        margin: 0px auto;
+        float: none;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .header-image-wrapper {
         height: 250px;
@@ -1341,6 +1350,15 @@ font-size: 40px;
     .permalink .post-footer .date-notes li {
         float: none; /* force two lines */
     }
+    .full-right .post-end {
+         width: 300px;
+    }
+    section#posts.sidebar-right,section#posts.sidebar-left {
+        margin: 0px auto;
+        float: none;
+        width:300px;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
