@@ -1948,7 +1948,7 @@ font-size: 40px;
  * WAYPOINTS
  * Items that get scrolling sticky
  ******************************************************************************/
-.sticky-section .exposed-nav-wrapper.content.sticky{
+.sticky-section .exposed-nav-wrapper.sticky{
     position:fixed ;
     top:0px;
     left:0px;
