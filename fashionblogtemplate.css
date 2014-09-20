@@ -1961,7 +1961,7 @@ font-size: 40px;
     display: inherit;
 }
 
-.sticky-section #sidebar1-1 .sticky{
+.sticky-section #sidebar1-1.sticky{
     position:fixed ;
     top:55px;
     right:20px;
