@@ -1958,6 +1958,7 @@ font-size: 40px;
     -moz-animation: slide-fade-in 0.8s ease;
     animation: slide-fade-in 0.8s ease;
     z-index:9000;
+    display: inherit;
 }
 
 #SideBarSec1-1.sticky{
@@ -1971,7 +1972,7 @@ font-size: 40px;
     -moz-animation: slide-fade-in 0.8s ease;
     animation: slide-fade-in 0.8s ease;
 }
-#SideBarSec1-1.collapse.sticky{
+#sidebar1-1 .sticky{
     position:fixed ;
     top:0px;
     right:20px;
