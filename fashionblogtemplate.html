@@ -65,6 +65,7 @@
         <meta name="text:Follow Me Text" content="FOLLOW ME ON:">
         <meta name="text:Sidebar Feature Title" content="SPECIAL FEATURE:">
         <meta name="text:Sidebar Feature URL" content="#">
+        <meta name="text:Sidebar Feature Post Number" content="">
         <meta name="text:Feature Override Tag" content="FeaturePost">
         <meta name="text:Photo Left Override Tag" content="PhotoLeft">
         <meta name="text:Photo Right Override Post Tag" content="PhotoRight">
@@ -532,27 +533,8 @@
                 }
 
             }
-            
-           @media (max-width: 940px) {
-               #sidebar{display:none;}
-               section#posts.sidebar-right,section#posts.sidebar-left {
-                    margin: 0px auto;
-                    float: none;
-                }
-           }
-            
-           @media (max-width: 620px) {
-               .full-right .post-end {
-                     width: 300px;
-               }
-               section#posts.sidebar-right,section#posts.sidebar-left {
-                    margin: 0px auto;
-                    float: none;
-                    width:300px;
-                }
-           }
-
-        
+            /* WORKING OVERRIDES*/
+            .feature-image img {width:100%;} 
                         
             /*Featured Post*/
             .t_FeaturePostTag{}
@@ -674,7 +656,7 @@
                     </div>
                 </header>
                 {block:IfNotCollapseNavigation}
-                    <div class="{block:HideTitle}{block:HideDescription}no-title-desc{/block:HideDescription}{/block:HideTitle} exposed-nav-wrapper content">
+                    <div id="top-nav-bar" class="{block:HideTitle}{block:HideDescription}no-title-desc{/block:HideDescription}{/block:HideTitle} exposed-nav-wrapper content">
                         <div class="h-line"></div>
                         <nav class="nav-menu">
                             <ul>
@@ -731,13 +713,16 @@
                 <div id="AdUnit2" class="width-300 height-300">
                 </div><!-- end #AdUnit2 -->
                 </div><!-- end #SideBarSec1 -->
+                {block:IfSidebarFeaturePostNumber}
                 <div id="SideBarSec2" class="sidebar-section ">
                     <h2 class="height-50">{text:Sidebar Feature Title}</h2>
-                    <div class="feature-image width-300 height-300"
-                    <a href="{block:IfSidebarFeatureURL}{Sidebar Feature URL}{block:IfSidebarFeatureURL}"><img src="{image:Sidebar FeatureImg 300x300}" alt="{text:Sidebar Feature Title}"></a>
+                    <div class="feature-image width-300 height-300">
+                    <a href="{BlogURL}post/{text:Sidebar Feature Post Number}"><picture></picture></a>
                     </div>
-                    <h4 class="height-50"><a href="{block:IfSidebarFeatureURL}{Sidebar Feature URL}{block:IfSidebarFeatureURL}" alt="{text:Sidebar Feature Title}">post on 1/23/2014</a></h4>
-                </div><!-- end #SideBarSec2 -->
+                    <h4 class="height-50"><a href="{BlogURL}post/{text:Sidebar Feature Post Number}" alt="{text:Sidebar Feature Title}">post on 1/23/2014</a></h4>
+                </div>
+                {/block:IfSidebarFeaturePostNumber}
+                <!-- end #SideBarSec2 -->
                  <div id="SideBarSec3" class="sidebar-section width-300">
                    
                  </div>
@@ -770,7 +755,7 @@
                                                     {block:IfResponsivePostImages}
                                                 <picture>
                                                     <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                                    {block:HighRes}<source srcset="{PhotoURL-HighRes}" media="(min-width: 620px)"{/block:HighRes} 
+                                                    {block:HighRes}<source srcset="{PhotoURL-HighRes}" media="(min-width: 620px)">{/block:HighRes}
                                                     <source srcset="{PhotoURL-500}" media="(min-width: 300px)">
                                                     <source srcset="{PhotoURL-400}" media="(min-width: 300px)">
                                                     <!--[if IE 9]></video><![endif]-->
@@ -778,7 +763,8 @@
                                                 </picture>
                                                 {/block:IfResponsivePostImages}
                                                 {block:IfNotResponsivePostImages}
-                                                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}
+                                                 <picture>
+                                                    {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag} </picture>
                                                 {/block:IfNotResponsivePostImages}
                                                 </div>
                                             </div>
@@ -799,7 +785,8 @@
                                                 {block:IfResponsivePostImages}
                                                 <picture>
                                                     <!--[if IE 9]><video style="display: none;"><![endif]-->
-                                                    {block:HighRes}<source srcset="{PhotoURL-HighRes}" media="(min-width: 620px)"{/block:HighRes} 
+                                                    {block:HighRes}
+                                                    <source srcset="{PhotoURL-HighRes}" media="(min-width: 620px)">{/block:HighRes}
                                                     <source srcset="{PhotoURL-500}" media="(min-width: 300px)">
                                                     <source srcset="{PhotoURL-400}" media="(min-width: 300px)">
                                                     <!--[if IE 9]></video><![endif]-->
@@ -807,7 +794,9 @@
                                                 </picture>
                                                 {/block:IfResponsivePostImages}
                                                 {block:IfNotResponsivePostImages}
+                                                 <picture>
                                                   <img src="{PhotoURL-500}"alt="{Caption}">
+                                                   </picture>
                                                 {/block:IfNotResponsivePostImages}
                                              {/block:Photos}
                                         </figure>
@@ -1046,6 +1035,61 @@
                 {/block:IndexPage}
             </footer>
         </section>
+        
+        <section>
+            <div class="sticky-section">
+                {block:IfNotCollapseNavigation}
+                    <div class="{block:HideTitle}{block:HideDescription}no-title-desc{/block:HideDescription}{/block:HideTitle} exposed-nav-wrapper content">
+                        <nav class="nav-menu">
+                            <ul>
+                                <li class="hidden">
+                                    <a href="/" class="nav-avatar">
+                                        <img src="{PortraitURL-24}" alt=""/> {Title}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/archive">{lang:Archive}</a>
+                                </li>
+                                {block:AskEnabled}
+                                    <li>
+                                        <a href="/ask" class="ask">{AskLabel}</a>
+                                    </li>
+                                {/block:AskEnabled}
+                                {block:HasPages}
+                                    {block:Pages}
+                                    <li>
+                                        <a href="{URL}" class="page">{Label}</a>
+                                    </li>
+                                    {/block:Pages}
+                                {/block:HasPages}
+                                {block:SubmissionsEnabled}
+                                    <li>
+                                        <a href="/submit" class="submit">{SubmitLabel}</a>
+                                    </li>
+                                {/block:SubmissionsEnabled}
+                            </ul>
+                        </nav>
+                    </div>
+                    {/block:IfNotCollapseNavigation}
+                    {block:IfShowSidebar}
+            <section id="sidebar1-1" class="{select:Sidebar Position} content clearfix">
+                <div id="SideBarSec1-1" class="sidebar-section {block:IfCollapseNavigation}collapse {/block:IfCollapseNavigation}">
+                {block:IfShowFollowBlock}
+                <div id="Social-sidebar"class="width-300 height-150">
+                    <h2>{text:Follow Me Text}</h2>
+                    {block:IFFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IFFacebookFollow}
+                    {block:IFTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IFTwitterFollow}
+                    {block:IFInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="Instagram">Instagram</a>{/block:IFInstagramFollow}
+                </div><!-- end #Social-sidebar -->
+                {/block:IfShowFollowBlock}
+                <div id="AdUnit2" class="width-300 height-300">
+                </div><!-- end #AdUnit2 -->
+                </div><!-- end #SideBarSec1 -->
+                {block:IfSidebarFeaturePostNumber}
+            </section><!-- End section #sidebar -->
+            {/block:IfShowSidebar}
+            </div>
+        </section>
        
         <!-- STANDARD SCRIPTS -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -1075,6 +1119,7 @@
                    type:'GET',
                    success: function(data){
                        jQuery('#posts').append(jQuery(data).find('#posts').html());
+                        {block:IfResponsivePostImages}picturefill();{/block:IfResponsivePostImages}
                    },
                    error: function(data) {
                         alert('Load More Post Request Failed');ac
@@ -1093,7 +1138,28 @@
         });
         </script>
         <!-- END ENDLESS SCROLL -->
-
+        
+        <!-- FEATURE POST -->
+        {block:IfSidebarFeaturePostNumber}
+        <script type="text/javascript">
+       
+                var nextpage = "{BlogURL}post/{text:Sidebar Feature Post Number}";
+                jQuery.ajax({
+                   url:nextpage,
+                   type:'GET',
+                   success: function(data){
+                       jQuery('.feature-image a picture').append(jQuery(data).find('#posts picture').html());
+                        {block:IfResponsivePostImages}picturefill();{/block:IfResponsivePostImages}
+                   },
+                   error: function(data) {
+                        alert('Load Feature Post Failed');
+                    }
+                });
+         
+         </script>
+        {/block:IfSidebarFeaturePostNumber}
+        <!-- END FEATURE POST -->
+         
         <!-- RESPONSIVE IMAGES -->
         {block:IfResponsivePostImages}
         <script src="//zamartz.github.io/fashiontemplate/picturefill.min.js"></script>
@@ -1131,15 +1197,14 @@
         <script src="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
         <script type="text/javascript">
             {block:IfStickyNavSide} 
-            jQuery('.exposed-nav-wrapper').waypoint(function() {
-                jQuery(".exposed-nav-wrapper").toggleClass("sticky");
+            jQuery('#top-nav-bar').waypoint(function() {
+                jQuery(".sticky-section .exposed-nav-wrapper").toggleClass("sticky");
                 jQuery(".exposed-nav-wrapper .nav-menu ul li:first-child").toggleClass("hidden");
             });
             {/block:IfStickyNavSide}
             {block:IfStickySidebar}
             jQuery('#sidebar-end').waypoint(function() {
-                jQuery("#SideBarSec1").toggleClass("sticky");
-                jQuery("#SideBarSec1").slideDown('slow');
+                jQuery("#sidebar1-1").toggleClass("sticky");
             });
             {/block:IfStickySidebar}
         </script>
