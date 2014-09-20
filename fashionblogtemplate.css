@@ -607,6 +607,13 @@ list-style-image: none;
     color: #444;
     text-decoration: none;
 }
+
+
+.sticky-section .exposed-nav-wrapper, .sticky-section #sidebar1-1{
+    display:none;
+}
+
+
 /** /Exposed nav **/
 
 .mobile-menu {
