@@ -1201,6 +1201,12 @@ li.list-like-button {
 
 footer{float:left;width:100%;}
 
+.endless-scroller{
+text-align: center;
+padding: 15px;
+cursor: pointer;
+}
+
 /******************************************************************************
  * SEARCH
  * Styles specific to search.
