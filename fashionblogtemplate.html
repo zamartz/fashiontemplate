@@ -757,7 +757,7 @@
                                                     <!--[if IE 9]><video style="display: none;"><![endif]-->
                                                     {block:HighRes}<source srcset="{PhotoURL-HighRes}" media="(min-width: 620px)">{/block:HighRes}
                                                     <source srcset="{PhotoURL-500}" media="(min-width: 300px)">
-                                                    <source srcset="{PhotoURL-400}" media="(min-width: 300px)">
+                                                    <source srcset="{PhotoURL-400}" media="(min-width: 0px)">
                                                     <!--[if IE 9]></video><![endif]-->
                                                     <img srcset="{PhotoURL-250}" alt="{PhotoAlt}"> 
                                                 </picture>
@@ -788,7 +788,7 @@
                                                     {block:HighRes}
                                                     <source srcset="{PhotoURL-HighRes}" media="(min-width: 620px)">{/block:HighRes}
                                                     <source srcset="{PhotoURL-500}" media="(min-width: 300px)">
-                                                    <source srcset="{PhotoURL-400}" media="(min-width: 300px)">
+                                                    <source srcset="{PhotoURL-400}" media="(min-width: 0px)">
                                                     <!--[if IE 9]></video><![endif]-->
                                                     <img srcset="{PhotoURL-250}" alt="{Caption}"> 
                                                 </picture>
@@ -1110,16 +1110,22 @@
         <!-- ENDLESS SCROLL -->
         <script type="text/javascript">
         var pagecount = {CurrentPage};
+        var noposts = 0;
         var totalpagecount = {TotalPages};
-        jQuery(".endless-scroller").click(function(){
-            if (pagecount < totalpagecount){
+        function endlessPost(){
+            if (pagecount < totalpagecount && noposts != "true"){
                 var nextpage = "/page/"+(pagecount+1);
                 jQuery.ajax({
                    url:nextpage,
                    type:'GET',
+                    beforeSend: function()
+                   {
+                    jQuery('#posts').append("<h2 class='loading-posts'> Loading Posts... </h2>");
+                   },
                    success: function(data){
                        jQuery('#posts').append(jQuery(data).find('#posts').html());
-                        {block:IfResponsivePostImages}picturefill();{/block:IfResponsivePostImages}
+                       jQuery('.loading-posts').remove();
+                       {block:IfResponsivePostImages}picturefill();{/block:IfResponsivePostImages}
                    },
                    error: function(data) {
                         alert('Load More Post Request Failed');ac
@@ -1133,8 +1139,15 @@
                 {/block:IfGoogleAnalyticsID}
                 pagecount++;
             }else{
-                jQuery('#posts').append("<h2> No more Post </h2>")
+                if(noposts != "true"){jQuery('#posts').append("<h2> No more Post </h2>");}
+                noposts = "true";
             }
+        }
+        // Endless Scroll on Click
+        jQuery( document ).ready(function() {
+            jQuery(".endless-scroller").click(function(){
+                endlessPost();
+            });
         });
         </script>
         <!-- END ENDLESS SCROLL -->
@@ -1142,7 +1155,7 @@
         <!-- FEATURE POST -->
         {block:IfSidebarFeaturePostNumber}
         <script type="text/javascript">
-       
+        jQuery( document ).ready(function() {
                 var nextpage = "{BlogURL}post/{text:Sidebar Feature Post Number}";
                 jQuery.ajax({
                    url:nextpage,
@@ -1155,8 +1168,8 @@
                         alert('Load Feature Post Failed');
                     }
                 });
-         
-         </script>
+        });
+        </script>
         {/block:IfSidebarFeaturePostNumber}
         <!-- END FEATURE POST -->
          
@@ -1165,10 +1178,12 @@
         <script src="//zamartz.github.io/fashiontemplate/picturefill.min.js"></script>
         {/block:IfResponsivePostImages}
         <script type="text/javascript">
+        jQuery( document ).ready(function() {
              jQuery(".selector" ).click(function(){
                 jQuery(".bar-icon-wrapper" ).toggleClass("show active");
                 jQuery(".pop-menu.west" ).toggleClass("show active");
              });
+        });
         </script>
         <!-- END RESPONSIVE IMAGES-->
 
@@ -1185,10 +1200,12 @@
                     });
                 }
             }
+        jQuery( document ).ready(function() {
             Dothemetags('{text:Feature Override Tag}','t_FeaturePostTag');
             Dothemetags('{text:Photo Left Override Tag}','t_PhotoLeftTag');
             Dothemetags('{text:Photo Right Override Post Tag}','t_PhotoRightTag');
             Dothemetags('{text:Photo Tall Override Tag}','t_HalfTallTag');
+        });
         </script>
         {/block:IfFeatureOverrideTag}
         <!-- END FEATURED TAGS -->
@@ -1196,26 +1213,38 @@
         <!-- WAYPOINTS -->
         <script src="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
         <script type="text/javascript">
+        jQuery( document ).ready(function() {
+            // refresh due to pageload not at top
+            jQuery.waypoints('refresh');
+            // sticky nav
             {block:IfStickyNavSide} 
             jQuery('#top-nav-bar').waypoint(function() {
                 jQuery(".sticky-section .exposed-nav-wrapper").toggleClass("sticky");
                 jQuery(".exposed-nav-wrapper .nav-menu ul li:first-child").toggleClass("hidden");
             });
             {/block:IfStickyNavSide}
+            // sticky sidebar
             {block:IfStickySidebar}
             jQuery('#sidebar-end').waypoint(function() {
                 jQuery("#sidebar1-1").toggleClass("sticky");
             });
             {/block:IfStickySidebar}
+            //auto endless scroll
+            jQuery('.endless-scroller').waypoint(function() {
+                endlessPost();
+            });
+        });
         </script>
         <!-- END WAYPOITNS -->
 
         <!-- CUSTOM READ MORE-->
         {block:IfCustomizeReadMore}
             <script type="text/javascript">
+            jQuery(document ).ready(function() {
                 jQuery(".read_more_container").each(function() {
                     jQuery(this).addClass("hidden");
                 });
+            });
             </script>
         {/block:IfCustomizeReadMore}
         <!-- END CUSTOME READ MORE -->
@@ -1229,6 +1258,7 @@
         <!-- DISQUS-->
         {block:IfDisqusID}
             <script type="text/javascript">
+            jQuery(document).ready(function() {
                 if(!StyleHatch.customizeMode){
                 var disqus_shortname = '{text:Disqus ID}';
                 (function () {
@@ -1238,6 +1268,7 @@
                   (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
                 }());
                 }
+            });
             </script>
         {/block:IfDisqusID}
         <!-- END DISQUS -->
