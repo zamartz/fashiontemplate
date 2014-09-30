@@ -1126,17 +1126,17 @@
                        jQuery('#posts').append(jQuery(data).find('#posts').html());
                        jQuery('.loading-posts').remove();
                        {block:IfResponsivePostImages}picturefill();{/block:IfResponsivePostImages}
+                       {block:IfGoogleAnalyticsID}
+                        ga('send', {
+                          'hitType': 'pageview',
+                          'page': nextpage
+                        });
+                       {/block:IfGoogleAnalyticsID}
                    },
                    error: function(data) {
                         alert('Load More Post Request Failed');ac
                     }
                 });
-                {block:IfGoogleAnalyticsID}
-                ga('send', {
-                  'hitType': 'pageview',
-                  'page': nextpage
-                });
-                {/block:IfGoogleAnalyticsID}
                 pagecount++;
             }else{
                 if(noposts != "true"){jQuery('#posts').append("<h2> No more Post </h2>");}
@@ -1232,6 +1232,7 @@
             //auto endless scroll
             jQuery('.endless-scroller').waypoint(function() {
                 endlessPost();
+                jQuery.waypoints('refresh');
             });
         });
         </script>
