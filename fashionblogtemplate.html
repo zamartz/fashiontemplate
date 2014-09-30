@@ -551,6 +551,9 @@
             /* Custom CSS */
             {CustomCSS}
         </style>
+          <!-- STANDARD SCRIPTS -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- END STANDARD SCRITPS -->
     </head>
     <body data-urlencoded-name="{URLEncodedName}" class="{select:Layout}{block:IndexPage} index-page{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:SearchPage} search-page{block:NoSearchResults} no-results{/block:NoSearchResults}{/block:SearchPage}{block:HideHeaderImage} no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} contain-header-image{/block:NoStretchHeaderImage}">
         <section id="page">
@@ -640,7 +643,7 @@
                             <a href="/" style="background-image: url({PortraitURL-128})" class="user-avatar"><img src="{PortraitURL-128}" alt="" class="print-only invisible"></a>
                         </figure>
 
-                        <div class="title-group{block:IndexPage} animate{/block:IndexPage}">
+                        <div class="title-group] animate]">
                             {block:ShowTitle}
                             <h1><a href="/">{Title}</a></h1>
                             {/block:ShowTitle}
@@ -1091,9 +1094,6 @@
             </div>
         </section>
        
-        <!-- STANDARD SCRIPTS -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <!-- END STANDARD SCRITPS -->
         <!-- GOOGLE ANALTICS -->
         {block:IfGoogleAnalyticsID}
             <script type="text/javascript">
@@ -1232,7 +1232,7 @@
             //auto endless scroll
             jQuery('.endless-scroller').waypoint(function() {
                 endlessPost();
-                jQuery.waypoints('refresh');
+                console.log("waypoints endless scroll");
             });
         });
         </script>
