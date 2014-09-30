@@ -1332,6 +1332,7 @@ font-size: 40px;
     .header-image-wrapper {
         height: 250px;
     }
+
     h1 {
         font-size: 54px;
     }
@@ -1719,10 +1720,7 @@ font-size: 40px;
 
     .post blockquote {
         padding-left: 13px;    
-        border-left: 1px black dotted;
-        padding-left: 10px;
     }
-
 
     .photoset .post {
         padding: 0;
