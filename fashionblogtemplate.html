@@ -75,9 +75,9 @@
         <meta name="text:Disqus shortname" content="">
         <meta name="text:AddThis RA" title="AddThis RA#" content="">
         <meta name="text:Facebook Follow" content="">
-        <meta name="text:Twitter Follow" content="zamartz">
-        <meta name="text:Instagram Follow" content="zamartz">
-        <meta name="text:LinkedIn Follow" content="zamartz">
+        <meta name="text:Twitter Follow" content="">
+        <meta name="text:Instagram Follow" content="">
+        <meta name="text:LinkedIn Follow" content="">
         <meta name="text:Pinterest Follow" content="">
         <meta name="text:GooglePlus Follow" content="">
         <meta name="text:BeHance Follow" content="">
@@ -104,7 +104,7 @@
         <meta name="select:Home Post Default" content="full-large" title="Full Large">
         <meta name="select:Home Post Default" content="full-left" title="Full Left Photo">
         <meta name="select:Home Post Default" content="full-right" title="Full Right Photo">
-       <!--  <meta name="select:Home Post Default" content="half-tall" title="Half Tall"> -->
+       <meta name="select:Home Post Default" content="half-tall" title="Half Tall">
        
         <meta name="select:Google Header Font" content="'Lora',serif" title="Lora">
         <meta name="select:Google Header Font" content="'Playfair Display','Times New Roman',Times,serif" title="Playfair Display">
@@ -717,9 +717,13 @@
                 {block:IfShowFollowBlock}
                 <div id="Social-sidebar"class="width-300 height-150">
                     <h2>{text:Follow Me Text}</h2>
-                    {block:IFFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IFFacebookFollow}
-                    {block:IFTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IFTwitterFollow}
-                    {block:IFInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="Instagram">Instagram</a>{/block:IFInstagramFollow}
+                    {block:IfFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IFFacebookFollow}
+                    {block:IfTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IfInstagramFollow}
+                    {block:IfInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-inst-third si-inst" title="Instagram">Instagram</a>{/block:IfInstagramFollow}
+                    {block:IfLinkedInFollow}<a href="//linkedin.com/in/{text:LinkedIn Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="LinkedIn">Instagram</a>{/block:IfLinkedInFollow}
+                    {block:IfPinterestFollow}<a href="//pinterest.com/{text:Pinterest Follow}" class="social-item si-bg-third si-bg-pin-third si-pin" title="Pinterest">Pinterest</a>{/block:IfPinterestFollow}
+                    {block:IfGooglePlusFollow}<a href="//plus.google.com/{text:GooglePlus Follow}" class="social-item si-bg-third si-bg-plus-third si-plus" title="Google +">Google +</a>{/block:IfGooglePlusFollow}
+                    {block:IfBeHanceFollow}<a href="//behance.net/{text:BeHance Follow}" class="social-item si-bg-third si-bg-be-third si-be" title="BeHance">BeHance</a>{/block:IfBeHanceFollow}
                 </div><!-- end #Social-sidebar -->
                 {/block:IfShowFollowBlock}
                 <div id="AdUnit2" class="width-300 height-300">

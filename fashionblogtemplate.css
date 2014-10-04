@@ -892,6 +892,11 @@ section#sidebar h1, section#sidebar h2, section#sidebar h3, section#sidebar h4, 
 	line-height: 50px;
 }
 
+.social-siedbar{
+min-height: 150px;
+max-height: 300px;
+}
+
 figure {
 margin: 0;
 }
