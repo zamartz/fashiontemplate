@@ -745,8 +745,8 @@
                 {block:IfShowFollowBlock}
                 <div id="Social-sidebar"class="width-300 social-sidebar">
                     <h2>{text:Follow Me Text}</h2>
-                    {block:IfFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IFFacebookFollow}
-                    {block:IfTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IfInstagramFollow}
+                    {block:IfFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IfFacebookFollow}
+                    {block:IfTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IfTwitterFollow}
                     {block:IfInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-inst-third si-inst" title="Instagram">Instagram</a>{/block:IfInstagramFollow}
                     {block:IfLinkedInFollow}<a href="//linkedin.com/in/{text:LinkedIn Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="LinkedIn">Instagram</a>{/block:IfLinkedInFollow}
                     {block:IfPinterestFollow}<a href="//pinterest.com/{text:Pinterest Follow}" class="social-item si-bg-third si-bg-pin-third si-pin" title="Pinterest">Pinterest</a>{/block:IfPinterestFollow}
@@ -810,7 +810,7 @@
                     {/block:IfUseGoogleDisplayAds}
                             <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage} {select:Home Post Default}{block:HasTags}{block:Tags} t_{URLSafeTag} {/block:Tags}{/block:HasTags}" {block:Date}data-post-id="post_{PostID}"{/block:Date}>
                                 <div class="post-wrapper clearfix">
-                                    <section class="post {block:IfMinimizeHomepagePosts} short-post{/block:IfMinimizeHomepagePosts}">
+                                    <section class="post {block:IfMinimizeHomepagePosts} short-post{/block:IfMinimizeHomepagePosts} {block:IfBlogRollSquareImages} sq-img-post{/block:IfBlogRollSquareImages}">
                                         {block:Text}
                                          <figure class="tumblr-text{block:Caption} with-caption{/block:Caption}">
                                             {block:Title}<h2 class="text-header"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
