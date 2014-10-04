@@ -1331,6 +1331,17 @@ font-size: 40px;
         margin: 0px auto;
         float: none;
     }
+    section#sidebar.sidebar-right, section#sidebar.sidebar-left {
+    float: none;
+    margin: 0px auto;
+    width: 640px;
+    }
+    .sidebar-section {
+    margin-top: 20px;
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {
