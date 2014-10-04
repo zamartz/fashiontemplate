@@ -1372,6 +1372,9 @@ font-size: 40px;
         text-overflow: ellipsis;
         color: #a7a7a7;
     }
+    section#main-content {
+    max-width: 90%;
+    }
 
     .permalink .post-footer .date-notes li {
         float: none; /* force two lines */
