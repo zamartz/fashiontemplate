@@ -1346,6 +1346,9 @@ font-size: 40px;
     #SideBarSec2.sidebar-section {
     margin-right: 0px;
     }
+    .barAd {
+    display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
