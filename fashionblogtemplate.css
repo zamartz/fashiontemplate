@@ -1379,10 +1379,20 @@ font-size: 40px;
     .full-right .post-end {
          width: 300px;
     }
-    section#posts.sidebar-right,section#posts.sidebar-left {
-        margin: 0px auto;
-        float: none;
-        width:300px;
+    section#sidebar.sidebar-right, section#sidebar.sidebar-left {
+    float: none;
+    margin: 0px auto;
+    width: 300px;
+    display:inherit;
+    }
+    .sidebar-section {
+    margin-top: 20px;
+    width: 300px;
+    float: left;
+    margin-right: 0px;
+    }
+    #SideBarSec2.sidebar-section {
+    margin-right: 0px;
     }
 
 }
