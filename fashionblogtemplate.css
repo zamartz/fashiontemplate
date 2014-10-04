@@ -1335,6 +1335,7 @@ font-size: 40px;
     float: none;
     margin: 0px auto;
     width: 640px;
+    display:inherit;
     }
     .sidebar-section {
     margin-top: 20px;
