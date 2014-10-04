@@ -1343,8 +1343,8 @@ font-size: 40px;
     float: left;
     margin-right: 20px;
     }
-    #SideBarSec2 .sidebar-section{
-        margin-right:0px;
+    #SideBarSec2.sidebar-section {
+    margin-right: 0px;
     }
 }
 
