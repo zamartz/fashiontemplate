@@ -125,6 +125,7 @@ textarea {
 	height: 50px;
 	position: relative;
 	margin-top: -50px;
+    pointer-events: none;
 }
 .post-end-block{
 	text-align: center;
