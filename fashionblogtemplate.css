@@ -1126,21 +1126,20 @@ display: inline-block;
 
 ul.post-infolist {
 display: inline-block;
-margin: 0;
+margin: 5px 0 auto;
 padding: 0;
 text-align: center;
-margin-bottom: 5px;
 }
 
-ul.post-infolist li{
-	list-style: none;
-	/*float: left;*/
-	font-size: 15px;
-	line-height: 21px;
-	margin: 0px 10px;
-	overflow: hidden;
-	height: 25px;
-	display: inline;
+ul.post-infolist li {
+list-style: none;
+float: left;
+font-size: 15px;
+line-height: 21px;
+margin: 0px 10px;
+overflow: hidden;
+height: 21px;
+display: inline;
 }
 
 li.post-date:before{

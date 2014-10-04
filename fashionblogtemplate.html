@@ -81,13 +81,11 @@
         <meta name="text:Pinterest Follow" content="">
         <meta name="text:GooglePlus Follow" content="">
         <meta name="text:BeHance Follow" content="">
-        <meta name="text:Feedly Follow" content="">
         <meta name="text:Read More Text" content="Read More...">
         <meta name="text:Google AdSense Publisher ID" content="">
         <meta name="text:Google AdSense Responsive Slot ID" content="">
         <meta name="text:Google AdSense 728x90 Slot ID" content="">
         <meta name="text:Google AdSense 300x250 Slot ID" content="">
-        <meta name="text:Google AdSense 320x50 Slot ID" content="">
 
         <!-- FONT -->
         <meta name="font:Post Header Font Default" title="Post Header Font" content="sans-serif"/>
@@ -336,7 +334,7 @@
                 /*background: url("https://dl.dropboxusercontent.com/s/egvzop1sb7i1yv7/Social-Square-Icons-Double.png");*/
                 display: inline-block;
                 float: none;
-                margin: 10px 5px;
+                margin: 10px 5px 0;
             }
 
             a.addthis_button_compact{
@@ -711,18 +709,38 @@
                 </div>
             {/block:SearchPage}
             <section id="main-content">
+               
+            {block:IfUseGoogleDisplayAds}
+                {block:IfGoogleAdSensePublisherID}
+                {block:IFGoogleAdSense728x90SlotID}
+                <section id="TopBarAd" class="barAd content clearfix">
+                     <div id="AdUnitTop" class="">
+                    <!-- Fashion Blog Template Setup 300x250 -->
+                    <ins class="adsbygoogle"
+                         style="display:block;width:728px;height:90px"
+                         data-ad-client="ca-{text:Google AdSense Publisher ID}"
+                         data-ad-slot="{text:Google AdSense 728x90 Slot ID}"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    </div><!-- end #AdUnit2 -->
+                 </section><!-- end top ad-->
+                {/block:IFGoogleAdSense728x90SlotID}
+                {/block:IfGoogleAdSensePublisherID}
+            {/block:IfUseGoogleDisplayAds}
+
             {block:IfShowSidebar}
             <section id="sidebar" class="{select:Sidebar Position} content clearfix">
                 <div id="SideBarSec1" class="sidebar-section {block:IfCollapseNavigation}collapse {/block:IfCollapseNavigation}">
                 {block:IfShowFollowBlock}
-                <div id="Social-sidebar"class="width-300 height-150">
+                <div id="Social-sidebar"class="width-300 social-sidebar">
                     <h2>{text:Follow Me Text}</h2>
                     {block:IfFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IFFacebookFollow}
                     {block:IfTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IfInstagramFollow}
                     {block:IfInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-inst-third si-inst" title="Instagram">Instagram</a>{/block:IfInstagramFollow}
                     {block:IfLinkedInFollow}<a href="//linkedin.com/in/{text:LinkedIn Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="LinkedIn">Instagram</a>{/block:IfLinkedInFollow}
                     {block:IfPinterestFollow}<a href="//pinterest.com/{text:Pinterest Follow}" class="social-item si-bg-third si-bg-pin-third si-pin" title="Pinterest">Pinterest</a>{/block:IfPinterestFollow}
-                    {block:IfGooglePlusFollow}<a href="//plus.google.com/{text:GooglePlus Follow}" class="social-item si-bg-third si-bg-plus-third si-plus" title="Google +">Google +</a>{/block:IfGooglePlusFollow}
+                    {block:IfGooglePlusFollow}<a href="//plus.google.com/{text:GooglePlus Follow}" class="social-item si-bg-third si-bg-gp-third si-gp" title="Google +">Google +</a>{/block:IfGooglePlusFollow}
                     {block:IfBeHanceFollow}<a href="//behance.net/{text:BeHance Follow}" class="social-item si-bg-third si-bg-be-third si-be" title="BeHance">BeHance</a>{/block:IfBeHanceFollow}
                 </div><!-- end #Social-sidebar -->
                 {/block:IfShowFollowBlock}
@@ -1059,6 +1077,26 @@
                     {/block:Posts}
                 </div>
             </section><!-- end section #posts -->
+
+            {block:IfUseGoogleDisplayAds}
+                {block:IfGoogleAdSensePublisherID}
+                {block:IFGoogleAdSense728x90SlotID}
+                <section id="BottomBarAd" class="barAd content clearfix">
+                     <div id="AdUnitBottom" class="">
+                    <!-- Fashion Blog Template Setup 300x250 -->
+                    <ins class="adsbygoogle"
+                         style="display:block;width:728px;height:90px"
+                         data-ad-client="ca-{text:Google AdSense Publisher ID}"
+                         data-ad-slot="{text:Google AdSense 728x90 Slot ID}"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    </div><!-- end #AdUnitBottom -->
+                 </section><!-- end bottom ad-->
+                {/block:IFGoogleAdSense728x90SlotID}
+                {/block:IfGoogleAdSensePublisherID}
+            {/block:IfUseGoogleDisplayAds}
+
         </section><!-- end section #main-content -->
             <footer id="footer" class="content clearfix">
                 {block:IndexPage}
@@ -1121,7 +1159,7 @@
             <section id="sidebar1-1" class="{select:Sidebar Position} content clearfix">
                 <div id="SideBarSec1-1" class="sidebar-section {block:IfCollapseNavigation}collapse {/block:IfCollapseNavigation}">
                 {block:IfShowFollowBlock}
-                <div id="Social-sidebar"class="width-300 height-150">
+                <div id="Social-sidebar"class="width-300 social-sidebar">
                     <h2>{text:Follow Me Text}</h2>
                     {block:IFFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IFFacebookFollow}
                     {block:IFTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IFTwitterFollow}
