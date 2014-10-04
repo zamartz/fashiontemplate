@@ -966,7 +966,7 @@ margin-bottom: -6px;
 }
 
 /* SHORT POST */
-.short-post .tumblr-photoset, .short-post .tumblr-photo ,.sq-img-post .tumblr-photoset,.sq-img-post .tumblr-photo {
+.sq-img-post .tumblr-photoset,.sq-img-post .tumblr-photo{
 max-height: 620px;
 min-height: 300px;
 overflow: hidden;
@@ -2024,7 +2024,6 @@ font-size: 40px;
 .sticky-section #sidebar1-1.sticky{
     position:fixed ;
     top:55px;
-    right:20px;
     display:inherit;
      -webkit-animation: slide-fade-in 0.8s ease;
     -o-animation: slide-fade-in 0.8s ease;
@@ -2033,4 +2032,10 @@ font-size: 40px;
     animation: slide-fade-in 0.8s ease;
 }
 
+.sticky-section #sidebar1-1.sidebar-right.sticky{
+   right:20px;
+}
+.sticky-section #sidebar1-1.sidebar-left.sticky{
+   left:20px;
+}
 
