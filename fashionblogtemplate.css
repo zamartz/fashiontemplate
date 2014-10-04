@@ -1334,7 +1334,7 @@ font-size: 40px;
     section#sidebar.sidebar-right, section#sidebar.sidebar-left {
     float: none;
     margin: 0px auto;
-    width: 640px;
+    width: 620px;
     display:inherit;
     }
     .sidebar-section {
