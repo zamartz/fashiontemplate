@@ -312,6 +312,10 @@
             .icon-search_16{
                 color:{block:IfLinkAccentsOnly}#444{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};
             }
+            .icon-search_16:before {
+            display: inline-block;
+            float: right;
+            }
 
             .post h1, .post h2, .post h3, .post h5, .post h6{
                 color: {color:Post Headers Color};
@@ -323,6 +327,12 @@
                 color: {color:Post Headers Color};
                 font-family: {block:IfUseGoogleFonts}{select:Google Sidebar Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{font:Post Sidebar Header Font Default}{/block:IfNotUseGoogleFonts};
                 font-weight: normal;
+            }
+            .pop-menu ul li:not(.no-hover):hover {
+                background: {block:IfLinkAccentsOnly}#e6eff7{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};;
+            }
+            .pop-menu.south ul li:last-child:hover:after {
+                background: {block:IfLinkAccentsOnly}#e6eff7{/block:IfLinkAccentsOnly}{block:IfNotLinkAccentsOnly}{AccentColor}{block:IfNotLinkAccentsOnly};;
             }
             
             /* Social Icon Override */
@@ -434,13 +444,13 @@
 
             /* POST MORE INFO LIST */
 
-            li.read-more:before,li.comment-count:before,li.note-count:before,li.post-date:before,li.source-link:before{
+            li.read-more:before, li.comment-count:before, li.note-count:before, li.post-date:before, li.source-link:before {
                 font-size: 30px;
-                color:{color:Nav Seperator Color};
-                position:relative;
-                top: 5px;
+                color: #ccc;
+                position: relative;
                 display: inline-block;
                 overflow: hidden;
+                float: left;
             }
             .post-infolist li a{
                 color:{color:Post Headers Color};
