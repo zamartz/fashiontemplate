@@ -72,7 +72,7 @@
         <meta name="text:Photo Right Override Post Tag" content="PhotoRight">
         <meta name="text:Photo Tall Override Tag" content="HalfTall">
         <meta name="text:Google analytics ID" content="">
-        <meta name="text:Disqus shortname" content="">
+        <meta name="text:Disqus ID" content="">
         <meta name="text:AddThis RA" title="AddThis RA#" content="">
         <meta name="text:Facebook Follow" content="">
         <meta name="text:Twitter Follow" content="">
@@ -787,7 +787,7 @@
                 <div id="sidebar-end"></div>
             </section><!-- End section #sidebar -->
             {/block:IfShowSidebar}
-            <section id="posts" class="content clearfix {block:IfShowSidebar}{select:Sidebar Position}{/block:IfShowSidebar} {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}{block:HideHeaderImage}no-image {/block:HideHeaderImage} {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar} {block:HideAvatar}avatar-hidden{/block:HideAvatar} {block:IfNotCollapseNavigation}exposed-nav{/block:IfNotCollapseNavigation}">
+            <section id="posts" class="content clearfix {block:IfShowSidebar}{select:Sidebar Position}{/block:IfShowSidebar} {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}{block:HideHeaderImage}no-image {/block:HideHeaderImage} {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar} {block:HideAvatar}avatar-hidden{/block:HideAvatar} {block:IfNotCollapseNavigation}exposed-nav{/block:IfNotCollapseNavigation}{/block:IfNotShowSidebar} no-sidebar{/block:IfNotShowSidebar}">
     
                 <div data-page-id="{CurrentPage}">
                     
@@ -1012,12 +1012,14 @@
                                         <section class="post-controls">
                                                 <div class="post-controls-buttons">
                                                     <ul class="post-contols-list">
+                                                    {block:IndexPage}
                                                     {block:IfAddThisRA}
                                                     <li class="list-reblog">
                                                         <div class="addthis_toolbox"  style="position:relative;" >
                                                         <a class="addthis_button_compact icon"  data-url="{Permalink}" addthis:url="{Permalink}"></a>  
                                                     </div></li>
                                                     {/block:IfAddThisRA}
+                                                    {/block:IndexPage}
                                                     <li class="list-reblog-button">{ReblogButton color="grey" size="20"}</li>
                                                     <li class="list-like-button">{LikeButton color="grey" size="20"}</li>
                                                 </ul>
@@ -1055,6 +1057,25 @@
                                     </section>
                                     {/block:Date}
                                     {block:PermalinkPage}
+                                        {block:IfAddThisRA}
+                                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                        <div class="addthiscontiner"><div class="addthis_sharing_toolbox"></div></div><!-- end .addthiscontianer-->
+                                        {/block:IfAddThisRA}
+
+                                        {block:IfDisqusID}
+                                        <section class="comments">
+                                            <div id="disqus_thread"></div>
+                                            <script type="text/javascript">
+                                              (function() {
+                                               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                               dsq.src = 'http://{text:Disqus ID}.disqus.com/embed.js';
+                                               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                              })();
+                                            </script>
+                                            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus ID}">comments powered by Disqus.</a></noscript>
+                                            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+                                        </section>
+                                        {/block:IfDisqusID}
 
                                         {block:PostNotes}
                                         <section id="notes" class="notes-wrapper clearfix">
@@ -1064,20 +1085,6 @@
 
                                         {block:Date}
 
-                                            {block:IfDisqusShortname}
-                                            <section class="comments">
-                                                <div id="disqus_thread"></div>
-                                                <script type="text/javascript">
-                                                  (function() {
-                                                   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                                                   dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
-                                                   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                                                  })();
-                                                </script>
-                                                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
-                                                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-                                            </section>
-                                            {/block:IfDisqusShortname}
 
                                         {/block:Date}
 
@@ -1165,7 +1172,9 @@
                         </nav>
                     </div>
                     {/block:IfNotCollapseNavigation}
+                    
                     {block:IfShowSidebar}
+                    {block:IfStickySidebar}
             <section id="sidebar1-1" class="{select:Sidebar Position} content clearfix">
                 <div id="SideBarSec1-1" class="sidebar-section {block:IfCollapseNavigation}collapse {/block:IfCollapseNavigation}">
                 {block:IfShowFollowBlock}
@@ -1194,6 +1203,7 @@
                 {/block:IfUseGoogleDisplayAds}
                 </div><!-- end #SideBarSec1 -->
             </section><!-- End section #sidebar -->
+            {/block:IfStickySidebar}
             {/block:IfShowSidebar}
             </div>
         </section>
@@ -1206,12 +1216,12 @@
         <!-- END STANDARD SCRITPS -->
         <!-- GOOGLE ANALTICS -->
         {block:IfGoogleAnalyticsID}
-            <script type="text/javascript">
+            <script>
                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-                ga('create', '{text:Google Analytics ID}', 'zamartz.com');
+                ga('create', '{text:Google Analytics ID}', 'auto');
                 ga('send', 'pageview');
             </script>
         {/block:IfGoogleAnalyticsID}
@@ -1361,7 +1371,7 @@
 
         <!-- ADDTHIS-->
         {block:IfAddThisRA}<!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:AddThis RA}"></script>
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:AddThis RA}" async></script>
         {/block:IfAddThisRA}
         <!-- END ADDTHIS-->
 
