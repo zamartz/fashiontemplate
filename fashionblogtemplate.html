@@ -80,6 +80,7 @@
         <meta name="text:LinkedIn Follow" content="">
         <meta name="text:Pinterest Follow" content="">
         <meta name="text:GooglePlus Follow" content="">
+        <meta name="text:YouTube Follow" content="">
         <meta name="text:BeHance Follow" content="">
         <meta name="text:Read More Text" content="Read More...">
         <meta name="text:Google AdSense Publisher ID" content="">
@@ -745,13 +746,14 @@
                 {block:IfShowFollowBlock}
                 <div id="Social-sidebar"class="width-300 social-sidebar">
                     <h2>{text:Follow Me Text}</h2>
-                    {block:IfFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IfFacebookFollow}
-                    {block:IfTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IfTwitterFollow}
-                    {block:IfInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-inst-third si-inst" title="Instagram">Instagram</a>{/block:IfInstagramFollow}
-                    {block:IfLinkedInFollow}<a href="//linkedin.com/in/{text:LinkedIn Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="LinkedIn">Instagram</a>{/block:IfLinkedInFollow}
-                    {block:IfPinterestFollow}<a href="//pinterest.com/{text:Pinterest Follow}" class="social-item si-bg-third si-bg-pin-third si-pin" title="Pinterest">Pinterest</a>{/block:IfPinterestFollow}
-                    {block:IfGooglePlusFollow}<a href="//plus.google.com/{text:GooglePlus Follow}" class="social-item si-bg-third si-bg-gp-third si-gp" title="Google +">Google +</a>{/block:IfGooglePlusFollow}
-                    {block:IfBeHanceFollow}<a href="//behance.net/{text:BeHance Follow}" class="social-item si-bg-third si-bg-be-third si-be" title="BeHance">BeHance</a>{/block:IfBeHanceFollow}
+                    {block:IfFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb {block:IfAddThisRA} addthis_button_facebook_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:Facebook Follow}"{/block:IfAddThisRA} title="Facbook" target="_blank">Facebook</a>{/block:IfFacebookFollow}
+                    {block:IfTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw {block:IfAddThisRA} addthis_button_twitter_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:Twitter Follow}"{/block:IfAddThisRA} title="Twitter" target="_blank">Twitter</a>{/block:IfTwitterFollow}
+                    {block:IfInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-inst-third si-inst {block:IfAddThisRA} addthis_button_instagram_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:Instagram Follow}"{/block:IfAddThisRA} title="Instagram" target="_blank">Instagram</a>{/block:IfInstagramFollow}
+                    {block:IfLinkedInFollow}<a href="//linkedin.com/in/{text:LinkedIn Follow}" class="social-item si-bg-third si-bg-in-third si-in {block:IfAddThisRA} addthis_button_linkedin_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:LinkedIn Follow}"{/block:IfAddThisRA} title="LinkedIn" target="_blank">Instagram</a>{/block:IfLinkedInFollow}
+                    {block:IfPinterestFollow}<a href="//pinterest.com/{text:Pinterest Follow}" class="social-item si-bg-third si-bg-pin-third si-pin {block:IfAddThisRA} addthis_button_pinterest_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:Pinterest Follow}"{/block:IfAddThisRA} title="Pinterest" target="_blank">Pinterest</a>{/block:IfPinterestFollow}
+                    {block:IfGooglePlusFollow}<a href="//plus.google.com/{text:GooglePlus Follow}" class="social-item si-bg-third si-bg-gp-third si-gp {block:IfAddThisRA} addthis_button_google_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:GooglePlus Follow}"{/block:IfAddThisRA}  title="Google +" target="_blank">Google +</a>{/block:IfGooglePlusFollow}
+                    {block:IfYouTubeFollow}<a href="//youtube.com/user/{text:YouTube Follow}" class="social-item si-bg-third si-bg-you-third si-you {block:IfAddThisRA} addthis_button_youtube_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:YouTube Follow}"{/block:IfAddThisRA}  title="YouTube" target="_blank">YouTube</a>{/block:IfYouTubeFollow}
+                    {block:IfBeHanceFollow}<a href="//behance.net/{text:BeHance Follow}" class="social-item si-bg-third si-bg-be-third si-be {block:IfAddThisRA} addthis_button_rss_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="//behance.net/{text:BeHance Follow}"{/block:IfAddThisRA} title="BeHance" target="_blank">BeHance</a>{/block:IfBeHanceFollow}
                 </div><!-- end #Social-sidebar -->
                 {/block:IfShowFollowBlock}
                 <div id="AdUnit2" class="width-300 height-300">
@@ -1180,9 +1182,14 @@
                 {block:IfShowFollowBlock}
                 <div id="Social-sidebar"class="width-300 social-sidebar">
                     <h2>{text:Follow Me Text}</h2>
-                    {block:IFFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb" title="Facbook">Facebook</a>{/block:IFFacebookFollow}
-                    {block:IFTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw" title="Twitter">Twitter</a>{/block:IFTwitterFollow}
-                    {block:IFInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-in-third si-in" title="Instagram">Instagram</a>{/block:IFInstagramFollow}
+                    {block:IfFacebookFollow}<a href="//facebook.com/{text:Facebook Follow}" class="social-item si-bg-third si-bg-fb-third si-fb {block:IfAddThisRA} addthis_button_facebook_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:Facebook Follow}"{/block:IfAddThisRA} title="Facbook" target="_blank">Facebook</a>{/block:IfFacebookFollow}
+                    {block:IfTwitterFollow}<a href="//twitter.com/{text:Twitter Follow}" class="social-item si-bg-third si-bg-tw-third si-tw {block:IfAddThisRA} addthis_button_twitter_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:Twitter Follow}"{/block:IfAddThisRA} title="Twitter" target="_blank">Twitter</a>{/block:IfTwitterFollow}
+                    {block:IfInstagramFollow}<a href="//instagram.com/{text:Instagram Follow}" class="social-item si-bg-third si-bg-inst-third si-inst {block:IfAddThisRA} addthis_button_instagram_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:Instagram Follow}"{/block:IfAddThisRA} title="Instagram" target="_blank">Instagram</a>{/block:IfInstagramFollow}
+                    {block:IfLinkedInFollow}<a href="//linkedin.com/in/{text:LinkedIn Follow}" class="social-item si-bg-third si-bg-in-third si-in {block:IfAddThisRA} addthis_button_linkedin_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:LinkedIn Follow}"{/block:IfAddThisRA} title="LinkedIn" target="_blank">Instagram</a>{/block:IfLinkedInFollow}
+                    {block:IfPinterestFollow}<a href="//pinterest.com/{text:Pinterest Follow}" class="social-item si-bg-third si-bg-pin-third si-pin {block:IfAddThisRA} addthis_button_pinterest_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:Pinterest Follow}"{/block:IfAddThisRA} title="Pinterest" target="_blank">Pinterest</a>{/block:IfPinterestFollow}
+                    {block:IfGooglePlusFollow}<a href="//plus.google.com/{text:GooglePlus Follow}" class="social-item si-bg-third si-bg-gp-third si-gp {block:IfAddThisRA} addthis_button_google_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:GooglePlus Follow}"{/block:IfAddThisRA}  title="Google +" target="_blank">Google +</a>{/block:IfGooglePlusFollow}
+                    {block:IfYouTubeFollow}<a href="//youtube.com/user/{text:YouTube Follow}" class="social-item si-bg-third si-bg-you-third si-you {block:IfAddThisRA} addthis_button_youtube_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="{text:YouTube Follow}"{/block:IfAddThisRA}  title="YouTube" target="_blank">YouTube</a>{/block:IfYouTubeFollow}
+                    {block:IfBeHanceFollow}<a href="//behance.net/{text:BeHance Follow}" class="social-item si-bg-third si-bg-be-third si-be {block:IfAddThisRA} addthis_button_rss_follow {/block:IfAddThisRA}" {block:IfAddThisRA}addthis:userid="//behance.net/{text:BeHance Follow}"{/block:IfAddThisRA} title="BeHance" target="_blank">BeHance</a>{/block:IfBeHanceFollow}
                 </div><!-- end #Social-sidebar -->
                 {/block:IfShowFollowBlock}
                 {block:IfUseGoogleDisplayAds}
@@ -1226,6 +1233,12 @@
             </script>
         {/block:IfGoogleAnalyticsID}
         <!-- END GOOGLE ANALYTICS -->
+
+         <!-- ADDTHIS-->
+        {block:IfAddThisRA}<!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:AddThis RA}" async></script>
+        {/block:IfAddThisRA}
+        <!-- END ADDTHIS-->
 
         <!-- ENDLESS SCROLL -->
         <script type="text/javascript">
@@ -1368,12 +1381,6 @@
             </script>
         {/block:IfCustomizeReadMore}
         <!-- END CUSTOME READ MORE -->
-
-        <!-- ADDTHIS-->
-        {block:IfAddThisRA}<!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:AddThis RA}" async></script>
-        {/block:IfAddThisRA}
-        <!-- END ADDTHIS-->
 
         <!-- DISQUS-->
         {block:IfDisqusID}

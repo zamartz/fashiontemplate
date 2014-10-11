@@ -385,7 +385,8 @@ body:not(.ios) .share-menu ul li:nth-child(2):hover {
 
 /** No header image **/
 .no-image #header {
-    margin-top: 140px;
+margin-top: 0;
+height: 350px;
 }
 
 /** No image, no avatar **/
