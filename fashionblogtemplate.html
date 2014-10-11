@@ -48,6 +48,7 @@
         <meta name="if:Use Google Display Ads" content="0">
 
         <!-- COLOR -->
+        <meta name="color:Header Background Color" content="#ccc"/>
         <meta name="color:SubTitle Color" content="#ddd"/> 
         <meta name="color:Navigation Color" content="#fff"/> 
         <meta name="color:Nav Seperator Color" content="#ccc"/>
@@ -264,6 +265,12 @@
                 font-family: {block:IfUseGoogleFonts}{select:Google Header Font}{/block:IfUseGoogleFonts}{block:IfNotUseGoogleFonts}{TitleFont}{/block:IfNotUseGoogleFonts};
                 font-weight: {TitleFontWeight};
             }
+
+            
+            #header{
+                background-color:{color:Header Background Color};
+            }
+            
 
             h1 a,
             .search-header {
