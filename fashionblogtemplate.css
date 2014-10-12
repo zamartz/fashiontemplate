@@ -368,6 +368,10 @@ body:not(.ios) .share-menu ul li:nth-child(2):hover {
     width: 100%;
 }
 
+.menu-margin {
+margin-top: 55px;
+}
+
 
 /******************************************************************************
  * HEADER STYLES
