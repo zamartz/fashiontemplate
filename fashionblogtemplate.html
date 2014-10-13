@@ -66,8 +66,8 @@
         <meta name="text:Nav Seperator Text" content="/">
         <meta name="text:Follow Me Text" content="FOLLOW ME ON:">
         <meta name="text:Sidebar Feature Title" content="SPECIAL FEATURE:">
-        <meta name="text:Sidebar Feature URL" content="#">
         <meta name="text:Sidebar Feature Post Number" content="">
+        <meta name="text:Sidebar Feature Footer" content="READ MORE">
         <meta name="text:Feature Override Tag" content="FeaturePost">
         <meta name="text:Photo Left Override Tag" content="PhotoLeft">
         <meta name="text:Photo Right Override Post Tag" content="PhotoRight">
@@ -789,14 +789,7 @@
                             <div class="feature-image width-300 height-300">
                             <a href="{BlogURL}post/{text:Sidebar Feature Post Number}"><picture></picture></a>
                             </div>
-                            <h4 class="height-50"><a href="{BlogURL}post/{text:Sidebar Feature Post Number}" alt="{text:Sidebar Feature Title}">post on 1/23/2014</a></h4>
-                        </div><!-- end #Feature-Siedbar -->
-                        <div id="Feature-Sidebar2"class="width-300 social-sidebar">
-                            <h2 class="height-50">{text:Sidebar Feature Title}</h2>
-                            <div class="feature-image width-300 height-300">
-                            <a href="{BlogURL}post/{text:Sidebar Feature Post Number}"><picture></picture></a>
-                            </div>
-                            <h4 class="height-50"><a href="{BlogURL}post/{text:Sidebar Feature Post Number}" alt="{text:Sidebar Feature Title}">post on 1/23/2014</a></h4>
+                            <h4 class="height-50"><a href="{BlogURL}post/{text:Sidebar Feature Post Number}" alt="{text:Sidebar Feature Title}">{text:Sidebar Feature Footer}</a></h4>
                         </div><!-- end #Feature-Siedbar -->
                     </div>
                     <!-- end #SideBarSec2 -->
@@ -1123,10 +1116,10 @@
                      <div id="pagination">
                     {block:IfNotEndlessScrolling}
                         {block:PreviousPage}
-                        <a href="{PreviousPage}" class="previous" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}">{lang:Previous}<span class="bg"></span></a>
+                        <a href="{PreviousPage}" class="previous" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}"><h2>{lang:Previous}</h2></a>
                         {/block:PreviousPage}
                         {block:NextPage}
-                        <a href="{NextPage}" class="next" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}">{lang:Next}<span class="bg"></span></a>
+                        <a href="{NextPage}" class="next" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}"><h2>{lang:Next}</h2></a>
                         {/block:NextPage}
                         <div class="loader"><div class="loader-bar"></div><div class="loader-bar"></div><div class="loader-bar"></div></div>
                     {block:IfNotEndlessScrolling}
@@ -1260,6 +1253,7 @@
         <!-- END ADDTHIS-->
 
         <!-- ENDLESS SCROLL -->
+        {block:IfEndlessScrolling}
         <script type="text/javascript">
         var pagecount = {CurrentPage};
         var noposts = 0;
@@ -1310,6 +1304,7 @@
             });
         });
         </script>
+        {/block:IfEndlessScrolling}
         <!-- END ENDLESS SCROLL -->
         
         <!-- FEATURE POST -->
@@ -1433,6 +1428,7 @@
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
          {/block:IfUseGoogleDisplayAds}
 
+         {block:IfEndlessScrolling}
          <script type="text/javascript">
         jQuery(window).scroll(function()
         {
@@ -1442,6 +1438,7 @@
             }
         });
         </script>
+        {/block:IfEndlessScrolling}
        
     </body>
 </html>

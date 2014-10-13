@@ -1919,6 +1919,10 @@ font-size: 40px;
     .video .video-wrapper a div {
         background-size: 50px 50px;
     }
+    #pagination
+    {text-align: center;
+        margin-top: 20px;
+    }
 
     #pagination a {
         margin-bottom: 20px;
