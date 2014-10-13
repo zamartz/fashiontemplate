@@ -1227,6 +1227,11 @@ padding: 15px;
 cursor: pointer;
 }
 
+ #pagination {
+        text-align: center;
+    }
+
+
 /******************************************************************************
  * SEARCH
  * Styles specific to search.
@@ -1918,9 +1923,6 @@ font-size: 40px;
 
     .video .video-wrapper a div {
         background-size: 50px 50px;
-    }
-    #pagination {
-        text-align: center;
     }
 
     #pagination a {
