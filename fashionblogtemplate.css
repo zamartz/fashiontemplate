@@ -4,11 +4,11 @@
 */
 @font-face {
     font-family: entypo;
-    src: url('https://dl.dropboxusercontent.com/s/bouv4i4hsvyit77/entypo.eot');
-    src: url('https://dl.dropboxusercontent.com/s/bouv4i4hsvyit77/entypo.eot?#iefix') format('embedded-opentype'),
-         url('https://dl.dropboxusercontent.com/s/2dbxwto0i59uxb9/entypo.woff') format('woff'),
-         url('https://dl.dropboxusercontent.com/s/sndkdrv1u57qrdk/entypo.ttf') format('truetype'),
-         url('https://dl.dropboxusercontent.com/s/obz59xzqcoz37rg/entypo.svg#EntypoRegular') format('svg');
+    src: url('http://static.tumblr.com/vj9a24z/Vwdndeqv1/entypo.eot');
+    src: url('http://static.tumblr.com/vj9a24z/Vwdndeqv1/entypo.eot?#iefix') format('embedded-opentype'),
+         url('http://static.tumblr.com/vj9a24z/wGtndeqwj/entypo.woff') format('woff'),
+         url('http://static.tumblr.com/vj9a24z/1VDndequh/entypo.ttf') format('truetype'),
+         url('http://static.tumblr.com/vj9a24z/bgwndeqvx/entypo.svg#EntypoRegular') format('svg');
 }
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;

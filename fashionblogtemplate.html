@@ -45,6 +45,8 @@
         <meta name="if:Blog Roll Square Images" content="1">
         <meta name="if:Feedly Widget" title="Show Feedly Button" content="0">
         <meta name="if:Minimize Homepage Posts" content="1">
+        <meta name="if:Post Fill Lines" content="1">
+        <meta name="if:Post Fill Color" content="1">
         <meta name="if:Customize Read More" content="1">
         <meta name="if:Use Google Display Ads" content="0">
 
@@ -56,6 +58,7 @@
         <meta name="color:Line Color" content="#000"/>
         <meta name="color:Post Headers Color" content="#000"/> 
         <meta name="color:Post SubTitle Color" content="#444"/> 
+        <meta name="color:Post Fill BGColor" content="#fff"/> 
         <meta name="color:Body Text Color" content="#444"/>
 
         <!-- TEXT -->
@@ -500,7 +503,12 @@
             section .post {
                 display: inline-block;
                 background-color: #fff;
+                {block:IfPostFillColor}
+                background-color:{color:Post Fill BGColor};
+                {/block:IfPostFillColor}
+                {block:IfPostFillLines}
                 background-image: url("//zamartz.github.io/fashiontemplate/line-bg.png");
+                {/block:IfPostFillLines}
                 background-position: center center;
             }
 
@@ -1125,7 +1133,7 @@
                         <div class="loader"><div class="loader-bar"></div><div class="loader-bar"></div><div class="loader-bar"></div></div>
                     {block:IfNotEndlessScrolling}
                     {block:IfEndlessScrolling}
-                    <div class="endless-scroller">Load More Posts</div>
+                    <div class="endless-scroller"><h2>Load More Posts</h2></div>
                     {/block:IfEndlessScrolling}
                      </div>
                     {/block:Pagination}
