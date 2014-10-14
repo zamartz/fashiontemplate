@@ -1,22 +1,3 @@
-/* entypo http://www.entypo.com/
-   By: Daniel Bruce & Andreas Blomback
-   Entypo License: (CC BY-SA 3.0)
-*/
-@font-face {
-    font-family: entypo;
-    src: url('http://static.tumblr.com/vj9a24z/Vwdndeqv1/entypo.eot');
-    src: url('http://static.tumblr.com/vj9a24z/Vwdndeqv1/entypo.eot?#iefix') format('embedded-opentype'),
-         url('http://static.tumblr.com/vj9a24z/wGtndeqwj/entypo.woff') format('woff'),
-         url('http://static.tumblr.com/vj9a24z/1VDndequh/entypo.ttf') format('truetype'),
-         url('http://static.tumblr.com/vj9a24z/bgwndeqvx/entypo.svg#EntypoRegular') format('svg');
-}
-[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-}
-.icon:before,.icon:after {
-	font-family: 'entypo', sans-serif !important;
-}
-
 /******************************************************************************
  * OVERWRITES
  * Variations on elements.

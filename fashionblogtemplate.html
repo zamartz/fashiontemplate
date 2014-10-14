@@ -246,9 +246,30 @@
         <meta property="og:image" content="{PortraitURL-64}"/>
         {/block:IndexPage}
          <!-- END OpenGraph Setup -->
+         
+         <style>
+         /* entypo http://www.entypo.com/
+           By: Daniel Bruce & Andreas Blomback
+           Entypo License: (CC BY-SA 3.0)
+        */
+         @font-face {
+            font-family: entypo;
+                src: url('//static.tumblr.com/vj9a24z/Vwdndeqv1/entypo.eot');
+                src: url('//static.tumblr.com/vj9a24z/Vwdndeqv1/entypo.eot?#iefix') format('embedded-opentype'),
+                     url('//static.tumblr.com/vj9a24z/wGtndeqwj/entypo.woff') format('woff'),
+                     url('//static.tumblr.com/vj9a24z/1VDndequh/entypo.ttf') format('truetype'),
+                     url('//static.tumblr.com/vj9a24z/bgwndeqvx/entypo.svg#EntypoRegular') format('svg');
+            }
+            [class*="entypo-"]:before {
+              font-family: 'entypo', sans-serif;
+            }
+            .icon:before,.icon:after {
+                font-family: 'entypo', sans-serif !important;
+            }
+         </style>
 
         <link rel="stylesheet" href="//zamartz.github.io/fashiontemplate/fashionblogtemplate.css">
-        <link rel="stylesheet" href="//dl.dropboxusercontent.com/s/m7krhvia7kjzpxl/socialsquare-min.css">
+        <link rel="stylesheet" href="http://static.tumblr.com/vj9a24z/rRsnder60/socialsquare-min.css">
 
         <!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]--> 
         <style>
@@ -353,7 +374,7 @@
                 text-align: center;
             }
             .social-item {
-                /*background: url("https://dl.dropboxusercontent.com/s/egvzop1sb7i1yv7/Social-Square-Icons-Double.png");*/
+                /*background: url("//static.tumblr.com/vj9a24z/REznder3i/social-square-icons-double.pngh");*/
                 display: inline-block;
                 float: none;
                 margin: 10px 5px 0;
@@ -507,7 +528,7 @@
                 background-color:{color:Post Fill BGColor};
                 {/block:IfPostFillColor}
                 {block:IfPostFillLines}
-                background-image: url("//zamartz.github.io/fashiontemplate/line-bg.png");
+                background-image: url("//static.tumblr.com/vj9a24z/ZKpndeqyo/line-bg.png");
                 {/block:IfPostFillLines}
                 background-position: center center;
             }
@@ -1340,7 +1361,7 @@
          
         <!-- RESPONSIVE IMAGES -->
         {block:IfResponsivePostImages}
-        <script src="//zamartz.github.io/fashiontemplate/picturefill.min.js"></script>
+        <script src="//static.tumblr.com/vj9a24z/wEinder4i/picturefill.min.js"></script>
         {/block:IfResponsivePostImages}
         <script type="text/javascript">
         jQuery( document ).ready(function() {
@@ -1376,7 +1397,7 @@
         <!-- END FEATURED TAGS -->
        
         <!-- WAYPOINTS -->
-        <script src="//zamartz.github.io/fashiontemplate/waypoints.min.js"></script>
+        <script src="//static.tumblr.com/vj9a24z/m5pnder49/waypoints.min.js"></script>
         <script type="text/javascript">
         jQuery( document ).ready(function() {
             // refresh due to pageload not at top
