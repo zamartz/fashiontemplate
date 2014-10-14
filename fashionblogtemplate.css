@@ -1381,6 +1381,9 @@ font-size: 40px;
     .barAd {
     display: none;
     }
+    .nav-menu {
+    font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 768px) {
