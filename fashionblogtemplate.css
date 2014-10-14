@@ -383,6 +383,10 @@ margin-top: 55px;
  * Defines the structure and styles of the entire theme.
  ******************************************************************************/
 
+#tumblr_controls {
+top: 70px;
+}
+
 /** Variations on header **/
 #header {
     -webkit-transform: translate3d(0, 0, 0);
