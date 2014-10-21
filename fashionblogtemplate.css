@@ -1020,6 +1020,7 @@ overflow: hidden;
     min-height: 150px;
     max-height:620px;
     overflow:auto;
+    background:#fff;
 }
 
 .short-post figure.tumblr-quote,  .short-post figure.tumblr-text {
