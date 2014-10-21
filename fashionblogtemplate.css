@@ -1013,6 +1013,7 @@ overflow: hidden;
 	background-color: #fff;
 	background-image: none;
 	height: 150px;
+    overflow:auto;
 }
 
 .short-post .tumblr-answer{
