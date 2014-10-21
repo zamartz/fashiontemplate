@@ -1019,7 +1019,7 @@ overflow: hidden;
 .short-post .tumblr-answer{
     height:100%;
     min-height: 150px;
-    max-height:620px;
+    max-height:620px; 
 }
 
 .short-post figure.tumblr-quote,  .short-post figure.tumblr-text {
