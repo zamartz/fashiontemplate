@@ -1009,10 +1009,16 @@ overflow: hidden;
 
 .short-post .caption{min-height:50px; overflow: hidden; overflow-y: auto;}
 
-.short-post figcaption.caption.with-caption,.short-post .tumblr-answer {
+.short-post figcaption.caption.with-caption, {
 	background-color: #fff;
 	background-image: none;
 	height: 150px;
+}
+
+.short-post .tumblr-answer{
+    height:100%;
+    min-height: 150px;
+    max-height:620px;
 }
 
 .short-post figure.tumblr-quote,  .short-post figure.tumblr-text {
