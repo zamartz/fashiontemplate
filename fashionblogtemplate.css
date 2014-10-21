@@ -949,9 +949,12 @@ margin-top: 20px;
 	min-width: 300px;
 }
 
+.tumblr-answer {
+text-align: center;
+}
+
 .tumblr-answer img{
 width:auto;
-text-align: center;
 }
 
 .avatar img {
@@ -1006,7 +1009,7 @@ overflow: hidden;
 
 .short-post .caption{min-height:50px; overflow: hidden; overflow-y: auto;}
 
-.short-post figcaption.caption.with-caption {
+.short-post figcaption.caption.with-caption,.short-post .tumblr-answer {
 	background-color: #fff;
 	background-image: none;
 	height: 150px;
